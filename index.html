@@ -6,7 +6,7 @@
     <title>Golden City RP</title>
     <style>
         body { background: linear-gradient(135deg, #4c1d95, #000000); min-height: 100vh; }
-        /* هذا الكود لإخفاء قسم الفريق مبدئياً */
+        /* إخفاء القسم مبدئياً */
         #team { display: none; }
     </style>
 </head>
@@ -17,8 +17,7 @@
         <ul class="flex gap-6 font-medium text-sm">
             <li class="hover:text-purple-400 cursor-pointer">الرئيسية</li>
             <li class="hover:text-purple-400 cursor-pointer">صناع المحتوى</li>
-            <!-- زر الفريق الذي سيقوم بإظهار القسم -->
-            <li class="hover:text-purple-300 cursor-pointer" onclick="showTeam()">الفريق</li>
+            <li class="hover:text-purple-300 cursor-pointer" onclick="showTeam()" style="cursor: pointer;">الفريق</li>
             <li class="hover:text-purple-300 cursor-pointer">البث المباشر</li>
             <li class="hover:text-purple-300 cursor-pointer">الوظائف</li>
             <li class="hover:text-purple-300 cursor-pointer">الأسئلة</li>
@@ -37,14 +36,43 @@
         <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-purple-100 transition">انضم للسيرفر</a>
     </main>
 
-    <!-- قسم الفريق (مخفي حالياً) -->
+    <!-- قسم الفريق -->
     <section id="team" class="py-20 text-center">
-        <!-- (هنا تضع محتويات قسم الفريق كما هي سابقاً) -->
+        
+        <!-- قسم GC | Owner -->
         <h2 class="text-2xl font-bold mb-8 text-yellow-500">GC | Owner 👑</h2>
-        <!-- ... باقي البطاقات ... -->
+        <div class="flex justify-center gap-6 flex-wrap mb-16">
+            <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
+                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg?ex=6a381474&is=6a36c2f4&hm=bf4065164012f52b17d84dac7de39f1e36c9fb5f0aa9283e2002158a8b6dc736&" class="w-24 h-24 rounded-full border-2 border-yellow-500 mb-4 object-cover">
+                <h3 class="text-lg font-bold">Abu Muhammad</h3>
+                <p class="text-yellow-500 font-semibold text-xs mb-3">Owner</p>
+                <div class="bg-black/40 px-3 py-1 rounded-lg text-sm text-gray-300 font-mono">@Abu_Muhammad</div>
+            </div>
+        </div>
+
+        <!-- قسم GC | Server Owner -->
+        <h2 class="text-2xl font-bold mb-8 text-orange-400">GC | Server Owner ⚡</h2>
+        <div class="flex justify-center gap-6 flex-wrap mb-16">
+            <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
+                <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934350497480937/IMG_7754.jpg?ex=6a381607&is=6a36c487&hm=621789f2fd05319ef468a27b6e1fdb3589dd7789d783c35c2bd98adf164c3a64&" class="w-24 h-24 rounded-full border-2 border-orange-500 mb-4 object-cover">
+                <h3 class="text-lg font-bold">IDOM</h3>
+                <p class="text-orange-500 font-semibold text-xs mb-3">Server Owner</p>
+                <div class="bg-black/40 px-3 py-1 rounded-lg text-sm text-gray-300 font-mono">@IDOM</div>
+            </div>
+        </div>
+
+        <!-- قسم GC | Staff -->
+        <h2 class="text-2xl font-bold mb-8 text-blue-400">GC | Staff 🛡️</h2>
+        <div class="flex justify-center gap-6 flex-wrap">
+            <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
+                <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934672481489068/avatar_803.png?ex=6a381653&is=6a36c4d3&hm=70389053543ee5635274b2338d7c8cf156ae572c2e412f9f4e16489750ca9484&" class="w-24 h-24 rounded-full border-2 border-blue-500 mb-4 object-cover">
+                <h3 class="text-lg font-bold">Faisal</h3>
+                <p class="text-blue-500 font-semibold text-xs mb-3">Staff</p>
+                <div class="bg-black/40 px-3 py-1 rounded-lg text-sm text-gray-300 font-mono">@Faisal</div>
+            </div>
+        </div>
     </section>
 
-    <!-- كود بسيط لإظهار القسم عند النقر -->
     <script>
         function showTeam() {
             document.getElementById('team').style.display = 'block';
