@@ -7,68 +7,59 @@
     <title>Golden City RP</title>
     <style>
         body { 
-            background: linear-gradient(rgba(76, 29, 149, 0.7), rgba(0, 0, 0, 0.8)), 
-                        url('https://cdn.discordapp.com/attachments/1500948461044895864/1517948188403826698/IMG_4212.png?ex=6a3822ea&is=6a36d16a&hm=3dc851c67dc5869775ed8580a92efd4275e7112b25c84efa241d8034b8f63044&');
+            background: linear-gradient(rgba(76, 29, 149, 0.6), rgba(0, 0, 0, 0.9)), 
+                        url('https://cdn.discordapp.com/attachments/1500948461044895864/1517948188403826698/IMG_4212.png');
             background-size: cover;
-            background-position: center;
             background-attachment: fixed;
             min-height: 100vh;
         }
-        #team { display: none; }
+        #team-section { display: none; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
     </style>
 </head>
 <body class="text-white font-sans">
 
-    <!-- القائمة العلوية كاملة -->
-    <nav class="w-full bg-black/50 backdrop-blur-md p-6 flex justify-between items-center shadow-lg sticky top-0 z-50">
+    <!-- القائمة العلوية -->
+    <nav class="w-full bg-black/50 backdrop-blur-md p-6 flex justify-between items-center sticky top-0 z-50">
         <ul class="flex gap-6 font-medium text-sm">
-            <li class="hover:text-purple-300 cursor-pointer transition">الرئيسية</li>
-            <li class="hover:text-purple-300 cursor-pointer transition">صناع المحتوى</li>
-            <li class="hover:text-purple-300 cursor-pointer transition" onclick="showTeam()">الفريق</li>
-            <li class="hover:text-purple-300 cursor-pointer transition">البث المباشر</li>
-            <li class="hover:text-purple-300 cursor-pointer transition">الوظائف</li>
-            <li class="hover:text-purple-300 cursor-pointer transition">الأسئلة</li>
-            <li class="hover:text-purple-300 cursor-pointer transition">المتصدرين</li>
+            <li class="hover:text-purple-300 cursor-pointer" onclick="location.reload()">الرئيسية</li>
+            <li class="hover:text-purple-300 cursor-pointer">صناع المحتوى</li>
+            <li class="hover:text-purple-300 cursor-pointer" onclick="showTeam()">الفريق</li>
+            <li class="hover:text-purple-300 cursor-pointer">البث المباشر</li>
+            <li class="hover:text-purple-300 cursor-pointer">الوظائف</li>
+            <li class="hover:text-purple-300 cursor-pointer">الأسئلة</li>
+            <li class="hover:text-purple-300 cursor-pointer">المتصدرين</li>
         </ul>
-        <div class="flex items-center gap-2 font-bold text-lg">
-            <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">GC</div>
-            <h1>GOLDEN CITY</h1>
-        </div>
+        <div class="font-bold text-lg">GOLDEN CITY</div>
     </nav>
 
-    <!-- المحتوى الرئيسي -->
-    <main class="w-full h-[80vh] flex flex-col justify-center items-start pl-16 text-right" style="padding-right: 4rem;">
-        <span class="text-white/60 font-bold tracking-[0.3em] mb-2 uppercase text-lg">GOLDEN CITY</span>
-        <h1 class="text-7xl font-black text-white mb-6">حيث تصبح الأحلام حقيقة</h1>
-        <p class="text-xl text-gray-200 max-w-lg leading-relaxed mb-10 border-r-4 border-white pr-6">
-            والواقع ليس سوى بداية. في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
-        </p>
-        
-        <div class="flex items-center gap-6">
-            <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 hover:bg-gray-200 px-10 py-4 rounded-lg font-bold text-lg transition duration-300">انضم للسيرفر</a>
-            <a href="https://www.tiktok.com/@golden.city3000?_r=1&_t=ZS-97NFCXD2VUX" target="_blank" class="text-white hover:text-purple-300 transition duration-300 text-4xl">
-                <i class="fab fa-tiktok"></i>
-            </a>
-        </div>
+    <!-- الصفحة الرئيسية -->
+    <main id="main-content" class="h-[80vh] flex flex-col justify-center items-start pr-16">
+        <h1 class="text-7xl font-black mb-6">حيث تصبح الأحلام حقيقة</h1>
+        <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 px-10 py-4 rounded-lg font-bold">انضم للسيرفر</a>
     </main>
 
     <!-- قسم الفريق -->
-    <section id="team" class="py-20 text-center bg-black/80 backdrop-blur-md">
-        <h2 class="text-3xl font-bold mb-12 text-white">فريق العمل</h2>
-        <div class="flex justify-center gap-6 flex-wrap">
-            <div class="flex flex-col items-center bg-white/10 p-6 rounded-2xl w-48 border border-white/10">
-                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg" class="w-24 h-24 rounded-full border-2 border-white mb-4 object-cover">
-                <h3 class="text-lg font-bold">Abu Muhammad</h3>
-                <p class="text-white/70 text-xs mb-3">Owner</p>
+    <section id="team-section" class="py-20 px-10">
+        <h2 class="text-3xl font-bold mb-16 text-center">GC Owners</h2>
+        <div class="team-grid justify-items-center">
+            <!-- مثال لعضو فريق -->
+            <div class="flex flex-col items-center">
+                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg" class="w-32 h-32 rounded-full border-2 border-purple-500 mb-4">
+                <h3 class="font-bold text-lg">Abu Muhammad</h3>
+                <p class="text-purple-400 text-sm">Owner</p>
+                <div class="flex gap-2 mt-2 text-gray-400">
+                    <i class="fab fa-discord"></i> <i class="fab fa-tiktok"></i>
+                </div>
             </div>
+            <!-- يمكنك تكرار هذا الـ div لكل عضو فريق بنفس الطريقة -->
         </div>
     </section>
 
     <script>
         function showTeam() {
-            const team = document.getElementById('team');
-            team.style.display = 'block';
-            team.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('team-section').style.display = 'block';
         }
     </script>
 </body>
