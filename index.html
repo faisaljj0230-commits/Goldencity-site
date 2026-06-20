@@ -7,52 +7,61 @@
     <title>Golden City RP</title>
     <style>
         body { 
-            background: linear-gradient(rgba(76, 29, 149, 0.6), rgba(0, 0, 0, 0.9)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                         url('https://cdn.discordapp.com/attachments/1500948461044895864/1517948188403826698/IMG_4212.png');
             background-size: cover;
+            background-position: center;
             background-attachment: fixed;
             min-height: 100vh;
         }
-        #team-section { display: none; }
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        #team-section { display: none; padding: 50px 20px; }
+        .grid-team { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 40px; justify-items: center; }
     </style>
 </head>
 <body class="text-white font-sans">
 
     <!-- القائمة العلوية -->
-    <nav class="w-full bg-black/50 backdrop-blur-md p-6 flex justify-between items-center sticky top-0 z-50">
+    <nav class="w-full bg-black/60 p-6 flex justify-between items-center sticky top-0 z-50">
         <ul class="flex gap-6 font-medium text-sm">
-            <li class="hover:text-purple-300 cursor-pointer" onclick="location.reload()">الرئيسية</li>
-            <li class="hover:text-purple-300 cursor-pointer">صناع المحتوى</li>
-            <li class="hover:text-purple-300 cursor-pointer" onclick="showTeam()">الفريق</li>
-            <li class="hover:text-purple-300 cursor-pointer">البث المباشر</li>
-            <li class="hover:text-purple-300 cursor-pointer">الوظائف</li>
-            <li class="hover:text-purple-300 cursor-pointer">الأسئلة</li>
-            <li class="hover:text-purple-300 cursor-pointer">المتصدرين</li>
+            <li class="cursor-pointer hover:text-purple-400" onclick="window.location.reload()">الرئيسية</li>
+            <li class="cursor-pointer hover:text-purple-400">صناع المحتوى</li>
+            <li class="cursor-pointer hover:text-purple-400" onclick="showTeam()">الفريق</li>
+            <li class="cursor-pointer hover:text-purple-400">البث المباشر</li>
+            <li class="cursor-pointer hover:text-purple-400">الوظائف</li>
+            <li class="cursor-pointer hover:text-purple-400">الأسئلة</li>
+            <li class="cursor-pointer hover:text-purple-400">المتصدرين</li>
         </ul>
-        <div class="font-bold text-lg">GOLDEN CITY</div>
+        <div class="font-bold text-xl">GOLDEN CITY</div>
     </nav>
 
-    <!-- الصفحة الرئيسية -->
-    <main id="main-content" class="h-[80vh] flex flex-col justify-center items-start pr-16">
+    <!-- المحتوى الرئيسي -->
+    <main id="main-content" class="flex flex-col justify-center items-start pr-16 h-[80vh]">
         <h1 class="text-7xl font-black mb-6">حيث تصبح الأحلام حقيقة</h1>
         <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 px-10 py-4 rounded-lg font-bold">انضم للسيرفر</a>
     </main>
 
     <!-- قسم الفريق -->
-    <section id="team-section" class="py-20 px-10">
-        <h2 class="text-3xl font-bold mb-16 text-center">GC Owners</h2>
-        <div class="team-grid justify-items-center">
-            <!-- مثال لعضو فريق -->
+    <section id="team-section">
+        <h2 class="text-4xl font-bold mb-16 text-center">فريق العمل</h2>
+        <div class="grid-team">
+            <!-- Abu Muhammad -->
             <div class="flex flex-col items-center">
                 <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg" class="w-32 h-32 rounded-full border-2 border-purple-500 mb-4">
-                <h3 class="font-bold text-lg">Abu Muhammad</h3>
+                <h3 class="font-bold">Abu Muhammad</h3>
                 <p class="text-purple-400 text-sm">Owner</p>
-                <div class="flex gap-2 mt-2 text-gray-400">
-                    <i class="fab fa-discord"></i> <i class="fab fa-tiktok"></i>
-                </div>
             </div>
-            <!-- يمكنك تكرار هذا الـ div لكل عضو فريق بنفس الطريقة -->
+            <!-- IDOM -->
+            <div class="flex flex-col items-center">
+                <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934350497480937/IMG_7754.jpg" class="w-32 h-32 rounded-full border-2 border-orange-500 mb-4">
+                <h3 class="font-bold">IDOM</h3>
+                <p class="text-orange-400 text-sm">Server Owner</p>
+            </div>
+            <!-- Faisal -->
+            <div class="flex flex-col items-center">
+                <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934672481489068/avatar_803.png" class="w-32 h-32 rounded-full border-2 border-blue-500 mb-4">
+                <h3 class="font-bold">Faisal</h3>
+                <p class="text-blue-400 text-sm">Staff</p>
+            </div>
         </div>
     </section>
 
