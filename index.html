@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Golden City RP</title>
     <style>
-        body { background: linear-gradient(135deg, #4c1d95, #000000); min-height: 100vh; }
-        /* إخفاء القسم مبدئياً */
+        body { 
+            background: linear-gradient(135deg, #4c1d95, #000000); 
+            min-height: 100vh; 
+            background-attachment: fixed;
+        }
+        /* إخفاء قسم الفريق مبدئياً */
         #team { display: none; }
     </style>
 </head>
 <body class="text-white font-sans">
 
-    <!-- شريط القائمة -->
     <nav class="w-full bg-gray-900/80 p-6 flex justify-between items-center shadow-lg sticky top-0 z-50">
         <ul class="flex gap-6 font-medium text-sm">
             <li class="hover:text-purple-400 cursor-pointer">الرئيسية</li>
@@ -29,17 +33,23 @@
         </div>
     </nav>
 
-    <!-- المحتوى الرئيسي -->
-    <main class="text-center mt-32 mb-20">
-        <h2 class="text-6xl font-extrabold mb-6">مرحباً بك في <span class="text-purple-400">Golden City</span></h2>
-        <p class="text-xl text-gray-200 mb-10">أفضل تجربة رول بلاي بانتظارك، انضم لمجتمعنا الآن.</p>
-        <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-purple-100 transition">انضم للسيرفر</a>
+    <main class="w-full h-[80vh] flex flex-col justify-center items-end pr-16 text-right">
+        <span class="text-orange-500 font-bold tracking-[0.5em] mb-2 uppercase text-lg">GOLDEN CITY</span>
+        <h1 class="text-7xl font-black text-white mb-6">حيث تصبح الأحلام حقيقة</h1>
+        <p class="text-xl text-gray-300 max-w-lg leading-relaxed mb-10 border-r-4 border-orange-500 pr-6">
+            والواقع ليس سوى بداية. في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
+        </p>
+        
+        <div class="flex items-center gap-6">
+            <a href="https://discord.gg/CwZftmkaH" class="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-lg font-bold text-lg transition duration-300">انضم للسيرفر</a>
+            <a href="https://www.tiktok.com/@golden.city3000?_r=1&_t=ZS-97NFCXD2VUX" target="_blank" class="text-white hover:text-orange-500 transition duration-300 text-4xl">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
     </main>
 
-    <!-- قسم الفريق -->
-    <section id="team" class="py-20 text-center">
+    <section id="team" class="py-20 text-center bg-black/20">
         
-        <!-- قسم GC | Owner -->
         <h2 class="text-2xl font-bold mb-8 text-yellow-500">GC | Owner 👑</h2>
         <div class="flex justify-center gap-6 flex-wrap mb-16">
             <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
@@ -50,7 +60,6 @@
             </div>
         </div>
 
-        <!-- قسم GC | Server Owner -->
         <h2 class="text-2xl font-bold mb-8 text-orange-400">GC | Server Owner ⚡</h2>
         <div class="flex justify-center gap-6 flex-wrap mb-16">
             <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
@@ -61,17 +70,14 @@
             </div>
         </div>
 
-        <!-- قسم GC | Staff -->
         <h2 class="text-2xl font-bold mb-8 text-blue-400">GC | Staff 🛡️</h2>
         <div class="flex justify-center gap-6 flex-wrap">
-            <!-- بطاقة Faisal -->
             <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
                 <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934672481489068/avatar_803.png?ex=6a381653&is=6a36c4d3&hm=70389053543ee5635274b2338d7c8cf156ae572c2e412f9f4e16489750ca9484&" class="w-24 h-24 rounded-full border-2 border-blue-500 mb-4 object-cover">
                 <h3 class="text-lg font-bold">Faisal</h3>
                 <p class="text-blue-500 font-semibold text-xs mb-3">Staff</p>
                 <div class="bg-black/40 px-3 py-1 rounded-lg text-sm text-gray-300 font-mono">@Faisal</div>
             </div>
-            <!-- بطاقة Mr.Not -->
             <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
                 <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517935290856112298/IMG_4207.png?ex=6a3816e7&is=6a36c567&hm=788b4ed4cce95413d84588a5d70a20f6828c1c07af28a88ae36f7a731a3874f5&" class="w-24 h-24 rounded-full border-2 border-blue-500 mb-4 object-cover">
                 <h3 class="text-lg font-bold">Mr.Not</h3>
