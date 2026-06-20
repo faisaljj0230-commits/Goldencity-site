@@ -6,54 +6,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Golden City RP</title>
     <style>
+        /* خلفية فخمة تدرج بنفسجي مع تعتيم */
         body { 
-            background: linear-gradient(135deg, #4c1d95, #000000); 
-            min-height: 100vh; 
+            background: radial-gradient(circle at 70% 30%, #4c1d95, #000000 70%), 
+                        linear-gradient(135deg, #2e1065 0%, #000000 100%);
+            min-height: 100vh;
             background-attachment: fixed;
+            color: white;
+            font-family: sans-serif;
         }
         #team { display: none; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
     </style>
 </head>
-<body class="text-white font-sans">
+<body>
 
-    <nav class="w-full bg-gray-900/50 p-6 flex justify-between items-center shadow-lg sticky top-0 z-50">
-        <ul class="flex gap-6 font-medium text-sm">
-            <li class="hover:text-purple-300 cursor-pointer">الرئيسية</li>
-            <li class="hover:text-purple-300 cursor-pointer">صناع المحتوى</li>
-            <li class="hover:text-purple-300 cursor-pointer" onclick="showTeam()" style="cursor: pointer;">الفريق</li>
-            <li class="hover:text-purple-300 cursor-pointer">البث المباشر</li>
-            <li class="hover:text-purple-300 cursor-pointer">الوظائف</li>
-            <li class="hover:text-purple-300 cursor-pointer">الأسئلة</li>
-            <li class="hover:text-purple-300 cursor-pointer">المتصدرين</li>
-        </ul>
-        <div class="flex items-center gap-2 font-bold text-lg">
-            <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">GC</div>
-            <h1>GOLDEN CITY</h1>
+    <nav class="w-full p-6 flex justify-between items-center z-50">
+        <div class="flex items-center gap-2 font-bold text-xl">
+            <div class="w-10 h-10 bg-purple-600 rounded flex items-center justify-center">GC</div>
+            <span>GOLDEN CITY</span>
         </div>
+        <ul class="flex gap-8 font-medium text-sm text-gray-300">
+            <li class="hover:text-white cursor-pointer transition">الرئيسية</li>
+            <li class="hover:text-white cursor-pointer transition">صناع المحتوى</li>
+            <li class="hover:text-white cursor-pointer transition" onclick="showTeam()">الفريق</li>
+            <li class="hover:text-white cursor-pointer transition">البث المباشر</li>
+        </ul>
     </nav>
 
-    <main class="w-full h-[80vh] flex flex-col justify-center items-start pl-16 text-right" style="padding-right: 4rem;">
-        <span class="text-white/60 font-bold tracking-[0.3em] mb-2 uppercase text-lg">GOLDEN CITY</span>
-        <h1 class="text-7xl font-black text-white mb-6">حيث تصبح الأحلام حقيقة</h1>
-        <p class="text-xl text-gray-300 max-w-lg leading-relaxed mb-10 border-r-4 border-white pr-6">
-            والواقع ليس سوى بداية. في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
+    <main class="h-[80vh] flex flex-col justify-center items-end pr-20 text-right">
+        <span class="text-purple-300 font-bold tracking-[0.4em] uppercase mb-4">Welcome to Golden City</span>
+        
+        <h1 class="text-8xl font-black text-white mb-6">حيث تصبح الأحلام حقيقة</h1>
+        
+        <p class="text-xl text-gray-400 max-w-lg mb-10 leading-relaxed border-r-4 border-purple-500 pr-6">
+            نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
         </p>
         
-        <div class="flex items-center gap-6">
-            <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 hover:bg-gray-200 px-10 py-4 rounded-lg font-bold text-lg transition duration-300">انضم للسيرفر</a>
-            <a href="https://www.tiktok.com/@golden.city3000?_r=1&_t=ZS-97NFCXD2VUX" target="_blank" class="text-white hover:text-purple-300 transition duration-300 text-4xl">
+        <div class="flex gap-4">
+            <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 px-8 py-4 rounded-lg font-bold hover:bg-gray-200 transition">انضم للسيرفر</a>
+            <a href="https://www.tiktok.com/@golden.city3000" target="_blank" class="glass px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition">
                 <i class="fab fa-tiktok"></i>
             </a>
         </div>
     </main>
 
-    <section id="team" class="py-20 text-center bg-black/20">
-        <h2 class="text-3xl font-bold mb-12 text-white">فريق العمل</h2>
+    <section id="team" class="py-20 text-center bg-black/40 backdrop-blur-lg">
+        <h2 class="text-4xl font-bold mb-12 text-white">إدارة الفريق</h2>
         <div class="flex justify-center gap-6 flex-wrap">
-            <div class="flex flex-col items-center bg-white/5 p-6 rounded-2xl w-48 border border-white/10">
-                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg?ex=6a381474&is=6a36c2f4&hm=bf4065164012f52b17d84dac7de39f1e36c9fb5f0aa9283e2002158a8b6dc736&" class="w-24 h-24 rounded-full border-2 border-white mb-4 object-cover">
-                <h3 class="text-lg font-bold">Abu Muhammad</h3>
-                <p class="text-white/70 text-xs mb-3">Owner</p>
+            <div class="glass p-8 rounded-2xl w-60">
+                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-500">
+                <h3 class="text-xl font-bold">Abu Muhammad</h3>
+                <p class="text-purple-300">Owner</p>
             </div>
         </div>
     </section>
