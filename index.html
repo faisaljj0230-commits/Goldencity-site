@@ -2,30 +2,35 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <script src="https://cdn.tailwindcss.com"></script>
     <title>Golden City RP</title>
     <style>
-        body { background: linear-gradient(135deg, #4c1d95, #000000); min-height: 100vh; }
+        body { font-family: sans-serif; text-align: center; background-color: #2c003e; color: white; }
+        .container { padding: 50px; }
+        .btn { display: inline-block; padding: 15px 30px; background-color: #9b59b6; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        section { margin-top: 50px; padding: 20px; background: rgba(0,0,0,0.3); border-radius: 10px; }
     </style>
 </head>
-<body class="text-white flex flex-col items-center justify-center font-sans">
+<body>
 
-    <nav class="w-full p-8 flex justify-between items-center max-w-6xl">
-        <h1 class="text-3xl font-bold tracking-widest text-purple-200">GOLDEN CITY</h1>
-        <ul class="flex gap-8 font-semibold">
-            <li class="hover:text-purple-300 cursor-pointer">الرئيسية</li>
-            <li class="hover:text-purple-300 cursor-pointer">القوانين</li>
-            <li class="hover:text-purple-300 cursor-pointer">التقديم</li>
-        </ul>
-    </nav>
+<div class="container">
+    <h1>مرحباً بك في Golden City</h1>
+    <p>أفضل تجربة رول بلاي بانتظارك، انضم لمجتمعنا الآن.</p>
+    
+    <!-- https://discord.gg/CwZftmkaH# -->
+    <a href="ضع_رابط_الدعوة_هنا" class="btn">الضم للسيرفر</a>
 
-    <main class="text-center mt-20">
-        <h2 class="text-6xl font-extrabold mb-6">مرحباً بك في <span class="text-purple-400">Golden City</span></h2>
-        <p class="text-xl text-gray-200 mb-10">أفضل تجربة رول بلاي بانتظارك، انضم لمجتمعنا الآن.</p>
-        <button class="bg-white text-purple-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-purple-100 transition">
-            انضم للسيرفر
-        </button>
-    </main>
+    <section id="about">
+        <h2>تعريف السيرفر</h2>
+        <p>جولدن سيتي هو مجتمع رول بلاي متطور يوفر تجربة واقعية وممتعة لجميع اللاعبين.</p>
+    </section>
+
+    <section id="rules">
+        <h2>القوانين</h2>
+        <p>١. يمنع منعاً باتاً استخدام أي برامج خارجية.</p>
+        <p>٢. الاحترام المتبادل بين جميع الأعضاء.</p>
+        <p>٣. الالتزام بقوانين الرول بلاي في جميع الأوقات.</p>
+    </section>
+</div>
 
 </body>
 </html>
