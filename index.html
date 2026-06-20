@@ -15,21 +15,20 @@
             min-height: 100vh;
         }
         #team { display: none; }
-        /* كلاس خاص ببطاقات الفريق لضمان وضوحها */
-        .team-card {
-            background-color: rgba(0, 0, 0, 0.7) !important;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-        }
     </style>
 </head>
 <body class="text-white font-sans">
 
-    <!-- القائمة -->
-    <nav class="w-full bg-black/50 backdrop-blur-sm p-6 flex justify-between items-center shadow-lg sticky top-0 z-50">
+    <!-- القائمة العلوية كاملة -->
+    <nav class="w-full bg-black/50 backdrop-blur-md p-6 flex justify-between items-center shadow-lg sticky top-0 z-50">
         <ul class="flex gap-6 font-medium text-sm">
-            <li class="hover:text-purple-300 cursor-pointer">الرئيسية</li>
-            <li class="hover:text-purple-300 cursor-pointer" onclick="showTeam()">الفريق</li>
+            <li class="hover:text-purple-300 cursor-pointer transition">الرئيسية</li>
+            <li class="hover:text-purple-300 cursor-pointer transition">صناع المحتوى</li>
+            <li class="hover:text-purple-300 cursor-pointer transition" onclick="showTeam()">الفريق</li>
+            <li class="hover:text-purple-300 cursor-pointer transition">البث المباشر</li>
+            <li class="hover:text-purple-300 cursor-pointer transition">الوظائف</li>
+            <li class="hover:text-purple-300 cursor-pointer transition">الأسئلة</li>
+            <li class="hover:text-purple-300 cursor-pointer transition">المتصدرين</li>
         </ul>
         <div class="flex items-center gap-2 font-bold text-lg">
             <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">GC</div>
@@ -44,30 +43,32 @@
         <p class="text-xl text-gray-200 max-w-lg leading-relaxed mb-10 border-r-4 border-white pr-6">
             والواقع ليس سوى بداية. في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
         </p>
+        
         <div class="flex items-center gap-6">
-            <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 px-10 py-4 rounded-lg font-bold text-lg hover:bg-gray-200 transition">انضم للسيرفر</a>
-            <a href="https://www.tiktok.com/@golden.city3000" target="_blank" class="text-white text-4xl hover:text-purple-300 transition"><i class="fab fa-tiktok"></i></a>
+            <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 hover:bg-gray-200 px-10 py-4 rounded-lg font-bold text-lg transition duration-300">انضم للسيرفر</a>
+            <a href="https://www.tiktok.com/@golden.city3000?_r=1&_t=ZS-97NFCXD2VUX" target="_blank" class="text-white hover:text-purple-300 transition duration-300 text-4xl">
+                <i class="fab fa-tiktok"></i>
+            </a>
         </div>
     </main>
 
-    <!-- قسم الفريق المُصلح -->
-    <section id="team" class="py-20 text-center bg-black/80">
-        <h2 class="text-4xl font-bold mb-12 text-white">فريق العمل</h2>
-        <div class="flex justify-center gap-8 flex-wrap">
-            <!-- البطاقة -->
-            <div class="team-card p-8 rounded-2xl w-56 flex flex-col items-center">
+    <!-- قسم الفريق -->
+    <section id="team" class="py-20 text-center bg-black/80 backdrop-blur-md">
+        <h2 class="text-3xl font-bold mb-12 text-white">فريق العمل</h2>
+        <div class="flex justify-center gap-6 flex-wrap">
+            <div class="flex flex-col items-center bg-white/10 p-6 rounded-2xl w-48 border border-white/10">
                 <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg" class="w-24 h-24 rounded-full border-2 border-white mb-4 object-cover">
-                <h3 class="text-lg font-bold text-white">Abu Muhammad</h3>
-                <p class="text-purple-300 text-sm font-semibold">Owner</p>
+                <h3 class="text-lg font-bold">Abu Muhammad</h3>
+                <p class="text-white/70 text-xs mb-3">Owner</p>
             </div>
         </div>
     </section>
 
     <script>
         function showTeam() {
-            const teamSection = document.getElementById('team');
-            teamSection.style.display = 'block';
-            teamSection.scrollIntoView({ behavior: 'smooth' });
+            const team = document.getElementById('team');
+            team.style.display = 'block';
+            team.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
