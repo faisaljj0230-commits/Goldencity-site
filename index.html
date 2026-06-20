@@ -11,78 +11,49 @@
             min-height: 100vh; 
             background-attachment: fixed;
         }
-        /* إخفاء قسم الفريق مبدئياً */
         #team { display: none; }
     </style>
 </head>
 <body class="text-white font-sans">
 
-    <nav class="w-full bg-gray-900/80 p-6 flex justify-between items-center shadow-lg sticky top-0 z-50">
+    <nav class="w-full bg-gray-900/50 p-6 flex justify-between items-center shadow-lg sticky top-0 z-50">
         <ul class="flex gap-6 font-medium text-sm">
-            <li class="hover:text-purple-400 cursor-pointer">الرئيسية</li>
-            <li class="hover:text-purple-400 cursor-pointer">صناع المحتوى</li>
+            <li class="hover:text-purple-300 cursor-pointer">الرئيسية</li>
+            <li class="hover:text-purple-300 cursor-pointer">صناع المحتوى</li>
             <li class="hover:text-purple-300 cursor-pointer" onclick="showTeam()" style="cursor: pointer;">الفريق</li>
             <li class="hover:text-purple-300 cursor-pointer">البث المباشر</li>
             <li class="hover:text-purple-300 cursor-pointer">الوظائف</li>
             <li class="hover:text-purple-300 cursor-pointer">الأسئلة</li>
             <li class="hover:text-purple-300 cursor-pointer">المتصدرين</li>
         </ul>
-        <div class="flex items-center gap-2">
-            <h1 class="text-xl font-bold tracking-widest text-white">GOLDEN CITY</h1>
-            <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center font-bold">GC</div>
+        <div class="flex items-center gap-2 font-bold text-lg">
+            <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">GC</div>
+            <h1>GOLDEN CITY</h1>
         </div>
     </nav>
 
-    <main class="w-full h-[80vh] flex flex-col justify-center items-end pr-16 text-right">
-        <span class="text-orange-500 font-bold tracking-[0.5em] mb-2 uppercase text-lg">GOLDEN CITY</span>
+    <main class="w-full h-[80vh] flex flex-col justify-center items-start pl-16 text-right" style="padding-right: 4rem;">
+        <span class="text-white/60 font-bold tracking-[0.3em] mb-2 uppercase text-lg">GOLDEN CITY</span>
         <h1 class="text-7xl font-black text-white mb-6">حيث تصبح الأحلام حقيقة</h1>
-        <p class="text-xl text-gray-300 max-w-lg leading-relaxed mb-10 border-r-4 border-orange-500 pr-6">
+        <p class="text-xl text-gray-300 max-w-lg leading-relaxed mb-10 border-r-4 border-white pr-6">
             والواقع ليس سوى بداية. في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
         </p>
         
         <div class="flex items-center gap-6">
-            <a href="https://discord.gg/CwZftmkaH" class="bg-orange-600 hover:bg-orange-700 text-white px-10 py-4 rounded-lg font-bold text-lg transition duration-300">انضم للسيرفر</a>
-            <a href="https://www.tiktok.com/@golden.city3000?_r=1&_t=ZS-97NFCXD2VUX" target="_blank" class="text-white hover:text-orange-500 transition duration-300 text-4xl">
+            <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 hover:bg-gray-200 px-10 py-4 rounded-lg font-bold text-lg transition duration-300">انضم للسيرفر</a>
+            <a href="https://www.tiktok.com/@golden.city3000?_r=1&_t=ZS-97NFCXD2VUX" target="_blank" class="text-white hover:text-purple-300 transition duration-300 text-4xl">
                 <i class="fab fa-tiktok"></i>
             </a>
         </div>
     </main>
 
     <section id="team" class="py-20 text-center bg-black/20">
-        
-        <h2 class="text-2xl font-bold mb-8 text-yellow-500">GC | Owner 👑</h2>
-        <div class="flex justify-center gap-6 flex-wrap mb-16">
-            <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
-                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg?ex=6a381474&is=6a36c2f4&hm=bf4065164012f52b17d84dac7de39f1e36c9fb5f0aa9283e2002158a8b6dc736&" class="w-24 h-24 rounded-full border-2 border-yellow-500 mb-4 object-cover">
-                <h3 class="text-lg font-bold">Abu Muhammad</h3>
-                <p class="text-yellow-500 font-semibold text-xs mb-3">Owner</p>
-                <div class="bg-black/40 px-3 py-1 rounded-lg text-sm text-gray-300 font-mono">@Abu_Muhammad</div>
-            </div>
-        </div>
-
-        <h2 class="text-2xl font-bold mb-8 text-orange-400">GC | Server Owner ⚡</h2>
-        <div class="flex justify-center gap-6 flex-wrap mb-16">
-            <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
-                <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934350497480937/IMG_7754.jpg?ex=6a381607&is=6a36c487&hm=621789f2fd05319ef468a27b6e1fdb3589dd7789d783c35c2bd98adf164c3a64&" class="w-24 h-24 rounded-full border-2 border-orange-500 mb-4 object-cover">
-                <h3 class="text-lg font-bold">IDOM</h3>
-                <p class="text-orange-500 font-semibold text-xs mb-3">Server Owner</p>
-                <div class="bg-black/40 px-3 py-1 rounded-lg text-sm text-gray-300 font-mono">@IDOM</div>
-            </div>
-        </div>
-
-        <h2 class="text-2xl font-bold mb-8 text-blue-400">GC | Staff 🛡️</h2>
+        <h2 class="text-3xl font-bold mb-12 text-white">فريق العمل</h2>
         <div class="flex justify-center gap-6 flex-wrap">
-            <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
-                <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934672481489068/avatar_803.png?ex=6a381653&is=6a36c4d3&hm=70389053543ee5635274b2338d7c8cf156ae572c2e412f9f4e16489750ca9484&" class="w-24 h-24 rounded-full border-2 border-blue-500 mb-4 object-cover">
-                <h3 class="text-lg font-bold">Faisal</h3>
-                <p class="text-blue-500 font-semibold text-xs mb-3">Staff</p>
-                <div class="bg-black/40 px-3 py-1 rounded-lg text-sm text-gray-300 font-mono">@Faisal</div>
-            </div>
-            <div class="flex flex-col items-center bg-gray-800/50 p-6 rounded-2xl w-48 hover:bg-gray-800 transition">
-                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517935290856112298/IMG_4207.png?ex=6a3816e7&is=6a36c567&hm=788b4ed4cce95413d84588a5d70a20f6828c1c07af28a88ae36f7a731a3874f5&" class="w-24 h-24 rounded-full border-2 border-blue-500 mb-4 object-cover">
-                <h3 class="text-lg font-bold">Mr.Not</h3>
-                <p class="text-blue-500 font-semibold text-xs mb-3">Staff</p>
-                <div class="bg-black/40 px-3 py-1 rounded-lg text-sm text-gray-300 font-mono">@Mr.Not</div>
+            <div class="flex flex-col items-center bg-white/5 p-6 rounded-2xl w-48 border border-white/10">
+                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg?ex=6a381474&is=6a36c2f4&hm=bf4065164012f52b17d84dac7de39f1e36c9fb5f0aa9283e2002158a8b6dc736&" class="w-24 h-24 rounded-full border-2 border-white mb-4 object-cover">
+                <h3 class="text-lg font-bold">Abu Muhammad</h3>
+                <p class="text-white/70 text-xs mb-3">Owner</p>
             </div>
         </div>
     </section>
@@ -93,6 +64,5 @@
             document.getElementById('team').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
-
 </body>
 </html>
