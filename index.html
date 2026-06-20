@@ -8,22 +8,31 @@
         body { background: linear-gradient(135deg, #4c1d95, #000000); min-height: 100vh; }
     </style>
 </head>
-<body class="text-white flex flex-col items-center justify-center font-sans">
+<body class="text-white font-sans">
 
-    <!-- القائمة المعدلة -->
-    <nav class="w-full p-8 flex justify-center items-center max-w-6xl relative">
-        <!-- الشعار في الزاوية العلوية اليمنى -->
-        <h1 class="text-3xl font-bold tracking-widest text-purple-200 absolute top-8 right-8">GOLDEN CITY</h1>
+    <!-- شريط القائمة العلوي -->
+    <nav class="w-full bg-gray-900/80 p-6 flex justify-between items-center shadow-lg">
         
-        <!-- القائمة في المنتصف -->
-        <ul class="flex gap-8 font-semibold">
-            <li class="hover:text-purple-300 cursor-pointer">الرئيسية</li>
-            <li class="hover:text-purple-300 cursor-pointer">القوانين</li>
-            <li class="hover:text-purple-300 cursor-pointer">التقديم</li>
+        <!-- القوائم في جهة اليسار -->
+        <ul class="flex gap-6 font-medium text-sm">
+            <li class="hover:text-purple-400 cursor-pointer">الرئيسية</li>
+            <li class="hover:text-purple-400 cursor-pointer">صناع المحتوى</li>
+            <li class="hover:text-purple-300 cursor-pointer">الفريق</li>
+            <li class="hover:text-purple-300 cursor-pointer">البث المباشر</li>
+            <li class="hover:text-purple-300 cursor-pointer">الوظائف</li>
+            <li class="hover:text-purple-300 cursor-pointer">الأسئلة</li>
+            <li class="hover:text-purple-300 cursor-pointer">المتصدرين</li>
         </ul>
+
+        <!-- الشعار في جهة اليمين -->
+        <div class="flex items-center gap-2">
+            <h1 class="text-xl font-bold tracking-widest text-white">GOLDEN CITY</h1>
+            <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center font-bold">GC</div>
+        </div>
     </nav>
 
-    <main class="text-center mt-20">
+    <!-- المحتوى الرئيسي -->
+    <main class="text-center mt-32">
         <h2 class="text-6xl font-extrabold mb-6">مرحباً بك في <span class="text-purple-400">Golden City</span></h2>
         <p class="text-xl text-gray-200 mb-10">أفضل تجربة رول بلاي بانتظارك، انضم لمجتمعنا الآن.</p>
         
