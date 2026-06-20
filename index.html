@@ -7,68 +7,68 @@
     <title>Golden City RP</title>
     <style>
         body { 
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://cdn.discordapp.com/attachments/1500948461044895864/1517948188403826698/IMG_4212.png');
+            /* دمج صورتك كخلفية مع طبقة تغميق بنفسجية وسوداء لضمان وضوح النص */
+            background: linear-gradient(rgba(76, 29, 149, 0.7), rgba(0, 0, 0, 0.8)), 
+                        url('https://cdn.discordapp.com/attachments/1500948461044895864/1517948188403826698/IMG_4212.png?ex=6a3822ea&is=6a36d16a&hm=3dc851c67dc5869775ed8580a92efd4275e7112b25c84efa241d8034b8f63044&');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             min-height: 100vh;
         }
-        #team-section { display: none; padding: 50px 20px; }
-        .grid-team { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 40px; justify-items: center; }
+        #team { display: none; }
     </style>
 </head>
 <body class="text-white font-sans">
 
-    <!-- القائمة العلوية -->
-    <nav class="w-full bg-black/60 p-6 flex justify-between items-center sticky top-0 z-50">
+    <!-- شريط القائمة -->
+    <nav class="w-full bg-black/30 backdrop-blur-md p-6 flex justify-between items-center shadow-lg sticky top-0 z-50">
         <ul class="flex gap-6 font-medium text-sm">
-            <li class="cursor-pointer hover:text-purple-400" onclick="window.location.reload()">الرئيسية</li>
-            <li class="cursor-pointer hover:text-purple-400">صناع المحتوى</li>
-            <li class="cursor-pointer hover:text-purple-400" onclick="showTeam()">الفريق</li>
-            <li class="cursor-pointer hover:text-purple-400">البث المباشر</li>
-            <li class="cursor-pointer hover:text-purple-400">الوظائف</li>
-            <li class="cursor-pointer hover:text-purple-400">الأسئلة</li>
-            <li class="cursor-pointer hover:text-purple-400">المتصدرين</li>
+            <li class="hover:text-purple-300 cursor-pointer">الرئيسية</li>
+            <li class="hover:text-purple-300 cursor-pointer">صناع المحتوى</li>
+            <li class="hover:text-purple-300 cursor-pointer" onclick="showTeam()" style="cursor: pointer;">الفريق</li>
+            <li class="hover:text-purple-300 cursor-pointer">البث المباشر</li>
+            <li class="hover:text-purple-300 cursor-pointer">الوظائف</li>
+            <li class="hover:text-purple-300 cursor-pointer">الأسئلة</li>
+            <li class="hover:text-purple-300 cursor-pointer">المتصدرين</li>
         </ul>
-        <div class="font-bold text-xl">GOLDEN CITY</div>
+        <div class="flex items-center gap-2 font-bold text-lg">
+            <div class="w-8 h-8 bg-purple-600 rounded flex items-center justify-center">GC</div>
+            <h1>GOLDEN CITY</h1>
+        </div>
     </nav>
 
     <!-- المحتوى الرئيسي -->
-    <main id="main-content" class="flex flex-col justify-center items-start pr-16 h-[80vh]">
-        <h1 class="text-7xl font-black mb-6">حيث تصبح الأحلام حقيقة</h1>
-        <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 px-10 py-4 rounded-lg font-bold">انضم للسيرفر</a>
+    <main class="w-full h-[80vh] flex flex-col justify-center items-start pl-16 text-right" style="padding-right: 4rem;">
+        <span class="text-white/60 font-bold tracking-[0.3em] mb-2 uppercase text-lg">GOLDEN CITY</span>
+        <h1 class="text-7xl font-black text-white mb-6">حيث تصبح الأحلام حقيقة</h1>
+        <p class="text-xl text-gray-200 max-w-lg leading-relaxed mb-10 border-r-4 border-white pr-6">
+            والواقع ليس سوى بداية. في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
+        </p>
+        
+        <div class="flex items-center gap-6">
+            <a href="https://discord.gg/CwZftmkaH" class="bg-white text-purple-900 hover:bg-gray-200 px-10 py-4 rounded-lg font-bold text-lg transition duration-300">انضم للسيرفر</a>
+            <a href="https://www.tiktok.com/@golden.city3000?_r=1&_t=ZS-97NFCXD2VUX" target="_blank" class="text-white hover:text-purple-300 transition duration-300 text-4xl">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
     </main>
 
     <!-- قسم الفريق -->
-    <section id="team-section">
-        <h2 class="text-4xl font-bold mb-16 text-center">فريق العمل</h2>
-        <div class="grid-team">
-            <!-- Abu Muhammad -->
-            <div class="flex flex-col items-center">
-                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg" class="w-32 h-32 rounded-full border-2 border-purple-500 mb-4">
-                <h3 class="font-bold">Abu Muhammad</h3>
-                <p class="text-purple-400 text-sm">Owner</p>
-            </div>
-            <!-- IDOM -->
-            <div class="flex flex-col items-center">
-                <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934350497480937/IMG_7754.jpg" class="w-32 h-32 rounded-full border-2 border-orange-500 mb-4">
-                <h3 class="font-bold">IDOM</h3>
-                <p class="text-orange-400 text-sm">Server Owner</p>
-            </div>
-            <!-- Faisal -->
-            <div class="flex flex-col items-center">
-                <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934672481489068/avatar_803.png" class="w-32 h-32 rounded-full border-2 border-blue-500 mb-4">
-                <h3 class="font-bold">Faisal</h3>
-                <p class="text-blue-400 text-sm">Staff</p>
+    <section id="team" class="py-20 text-center bg-black/60 backdrop-blur-md">
+        <h2 class="text-3xl font-bold mb-12 text-white">فريق العمل</h2>
+        <div class="flex justify-center gap-6 flex-wrap">
+            <div class="flex flex-col items-center bg-white/10 p-6 rounded-2xl w-48 border border-white/10">
+                <img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg?ex=6a381474&is=6a36c2f4&hm=bf4065164012f52b17d84dac7de39f1e36c9fb5f0aa9283e2002158a8b6dc736&" class="w-24 h-24 rounded-full border-2 border-white mb-4 object-cover">
+                <h3 class="text-lg font-bold">Abu Muhammad</h3>
+                <p class="text-white/70 text-xs mb-3">Owner</p>
             </div>
         </div>
     </section>
 
     <script>
         function showTeam() {
-            document.getElementById('main-content').style.display = 'none';
-            document.getElementById('team-section').style.display = 'block';
+            document.getElementById('team').style.display = 'block';
+            document.getElementById('team').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
