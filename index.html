@@ -18,18 +18,18 @@
         }
         #team-page { display: none; padding: 40px; background: rgba(0, 0, 0, 0.9); min-height: 100vh; }
         .member-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; text-align: center; width: 200px; }
-        .member-img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin: 0 auto 16px; border: 2px solid #a855f7; }
-        .social-btn { background: rgba(255, 255, 255, 0.1); padding: 8px 16px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+        .social-btn { background: rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); transition: 0.3s; }
+        .social-btn:hover { background: rgba(168, 85, 247, 0.3); border-color: #a855f7; }
     </style>
 </head>
 <body class="text-white">
 
-    <!-- القائمة العلوية -->
     <nav class="w-full p-6 flex justify-between items-center z-50">
         <div class="flex items-center gap-3">
-            <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1518121927498272898/E7175AA3-74C1-4AB4-8004-8CD8AF427F16.png" referrerpolicy="no-referrer" class="w-12 h-12 object-contain">
-            <span class="text-2xl font-black tracking-wider">GOLDEN CITY</span>
+            <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1518121927498272898/E7175AA3-74C1-4AB4-8004-8CD8AF427F16.png" class="w-12 h-12 object-contain">
+            <span class="text-2xl font-black text-white tracking-wider">GOLDEN CITY</span>
         </div>
+        
         <ul class="flex gap-8 font-bold text-sm">
             <li class="hover:text-purple-400 cursor-pointer" onclick="location.reload()">الرئيسية</li>
             <li class="hover:text-purple-400 cursor-pointer">صناع المحتوى</li>
@@ -41,38 +41,36 @@
         </ul>
     </nav>
 
-    <!-- الواجهة الرئيسية -->
-    <main id="main-content" class="w-full h-[80vh] flex flex-col justify-end items-end p-16">
-        <div class="text-right">
-            <h1 class="text-6xl font-black text-white mb-2">شكراً لكم</h1>
-            <p class="text-purple-400 font-bold mb-4 text-xl">Golden City - حيث تصبح الأحلام حقيقة</p>
-            <p class="text-gray-300 max-w-md mb-6 leading-relaxed">
-                تجربة حياة واقعية في عالم GTA، انضم لأكثر من 300,000 ألف لاعب في عالم مليء بالأحداث والقصص التي لا تُنسى.
-            </p>
-            <div class="flex gap-4">
-                <a href="https://discord.gg/CwZftmkaH" class="social-btn"><i class="fab fa-discord"></i> Discord</a>
-                <a href="https://vt.tiktok.com/ZSxGhJcxE/" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i> TikTok</a>
-            </div>
+    <main id="main-content" class="w-full h-[70vh] flex flex-col justify-center items-center text-center px-4">
+        <div class="text-purple-400 font-black tracking-[0.3em] mb-4 uppercase text-lg">GC حيث تصبح الاحلام حقيقه</div>
+        <p class="text-gray-300 max-w-xl text-lg leading-relaxed mb-8 border-b border-purple-500/50 pb-6">
+            في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
+        </p>
+        <div class="flex gap-4">
+            <a href="https://discord.gg/CwZftmkaH" class="social-btn"><i class="fab fa-discord"></i> Discord</a>
+            <a href="https://vt.tiktok.com/ZSxGhJcxE/" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i> TikTok</a>
         </div>
     </main>
 
-    <!-- صفحة الفريق -->
     <section id="team-page">
-        <h2 class="text-4xl font-black text-center mb-16 text-purple-400">الفريق الإداري</h2>
+        <h2 class="text-4xl font-black text-center mb-16 text-purple-400">الفريق وراء Golden City</h2>
+        
         <h3 class="text-2xl font-bold mb-8 border-r-4 border-purple-500 pr-4">Owners</h3>
         <div class="flex flex-wrap gap-6 mb-16">
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg" referrerpolicy="no-referrer" class="member-img"><h3 class="font-bold">Abu Muhammad</h3><p class="text-purple-300 text-xs">Owner</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-500"><h3 class="font-bold">Abu Muhammad</h3><p class="text-purple-300 text-xs">Owner</p></div>
         </div>
+        
         <h3 class="text-2xl font-bold mb-8 border-r-4 border-blue-500 pr-4">Founders</h3>
         <div class="flex flex-wrap gap-6 mb-16">
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517941376254345508/IMG_4208.png" referrerpolicy="no-referrer" class="member-img"><h3 class="font-bold">Abo Saeed</h3><p class="text-blue-300 text-xs">Founder</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517941376254345508/IMG_4208.png" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-blue-500"><h3 class="font-bold">Abo Saeed</h3><p class="text-blue-300 text-xs">Founder</p></div>
         </div>
+        
         <h3 class="text-2xl font-bold mb-8 border-r-4 border-green-500 pr-4">Staff</h3>
         <div class="flex flex-wrap gap-6">
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934350497480937/IMG_7754.jpg" referrerpolicy="no-referrer" class="member-img"><h3 class="font-bold">IDOM</h3><p class="text-green-300 text-xs">Staff</p></div>
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517935290856112298/IMG_4207.png" referrerpolicy="no-referrer" class="member-img"><h3 class="font-bold">Mr.Not</h3><p class="text-green-300 text-xs">Staff</p></div>
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934672481489068/avatar_803.png" referrerpolicy="no-referrer" class="member-img"><h3 class="font-bold">Faisal</h3><p class="text-green-300 text-xs">Staff</p></div>
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517942466576121887/F5D64E7D-74FD-4958-8D1C-A2591980E42E.jpg" referrerpolicy="no-referrer" class="member-img"><h3 class="font-bold">Mshari</h3><p class="text-green-300 text-xs">Staff</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934350497480937/IMG_7754.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500"><h3 class="font-bold">IDOM</h3><p class="text-green-300 text-xs">Staff</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517935290856112298/IMG_4207.png" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500"><h3 class="font-bold">Mr.Not</h3><p class="text-green-300 text-xs">Staff</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934672481489068/avatar_803.png" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500"><h3 class="font-bold">Faisal</h3><p class="text-green-300 text-xs">Staff</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517942466576121887/F5D64E7D-74FD-4958-8D1C-A2591980E42E.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500"><h3 class="font-bold">Mshari</h3><p class="text-green-300 text-xs">Staff</p></div>
         </div>
     </section>
 
