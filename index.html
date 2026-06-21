@@ -6,34 +6,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Golden City RP</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
         body { 
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
                         url('https://cdn.discordapp.com/attachments/1500948461044895864/1517948188403826698/IMG_4212.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             min-height: 100vh;
-            font-family: 'Cairo', sans-serif;
         }
-        #team-page { display: none; padding: 40px; background: rgba(0, 0, 0, 0.9); min-height: 100vh; }
-        .member-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; text-align: center; width: 200px; }
-        .social-btn { background: rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); transition: 0.3s; }
-        .social-btn:hover { background: rgba(168, 85, 247, 0.3); border-color: #a855f7; }
+        #team-page { display: none; padding: 40px; }
+        .member-card { background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; text-align: center; width: 200px; transition: transform 0.3s; }
+        .member-card:hover { transform: translateY(-5px); }
+        .social-btn { background: rgba(255, 255, 255, 0.1); padding: 12px 20px; border-radius: 10px; display: flex; align-items: center; gap: 10px; transition: 0.3s; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .social-btn:hover { background: rgba(255, 255, 255, 0.2); }
     </style>
 </head>
-<body class="text-white">
+<body class="text-white font-sans">
 
-    <nav class="w-full p-6 flex justify-between items-center z-50">
-        <div class="flex items-center gap-3">
-            <img src="https://cdn.discordapp.com/attachments/1499082581956886651/1518121927498272898/E7175AA3-74C1-4AB4-8004-8CD8AF427F16.png" class="w-12 h-12 object-contain">
-            <span class="text-2xl font-black text-white tracking-wider">GOLDEN CITY</span>
-        </div>
-        
-        <ul class="flex gap-8 font-bold text-sm">
+    <!-- القائمة -->
+    <nav class="w-full bg-transparent p-6 flex justify-between items-center z-50">
+        <div class="font-bold text-xl">GOLDEN CITY</div>
+        <ul class="flex gap-6 font-medium text-sm">
             <li class="hover:text-purple-400 cursor-pointer" onclick="location.reload()">الرئيسية</li>
             <li class="hover:text-purple-400 cursor-pointer">صناع المحتوى</li>
-            <li class="hover:text-purple-400 cursor-pointer text-purple-400" onclick="showTeam()">الفريق</li>
+            <li class="hover:text-purple-400 cursor-pointer font-bold text-purple-400" onclick="showTeam()">الفريق</li>
             <li class="hover:text-purple-400 cursor-pointer">البث المباشر</li>
             <li class="hover:text-purple-400 cursor-pointer">الوظائف</li>
             <li class="hover:text-purple-400 cursor-pointer">الأسئلة</li>
@@ -41,36 +37,35 @@
         </ul>
     </nav>
 
-    <main id="main-content" class="w-full h-[70vh] flex flex-col justify-center items-center text-center px-4">
-        <div class="text-purple-400 font-black tracking-[0.3em] mb-4 uppercase text-lg">GC حيث تصبح الاحلام حقيقه</div>
-        <p class="text-gray-300 max-w-xl text-lg leading-relaxed mb-8 border-b border-purple-500/50 pb-6">
+    <!-- الواجهة الرئيسية -->
+    <main id="main-content" class="w-full h-[80vh] flex flex-col justify-center items-start pr-16">
+        <div class="text-purple-400 font-bold tracking-[0.2em] mb-6 uppercase">GC حيث تصبح الاحلام حقيقه</div>
+        <p class="text-gray-300 max-w-lg text-lg leading-relaxed mb-8 border-r-4 border-purple-500 pr-6">
             في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
         </p>
         <div class="flex gap-4">
-            <a href="https://discord.gg/CwZftmkaH" class="social-btn"><i class="fab fa-discord"></i> Discord</a>
-            <a href="https://vt.tiktok.com/ZSxGhJcxE/" target="_blank" class="social-btn"><i class="fab fa-tiktok"></i> TikTok</a>
+            <a href="https://discord.gg/CwZftmkaH" class="social-btn"><i class="fab fa-discord text-xl"></i> <span>Discord</span></a>
+            <a href="https://vt.tiktok.com/ZSxGhJcxE/" target="_blank" class="social-btn"><i class="fab fa-tiktok text-xl"></i> <span>TikTok</span></a>
         </div>
     </main>
 
+    <!-- صفحة الفريق (محتفظة بكل البيانات) -->
     <section id="team-page">
-        <h2 class="text-4xl font-black text-center mb-16 text-purple-400">الفريق وراء Golden City</h2>
-        
+        <h2 class="text-4xl font-bold text-center mb-16">الفريق الإداري</h2>
         <h3 class="text-2xl font-bold mb-8 border-r-4 border-purple-500 pr-4">Owners</h3>
         <div class="flex flex-wrap gap-6 mb-16">
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-500"><h3 class="font-bold">Abu Muhammad</h3><p class="text-purple-300 text-xs">Owner</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517932663963390011/IMG_7805.jpg?ex=6a381474&is=6a36c2f4&hm=bf4065164012f52b17d84dac7de39f1e36c9fb5f0aa9283e2002158a8b6dc736&" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-purple-500 object-cover"><h3 class="font-bold">Abu Muhammad</h3><p class="text-purple-300 text-xs">Owner</p></div>
         </div>
-        
         <h3 class="text-2xl font-bold mb-8 border-r-4 border-blue-500 pr-4">Founders</h3>
         <div class="flex flex-wrap gap-6 mb-16">
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517941376254345508/IMG_4208.png" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-blue-500"><h3 class="font-bold">Abo Saeed</h3><p class="text-blue-300 text-xs">Founder</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517941376254345508/IMG_4208.png?ex=6a381c92&is=6a36cb12&hm=74f3f66c7e27c993c18c2b7c6c60a30e06ccb9b935bc7d72e653cdfa59f56ea0&" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-blue-500 object-cover"><h3 class="font-bold">Abo Saeed</h3><p class="text-blue-300 text-xs">Founder</p></div>
         </div>
-        
         <h3 class="text-2xl font-bold mb-8 border-r-4 border-green-500 pr-4">Staff</h3>
         <div class="flex flex-wrap gap-6">
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934350497480937/IMG_7754.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500"><h3 class="font-bold">IDOM</h3><p class="text-green-300 text-xs">Staff</p></div>
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517935290856112298/IMG_4207.png" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500"><h3 class="font-bold">Mr.Not</h3><p class="text-green-300 text-xs">Staff</p></div>
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934672481489068/avatar_803.png" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500"><h3 class="font-bold">Faisal</h3><p class="text-green-300 text-xs">Staff</p></div>
-            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517942466576121887/F5D64E7D-74FD-4958-8D1C-A2591980E42E.jpg" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500"><h3 class="font-bold">Mshari</h3><p class="text-green-300 text-xs">Staff</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934350497480937/IMG_7754.jpg?ex=6a381607&is=6a36c487&hm=621789f2fd05319ef468a27b6e1fdb3589dd7789d783c35c2bd98adf164c3a64&" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500 object-cover"><h3 class="font-bold">IDOM</h3><p class="text-green-300 text-xs">Staff</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517935290856112298/IMG_4207.png?ex=6a3816e7&is=6a36c567&hm=788b4ed4cce95413d84588a5d70a20f6828c1c07af28a88ae36f7a731a3874f5&" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500 object-cover"><h3 class="font-bold">Mr.Not</h3><p class="text-green-300 text-xs">Staff</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1499082581956886651/1517934672481489068/avatar_803.png?ex=6a381653&is=6a36c4d3&hm=70389053543ee5635274b2338d7c8cf156ae572c2e412f9f4e16489750ca9484&" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500 object-cover"><h3 class="font-bold">Faisal</h3><p class="text-green-300 text-xs">Staff</p></div>
+            <div class="member-card"><img src="https://cdn.discordapp.com/attachments/1500948461044895864/1517942466576121887/F5D64E7D-74FD-4958-8D1C-A2591980E42E.jpg?ex=6a381d96&is=6a36cc16&hm=3857c48ef624965c54c8bb61e2167ad2391f8375ba58885634b57fa0d1ad3c25&" class="w-24 h-24 rounded-full mx-auto mb-4 border-2 border-green-500 object-cover"><h3 class="font-bold">Mshari</h3><p class="text-green-300 text-xs">Staff</p></div>
         </div>
     </section>
 
