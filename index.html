@@ -5,52 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Golden City RP</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
-        body { font-family: 'Cairo', sans-serif; }
-        
-        .hero-bg { 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
-                        url('https://i.ibb.co/L9H0FkS/IMG-2171.png'); 
+        body { 
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+                        url('https://cdn.discordapp.com/attachments/1500948461044895864/1517948188403826698/IMG_4212.png');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
+            background-attachment: fixed;
             min-height: 100vh;
         }
+        .page { display: none; padding: 40px; }
+        .active { display: block !important; }
+        .member-card { background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 20px; text-align: center; width: 200px; transition: transform 0.3s; }
+        .member-card:hover { transform: translateY(-5px); }
+        .social-btn { background: rgba(255, 255, 255, 0.1); padding: 12px 20px; border-radius: 10px; display: flex; align-items: center; gap: 10px; transition: 0.3s; border: 1px solid rgba(255, 255, 255, 0.1); }
     </style>
 </head>
-<body class="bg-black text-white">
+<body class="text-white font-sans">
 
-    <div class="hero-bg flex flex-col min-h-screen">
-        <nav class="flex justify-between items-center p-8 w-full z-10">
-            <div class="text-2xl font-black italic tracking-tighter">GOLDEN<span class="text-purple-500">CITY</span></div>
-            <div class="flex gap-8 text-sm font-light text-gray-400">
-                <a href="#" class="hover:text-white transition">الرئيسية</a>
-                <a href="#" class="hover:text-white transition">الفريق</a>
-                <a href="#" class="hover:text-white transition">البث المباشر</a>
-                <a href="#" class="hover:text-white transition">الوظائف</a>
-            </div>
-        </nav>
+    <nav class="w-full p-6 flex justify-between items-center">
+        <div class="font-bold text-xl cursor-pointer" onclick="showPage('main-content')">GOLDEN CITY</div>
+        <ul class="flex gap-6 font-medium text-sm">
+            <li class="hover:text-purple-400 cursor-pointer" onclick="showPage('main-content')">الرئيسية</li>
+            <li class="hover:text-purple-400 cursor-pointer" onclick="showPage('team-page')">الفريق</li>
+        </ul>
+    </nav>
 
-        <main class="flex-grow flex flex-col justify-end p-12">
-            <div class="max-w-xl mb-12">
-                <div class="inline-block border border-gray-700 bg-black/40 px-4 py-1 rounded-full text-xs text-purple-300 mb-6">
-                    رقم 1 كأفضل مجتمع حياة واقعية في الشرق الأوسط
-                </div>
-                <h1 class="text-xl font-light text-purple-400 mb-4 tracking-widest uppercase">
-                    GC حيث تصبح الاحلام حقيقه
-                </h1>
-                <p class="text-gray-300 text-lg leading-relaxed border-r-2 border-white pr-6">
-                    في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
-                </p>
-                <div class="mt-8">
-                    <a href="https://discord.gg/CwZftmkaH" class="text-3xl text-white hover:text-purple-500 transition duration-300">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                </div>
-            </div>
-        </main>
-    </div>
+    <main id="main-content" class="page active w-full h-[70vh] flex flex-col justify-center items-start pr-16">
+        <h1 class="text-purple-400 font-bold tracking-[0.2em] mb-6 uppercase">GC حيث تصبح الاحلام حقيقه</h1>
+        <p class="text-gray-300 max-w-lg text-lg leading-relaxed mb-8 border-r-4 border-purple-500 pr-6">
+            في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها.
+        </p>
+        <div class="flex gap-4">
+            <a href="https://discord.gg/CwZftmkaH" class="social-btn"><i class="fab fa-discord"></i> Discord</a>
+        </div>
+    </main>
 
+    <section id="team-page" class="page">
+        <h2 class="text-4xl font-bold text-center mb-16">الفريق الإداري</h2>
+    </section>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
