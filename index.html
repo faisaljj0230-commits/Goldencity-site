@@ -10,9 +10,8 @@
         body { font-family: 'Cairo', sans-serif; }
         
         .hero-bg { 
-            /* هنا ستحط الكود الطويل جداً الذي نسخته بدلاً من كلمة رابط_الصورة_هنا */
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
-                        url('رابط_الصورة_هنا'); 
+                        url('https://i.ibb.co/L9H0FkS/IMG-2171.png'); 
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -21,17 +20,37 @@
     </style>
 </head>
 <body class="bg-black text-white">
+
     <div class="hero-bg flex flex-col min-h-screen">
+        <nav class="flex justify-between items-center p-8 w-full z-10">
+            <div class="text-2xl font-black italic tracking-tighter">GOLDEN<span class="text-purple-500">CITY</span></div>
+            <div class="flex gap-8 text-sm font-light text-gray-400">
+                <a href="#" class="hover:text-white transition">الرئيسية</a>
+                <a href="#" class="hover:text-white transition">الفريق</a>
+                <a href="#" class="hover:text-white transition">البث المباشر</a>
+                <a href="#" class="hover:text-white transition">الوظائف</a>
+            </div>
+        </nav>
+
         <main class="flex-grow flex flex-col justify-end p-12">
-             <div class="max-w-xl mb-12">
+            <div class="max-w-xl mb-12">
+                <div class="inline-block border border-gray-700 bg-black/40 px-4 py-1 rounded-full text-xs text-purple-300 mb-6">
+                    رقم 1 كأفضل مجتمع حياة واقعية في الشرق الأوسط
+                </div>
                 <h1 class="text-xl font-light text-purple-400 mb-4 tracking-widest uppercase">
                     GC حيث تصبح الاحلام حقيقه
                 </h1>
                 <p class="text-gray-300 text-lg leading-relaxed border-r-2 border-white pr-6">
-                    في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها.
+                    في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
                 </p>
+                <div class="mt-8">
+                    <a href="https://discord.gg/CwZftmkaH" class="text-3xl text-white hover:text-purple-500 transition duration-300">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
             </div>
         </main>
     </div>
+
 </body>
 </html>
