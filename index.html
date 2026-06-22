@@ -10,7 +10,7 @@
         body { font-family: 'Cairo', sans-serif; }
         
         .hero-bg { 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
                         url('http://i.imgur.com/dAHL0a0.gif'); 
             background-size: cover;
             background-position: center;
@@ -22,13 +22,25 @@
 <body class="bg-black text-white">
 
     <div class="hero-bg flex flex-col min-h-screen">
-        <nav class="flex justify-between items-center p-8 w-full z-10">
-            <div class="text-2xl font-black italic tracking-tighter">GOLDEN<span class="text-purple-500">CITY</span></div>
-            <div class="flex gap-8 text-sm font-light text-gray-400">
-                <a href="#" class="hover:text-white transition">الرئيسية</a>
-                <a href="#" class="hover:text-white transition">الفريق</a>
-                <a href="#" class="hover:text-white transition">البث المباشر</a>
-                <a href="#" class="hover:text-white transition">الوظائف</a>
+        <nav class="flex justify-between items-center px-12 py-6 w-full z-10">
+            <div class="flex items-center">
+                <a href="#" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded text-sm transition font-bold">
+                    المتجر
+                </a>
+            </div>
+
+            <div class="flex gap-8 text-sm font-light text-gray-300">
+                <a href="#" class="hover:text-purple-400 transition">المتصدّرين</a>
+                <a href="#" class="hover:text-purple-400 transition">الأسئلة</a>
+                <a href="#" class="hover:text-purple-400 transition">الوظائف</a>
+                <a href="#" class="hover:text-purple-400 transition">البث المباشر</a>
+                <a href="#" class="hover:text-purple-400 transition">الفريق</a>
+                <a href="#" class="hover:text-purple-400 transition font-bold text-white border-b border-purple-500">الرئيسية</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <span class="text-xl font-bold tracking-widest uppercase">GOLDEN <span class="text-purple-500">CITY</span></span>
+                <img src="http://i.imgur.com/JUs4D7V.jpeg" alt="Logo" class="w-10 h-10 object-contain rounded-full">
             </div>
         </nav>
 
