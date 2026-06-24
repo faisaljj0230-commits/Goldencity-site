@@ -3,64 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden City | القوانين</title>
+    <title>Golden City | الإبداع</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; }
     </style>
 </head>
-<body class="min-h-screen">
+<body>
 
-    <!-- القائمة العلوية -->
-    <div class="w-full bg-black/70 backdrop-blur-sm border-b border-red-900/50 mb-12">
+    <div class="w-full bg-black/70 backdrop-blur-sm border-b border-red-900/50">
         <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-            <span class="text-lg font-bold uppercase tracking-widest text-red-600">GOLDEN CITY</span>
-            <div class="flex flex-row-reverse gap-6 text-sm">
+            <div class="flex items-center gap-6">
+                <span class="text-lg font-bold tracking-widest uppercase text-white">GOLDEN CITY</span>
+                <div class="flex flex-col items-center">
+                    <img src="https://files.catbox.moe/r1xmf8.png" alt="Logo" class="w-10 h-10 object-contain">
+                    <span class="text-[8px] font-bold tracking-[0.2em] text-red-900 uppercase">STUDIOS</span>
+                </div>
+            </div>
+
+            <div class="flex flex-row-reverse gap-6 text-sm font-light text-gray-300">
                 <a href="index.html" class="hover:text-red-500 transition">الرئيسية</a>
-                <a href="creativity.html" class="hover:text-red-500 transition">الابداع</a>
+                <a href="creativity.html" class="text-red-500 border-b-2 border-red-700 font-bold transition">الابداع</a>
                 <a href="team.html" class="hover:text-red-500 transition">الفريق</a>
-                <a href="rules.html" class="text-red-500 border-b-2 border-red-700 font-bold transition">القوانين</a>
+                <!-- تم الربط بـ rules.html هنا -->
+                <a href="rules.html" class="hover:text-red-500 transition">القوانين</a>
+                <a href="#" class="hover:text-red-500 transition">الأسئلة</a>
+                <a href="#" class="hover:text-red-500 transition">المتصدّرين</a>
+            </div>
+
+            <div class="flex items-center">
+                <a href="#" class="bg-red-900 hover:bg-red-800 text-white px-5 py-1.5 rounded text-sm transition font-bold shadow-lg shadow-red-900/20">المتجر</a>
             </div>
         </nav>
     </div>
 
-    <!-- حاوية القوانين -->
-    <div class="max-w-3xl mx-auto px-8 pb-20">
-        <h1 class="text-4xl font-black text-center mb-8 text-white">دستور المدينة</h1>
-        
-        <!-- القائمة المنسدلة -->
-        <select id="ruleSelect" onchange="updateRules()" class="w-full bg-gray-900 border-2 border-red-900 text-white p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition cursor-pointer mb-8 text-center font-bold text-lg shadow-lg shadow-red-900/20">
-            <option value="roleplay">RolePlay Rules</option>
-            <option value="criminal">Criminal Rules</option>
-            <option value="discord">Discord Rules</option>
-            <option value="safe">Safe Area</option>
-            <option value="injury">Injury Rules</option>
-        </select>
+    <div class="text-right py-16 px-8 max-w-7xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">قائمة الشخصيات الإبداعية</h1>
+        <p class="text-gray-400 text-lg">تعرفوا على الشخصيات الإبداعية في Golden City</p>
+    </div>
 
-        <!-- منطقة عرض القوانين -->
-        <div class="bg-gray-900/30 border border-red-900/50 p-8 rounded-xl min-h-[300px]">
-            <h2 id="title" class="text-2xl font-bold mb-6 text-red-500 uppercase border-b border-red-900 pb-2">RolePlay Rules</h2>
-            <div id="text" class="text-gray-300 leading-relaxed space-y-4">
-                <p>قوانين الرول بلاي ستظهر هنا بعد اختيارها...</p>
+    <div class="flex items-center gap-2 text-orange-500 mb-8 px-8 max-w-7xl mx-auto">
+        <i class="fas fa-star"></i>
+        <span class="font-bold">شخصيات إبداعية مميزة</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-8 pb-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <div class="relative w-full max-w-[280px] group cursor-pointer">
+                <div class="relative bg-gradient-to-br from-orange-900 to-black p-[2px] rounded-lg overflow-hidden">
+                    <div class="bg-black/80 p-1">
+                        <img src="https://files.catbox.moe/aa0cyw.png" alt="Rainer Voss" class="w-full h-auto object-cover rounded-md brightness-110">
+                    </div>
+                </div>
+                <div class="mt-4 text-right">
+                    <div class="inline-block bg-orange-900/20 border border-orange-700/50 text-orange-500 text-[10px] px-2 py-0.5 rounded font-bold mb-1">
+                        FEATURED ⭐
+                    </div>
+                    <h3 class="text-white font-bold text-lg">Rainer Voss</h3>
+                    <p class="text-gray-400 text-sm">IDOM</p>
+                </div>
             </div>
+
+            <div class="relative w-full max-w-[280px] group cursor-pointer">
+                <div class="relative bg-gradient-to-br from-orange-900 to-black p-[2px] rounded-lg overflow-hidden">
+                    <div class="bg-black/80 p-1">
+                        <img src="https://files.catbox.moe/zc6p2d.png" alt="Khalid Mohammed" class="w-full h-auto object-cover rounded-md brightness-110">
+                    </div>
+                </div>
+                <div class="mt-4 text-right">
+                    <div class="inline-block bg-orange-900/20 border border-orange-700/50 text-orange-500 text-[10px] px-2 py-0.5 rounded font-bold mb-1">
+                        FEATURED ⭐
+                    </div>
+                    <h3 class="text-white font-bold text-lg">Khalid Mohammed</h3>
+                    <p class="text-gray-400 text-sm">Abu Mohammed</p>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <script>
-        const rules = {
-            roleplay: { title: "RolePlay Rules", body: "1. القوانين الخاصة بالرول بلاي هنا.<br>2. التزم بتمثيل الشخصية بكل دقة." },
-            criminal: { title: "Criminal Rules", body: "1. قوانين الجرائم المسموحة.<br>2. يمنع خرق قوانين المدينة." },
-            discord: { title: "Discord Rules", body: "1. قوانين الاحترام في الديسكورد.<br>2. عدم الإساءة للأعضاء." },
-            safe: { title: "Safe Area", body: "1. المناطق الآمنة يمنع فيها الأكشن.<br>2. التزم بالهدوء." },
-            injury: { title: "Injury Rules", body: "1. قوانين الإصابات عند الوفاة.<br>2. انتظار الإسعاف." }
-        };
-
-        function updateRules() {
-            const select = document.getElementById("ruleSelect").value;
-            document.getElementById("title").innerText = rules[select].title;
-            document.getElementById("text").innerHTML = rules[select].body;
-        }
-    </script>
 </body>
 </html>
