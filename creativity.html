@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden City | الإبداع</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
+        body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; }
+    </style>
+</head>
+<body>
 
+    <!-- القائمة الموحدة (مربوطة بباقي الصفحات) -->
+    <div class="w-full bg-black/70 backdrop-blur-sm border-b border-red-900/50">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
+            <div class="flex items-center gap-6">
+                <span class="text-lg font-bold tracking-widest uppercase text-white">GOLDEN CITY</span>
+                <div class="flex flex-col items-center">
+                    <img src="https://files.catbox.moe/r1xmf8.png" alt="Logo" class="w-10 h-10 object-contain">
+                    <span class="text-[8px] font-bold tracking-[0.2em] text-red-900 uppercase">STUDIOS</span>
+                </div>
+            </div>
+
+            <div class="flex flex-row-reverse gap-6 text-sm font-light text-gray-300">
+                <a href="index.html" class="hover:text-red-500 transition">الرئيسية</a>
+                <a href="creativity.html" class="text-red-500 border-b-2 border-red-700 font-bold transition">الابداع</a>
+                <a href="team.html" class="hover:text-red-500 transition">الفريق</a>
+                <a href="#" class="hover:text-red-500 transition">القوانين</a>
+                <a href="#" class="hover:text-red-500 transition">الأسئلة</a>
+                <a href="#" class="hover:text-red-500 transition">المتصدّرين</a>
+            </div>
+
+            <div class="flex items-center">
+                <a href="#" class="bg-red-900 hover:bg-red-800 text-white px-5 py-1.5 rounded text-sm transition font-bold shadow-lg shadow-red-900/20">المتجر</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- العنوان الرئيسي -->
+    <div class="text-right py-16 px-8 max-w-7xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">قائمة الشخصيات الإبداعية</h1>
+        <p class="text-gray-400 text-lg">تعرفوا على الشخصيات الإبداعية في Golden City</p>
+    </div>
+
+    <!-- العنوان الفرعي -->
+    <div class="flex items-center gap-2 text-orange-500 mb-8 px-8 max-w-7xl mx-auto">
+        <i class="fas fa-star"></i>
+        <span class="font-bold">شخصيات إبداعية مميزة</span>
+    </div>
+
+    <!-- شبكة عرض البطاقات -->
+    <div class="max-w-7xl mx-auto px-8 pb-20">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            
+            <!-- بطاقة الشخصية (Rainer Voss) -->
+            <div class="relative w-full max-w-[280px] group cursor-pointer">
+                <div class="relative bg-gradient-to-br from-orange-900 to-black p-[2px] rounded-lg overflow-hidden">
+                    <div class="bg-black/80 p-1">
+                        <img src="https://files.catbox.moe/aa0cyw.png" alt="Rainer Voss" class="w-full h-auto object-cover rounded-md brightness-110">
+                    </div>
+                </div>
+                <div class="mt-4 text-right">
+                    <div class="inline-block bg-orange-900/20 border border-orange-700/50 text-orange-500 text-[10px] px-2 py-0.5 rounded font-bold mb-1">
+                        FEATURED ⭐
+                    </div>
+                    <h3 class="text-white font-bold text-lg">Rainer Voss</h3>
+                    <p class="text-gray-400 text-sm">IDOM</p>
+                </div>
+            </div>
+
+            <!-- أضف بطاقات إضافية هنا بنفس كود الديف أعلاه -->
+
+        </div>
+    </div>
+
+</body>
+</html>
