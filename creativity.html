@@ -15,7 +15,7 @@
     <!-- القائمة العلوية -->
     <div class="w-full bg-black/70 backdrop-blur-sm border-b border-red-900/50 mb-12">
         <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-            <span class="text-lg font-bold uppercase tracking-widest">GOLDEN CITY</span>
+            <span class="text-lg font-bold uppercase tracking-widest text-red-600">GOLDEN CITY</span>
             <div class="flex flex-row-reverse gap-6 text-sm">
                 <a href="index.html" class="hover:text-red-500 transition">الرئيسية</a>
                 <a href="creativity.html" class="hover:text-red-500 transition">الابداع</a>
@@ -27,10 +27,10 @@
 
     <!-- حاوية القوانين -->
     <div class="max-w-3xl mx-auto px-8 pb-20">
-        <h1 class="text-4xl font-black text-center mb-8">دستور المدينة</h1>
+        <h1 class="text-4xl font-black text-center mb-8 text-white">دستور المدينة</h1>
         
         <!-- القائمة المنسدلة -->
-        <select id="ruleSelect" onchange="updateRules()" class="w-full bg-gray-900 border border-red-900 text-white p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-700 transition cursor-pointer mb-8 text-center font-bold text-lg">
+        <select id="ruleSelect" onchange="updateRules()" class="w-full bg-gray-900 border-2 border-red-900 text-white p-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600 transition cursor-pointer mb-8 text-center font-bold text-lg shadow-lg shadow-red-900/20">
             <option value="roleplay">RolePlay Rules</option>
             <option value="criminal">Criminal Rules</option>
             <option value="discord">Discord Rules</option>
@@ -39,22 +39,21 @@
         </select>
 
         <!-- منطقة عرض القوانين -->
-        <div id="content" class="bg-gray-900/20 border border-red-900/50 p-8 rounded-xl min-h-[300px]">
+        <div class="bg-gray-900/30 border border-red-900/50 p-8 rounded-xl min-h-[300px]">
             <h2 id="title" class="text-2xl font-bold mb-6 text-red-500 uppercase border-b border-red-900 pb-2">RolePlay Rules</h2>
             <div id="text" class="text-gray-300 leading-relaxed space-y-4">
-                <p>يرجى اختيار القسم من القائمة أعلاه لعرض القوانين الخاصة به.</p>
+                <p>قوانين الرول بلاي ستظهر هنا بعد اختيارها...</p>
             </div>
         </div>
     </div>
 
     <script>
-        // هنا يمكنك إضافة القوانين الخاصة بك
         const rules = {
-            roleplay: { title: "RolePlay Rules", body: "اكتب هنا قوانين الرول بلاي الخاصة بك..." },
-            criminal: { title: "Criminal Rules", body: "اكتب هنا قوانين الجريمة..." },
-            discord: { title: "Discord Rules", body: "اكتب هنا قوانين الديسكورد..." },
-            safe: { title: "Safe Area", body: "اكتب هنا قوانين المناطق الآمنة..." },
-            injury: { title: "Injury Rules", body: "اكتب هنا قوانين الإصابات..." }
+            roleplay: { title: "RolePlay Rules", body: "1. القوانين الخاصة بالرول بلاي هنا.<br>2. التزم بتمثيل الشخصية بكل دقة." },
+            criminal: { title: "Criminal Rules", body: "1. قوانين الجرائم المسموحة.<br>2. يمنع خرق قوانين المدينة." },
+            discord: { title: "Discord Rules", body: "1. قوانين الاحترام في الديسكورد.<br>2. عدم الإساءة للأعضاء." },
+            safe: { title: "Safe Area", body: "1. المناطق الآمنة يمنع فيها الأكشن.<br>2. التزم بالهدوء." },
+            injury: { title: "Injury Rules", body: "1. قوانين الإصابات عند الوفاة.<br>2. انتظار الإسعاف." }
         };
 
         function updateRules() {
@@ -62,9 +61,6 @@
             document.getElementById("title").innerText = rules[select].title;
             document.getElementById("text").innerHTML = rules[select].body;
         }
-
-        // عرض القوانين عند تحميل الصفحة
-        window.onload = updateRules;
     </script>
 </body>
 </html>
