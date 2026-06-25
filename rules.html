@@ -27,7 +27,6 @@
         </nav>
     </div>
 
-    <!-- حاوية القوانين -->
     <div class="max-w-4xl mx-auto px-8 pb-20">
         <h1 class="text-4xl font-black text-center mb-8 text-white">Server Rules</h1>
         
@@ -43,7 +42,7 @@
         </select>
 
         <div class="bg-gray-900/30 border border-red-900/50 p-8 rounded-xl min-h-[400px]">
-            <h2 id="title" class="text-2xl font-bold mb-6 text-red-500 uppercase border-b border-red-900 pb-2">Roleplay Rules</h2>
+            <h2 id="title" class="text-2xl font-bold mb-6 text-red-500 uppercase border-b border-red-900 pb-2">Roleplay Rules 1</h2>
             <div id="text" class="text-gray-300 leading-relaxed space-y-4 text-sm md:text-base">
             </div>
         </div>
@@ -51,14 +50,20 @@
 
     <script>
         const rules = {
-            rp: { title: "Roleplay Rules", body: "اكتب هنا قوانين الرول بلاي..." },
-            rp1: { title: "Roleplay Rules 1", body: "اكتب هنا قوانين الرول بلاي 1..." },
-            rp2: { title: "Roleplay Rules 2", body: "اكتب هنا قوانين الرول بلاي 2..." },
-            discord: { title: "Discord Rules", body: "اكتب هنا قوانين الديسكورد..." },
-            criminal: { title: "Criminal Rules", body: "اكتب هنا قوانين الجرائم..." },
-            safe: { title: "Safe Area", body: "اكتب هنا قوانين المناطق الآمنة..." },
-            theft: { title: "Theft Rules", body: "اكتب هنا قوانين السرقة..." },
-            factory: { title: "Factory Rules", body: "اكتب هنا قوانين المصنع..." }
+            rp: { 
+                title: "Roleplay Rules", 
+                body: "قوانين الرول بلاي الأساسية..." 
+            },
+            rp1: { 
+                title: "Roleplay Rules 1", 
+                body: "35. يجب تجهيز لستر أو VIP لسرقة البقالة لعدم مداخلة الشرطة.<br>36. يجب الانصياع لأوامر الشرطة والصمت ولا يحق لك الهروب.<br>37. يمنع الهروب من المستشفى أثناء توجيه سلاح أو تيزر عليك.<br>38. يمنع تركيب أحزمة الشرطة/المسعفين أو التشبه بملابسهم.<br>39. يحق الرجوع إذا تم إسقاطك من عصابة مدنية.<br>40. لا يحق لك الرجوع إذا طحت، وتعتبر مسقطًا حتى تعود لموقع إسقاطك.<br>41. تكرار الإسقاط من الشرطة المدنية يستوجب مساءلة إدارية.<br>42. عند الرجوع لسيناريو، اجعلهم يلاحظونك أولاً قبل الإطلاق.<br>43. يمنع التحدث في الـ Everyone.<br>- في حال كان الشخص أمامك يمكنك إرسال VIP للتحدث.<br>44-45. في حال رتبة الحجز المالي: يمنع الشراء، التحويل، أو السحب والإيداع.<br>46. يمنع استخدام أي سلاح غير مسموح أو غير موجود بالحقيبة.<br>47. يسمح بالأسلحة الموجودة في الحقيبة.<br>48. يمنع الهروب من الشرطة بعد الإنعاش.<br>49. يمنع التواصل غير الشرعي (معلومات من خارج المدينة).<br>50. يمنع إهانة الشخص المسقط.<br><br><strong>ملاحظة:</strong> لا يوجد شيء يسمى إعادة سيناريو، يكمل السيناريو وتُرفع شكوى للتعويض.<br>• يجب على العسكر والمواطنين إنشاء مجموعات خاصة على السوني.<br>• عند المطاردة انتقل للموجة الخاصة ولا تناقش في الموجة العامة." 
+            },
+            rp2: { title: "Roleplay Rules 2", body: "قوانين الجزء الثاني..." },
+            discord: { title: "Discord Rules", body: "قوانين الديسكورد..." },
+            criminal: { title: "Criminal Rules", body: "قوانين الجرائم..." },
+            safe: { title: "Safe Area", body: "قوانين المناطق الآمنة..." },
+            theft: { title: "Theft Rules", body: "قوانين السرقة..." },
+            factory: { title: "Factory Rules", body: "قوانين المصنع..." }
         };
 
         function updateRules() {
