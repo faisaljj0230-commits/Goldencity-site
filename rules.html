@@ -3,77 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Golden City | القوانين</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
-        body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; }
+        body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
+        
+        /* خلفية الصفحة مطابقة للصورة التي أرسلتها */
+        .rules-bg { 
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://files.catbox.moe/v94tqh.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* تنسيق الأزرار (القوانين) الرصاصية */
+        .rule-section { background-color: #1a1a1a; margin-bottom: 10px; cursor: pointer; border: 1px solid #333; transition: 0.3s; }
+        .rule-section:hover { border-right: 4px solid #b91c1c; }
+        .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
+        .rule-content { padding: 20px; border-top: 1px solid #333; background: #121212; display: none; }
     </style>
 </head>
-<body class="min-h-screen">
+<body class="rules-bg">
 
-    <!-- القائمة العلوية الموحدة -->
-    <div class="w-full bg-black/70 backdrop-blur-sm border-b border-red-900/50 mb-12">
-        <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-            <span class="text-lg font-bold uppercase tracking-widest text-red-600">GOLDEN CITY</span>
-            <div class="flex flex-row-reverse gap-6 text-sm">
-                <a href="index.html" class="hover:text-red-500 transition">الرئيسية</a>
-                <a href="creativity.html" class="hover:text-red-500 transition">الابداع</a>
-                <a href="team.html" class="hover:text-red-500 transition">الفريق</a>
-                <a href="rules.html" class="text-red-500 border-b-2 border-red-700 font-bold transition">القوانين</a>
-                <a href="questions.html" class="hover:text-red-500 transition">الأسئلة</a>
-                <a href="leaders.html" class="hover:text-red-500 transition">المتصدرين</a>
-            </div>
-        </nav>
+    <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-6">
+        <span class="text-xl font-bold tracking-widest">GOLDEN CITY</span>
+        <div class="flex gap-8 text-sm font-bold text-gray-400">
+            <a href="index.html" class="hover:text-red-500 transition">الرئيسية</a>
+            <a href="rules.html" class="text-red-500 border-b-2 border-red-700">القوانين</a>
+            <a href="store.html" class="hover:text-red-500 transition">المتجر</a>
+            <a href="apply.html" class="hover:text-red-500 transition">التقديمات</a>
+            <a href="creativity.html" class="hover:text-red-500 transition">الإبداع</a>
+        </div>
+    </nav>
+
+    <div class="text-center py-16">
+        <h1 class="text-5xl font-black uppercase">القوانين</h1>
     </div>
 
-    <!-- حاوية القوانين -->
-    <div class="max-w-4xl mx-auto px-8 pb-20">
-        <h1 class="text-4xl font-black text-center mb-8 text-white">Server Rules</h1>
+    <div class="max-w-3xl mx-auto px-4" id="rules-container">
         
-        <select id="ruleSelect" onchange="updateRules()" class="w-full bg-gray-900 border-2 border-red-900 text-white p-4 rounded-lg cursor-pointer mb-8 text-center font-bold text-lg">
-            <option value="rp">Roleplay Rules</option>
-            <option value="rp1">Roleplay Rules 1</option>
-            <option value="rp2">Roleplay Rules 2</option>
-            <option value="discord">Discord Rules</option>
-            <option value="criminal">Criminal Rules</option>
-            <option value="safe">Safe Area</option>
-            <option value="theft">Theft Rules</option>
-            <option value="factory">Factory Rules</option>
-        </select>
-
-        <div class="bg-gray-900/30 border border-red-900/50 p-8 rounded-xl min-h-[400px]">
-            <h2 id="title" class="text-2xl font-bold mb-6 text-red-500 uppercase border-b border-red-900 pb-2">Roleplay Rules</h2>
-            <div id="text" class="text-gray-300 leading-relaxed space-y-4 text-sm md:text-base">
+        <div class="rule-section">
+            <div class="rule-header" onclick="toggleRule(this)">
+                <span>قوانين الرول بلاي</span>
+                <i class="fas fa-chevron-down text-sm"></i>
+            </div>
+            <div class="rule-content text-gray-300 leading-loose">
+                هنا ستظهر القوانين الخاصة بك عند الضغط على القسم.
             </div>
         </div>
+
     </div>
 
     <script>
-        const rules = {
-            rp: { 
-                title: "Roleplay Rules", 
-                body: "<strong>التواصل الغير شرعي:</strong><br>أي معلومة تحصل عليها من خارج المدينة (بث، ديسكورد، يوتيوب) تعتبر مخالفة.<br><br><strong>تعريف تقدير الحياة:</strong><br>عدم الخوف بشكل واقعي على حياتك عند التعرض للتهديد بالأسلحة يعتبر مخالفة.<br><br>1. يجب بناء كركتر وتقمصه بشكل ممتاز بالأقوال والأفعال.<br>2. يمنع إهانة الشخص المسقط بأي حال.<br>3. يمنع تقليد ملابس الشرطة والإسعاف.<br>4. يمنع الخروج عن الرول بلاي.<br>5. عند السقوط يحق لك التحدث بصيغة الألم لمدة (5 دقائق) فقط.<br>6. يمنع استخدام القلتشات أو الهاك (باند نهائي).<br>7. لا يحق لك التحرك وأنت مسقط.<br>8. يمنع أي اتفاق خارج الرول بلاي.<br>9. في حال إضافة لصق على فمك يمنع إصدار أي صوت (تقفل المايك).<br>10. يمنع التدخل في سيناريو قائم (باند).<br>11. الشخصنة ممنوعة (باند).<br>12. ترابط الشخصية الأولى مع الثانية ممنوع.<br>13. ممنوع الكلام المشفر بغرض السب.<br>14. يمنع تعبئة البيانات في حال وجود المسعفين.<br>15. يمنع الخروج من القيم أثناء السيناريو.<br>16. يمنع لبس عدة الغوص خارج البحر.<br>17. يجب احترام الجميع ويمنع الاستفزاز أو الكلام الجنسي.<br>18. في حال تحللت (10 دقائق) تنسى المتسبب، ويمنع التحلل داخل السيناريو.<br>19. يجب أخذ المواقف الجدية بشكل جدي (عسكري، محامٍ، مسعف).<br>20. التعرف على الشخص بالشكل فقط.<br>21. يجب تقدير حياتك عند التهديد وليس لديك استطاعة للمقاومة.<br>22. يمنع استخدام أي قلتش يضر ببيئة اللعب.<br>23. يمنع خطف أو التعرض للمسعفين.<br>24. يمنع سرقة أغراض الشرطة أو المسعفين.<br>25. يمنع التربص للموظفين عند مقر الوظيفة.<br>26. يمنع إزعاج الموظفين أو التلفظ عليهم.<br>27. في حال فقدان إطارين يمنع استكمال القيادة.<br>28. يمنع التعرف من خلال إعطاء أيتم أو الآيدي.<br>29. عدم رد الخطأ بالأخطاء.<br>30. يمنع ذكر شخصية لم تتعرف عليها.<br>31. يمنع الكذب في الاسم عند طلب الهوية.<br>32. في السجن تعتبر الأغراض مسحوبة.<br>33. في حال الإعصار يجب إكمال الأحداث عند العودة." 
-            },
-            rp1: { 
-                title: "Roleplay Rules 1", 
-                body: "35. يجب تجهيز لستر أو VIP لسرقة البقالة لعدم مداخلة الشرطة.<br>36. يجب الانصياع لأوامر الشرطة والصمت ولا يحق لك الهروب.<br>37. يمنع الهروب من المستشفى أثناء توجيه سلاح أو تيزر عليك.<br>38. يمنع تركيب أحزمة الشرطة/المسعفين أو التشبه بملابسهم.<br>39. يحق الرجوع إذا تم إسقاطك من عصابة مدنية.<br>40. لا يحق لك الرجوع إذا طحت، وتعتبر مسقطًا حتى تعود لموقع إسقاطك.<br>41. تكرار الإسقاط من الشرطة المدنية يستوجب مساءلة إدارية.<br>42. عند الرجوع لسيناريو، اجعلهم يلاحظونك أولاً قبل الإطلاق.<br>43. يمنع التحدث في الـ Everyone.<br>44-45. في حال رتبة الحجز المالي: يمنع الشراء، التحويل، أو السحب والإيداع.<br>46. يمنع استخدام أي سلاح غير مسموح أو غير موجود بالحقيبة.<br>47. يسمح بالأسلحة الموجودة في الحقيبة.<br>48. يمنع الهروب من الشرطة بعد الإنعاش.<br>49. يمنع التواصل غير الشرعي (معلومات من خارج المدينة).<br>50. يمنع إهانة الشخص المسقط." 
-            },
-            rp2: { title: "Roleplay Rules 2", body: "محتوى قوانين الجزء الثاني..." },
-            discord: { title: "Discord Rules", body: "محتوى قوانين الديسكورد..." },
-            criminal: { title: "Criminal Rules", body: "محتوى قوانين الجرائم..." },
-            safe: { title: "Safe Area", body: "محتوى قوانين المناطق الآمنة..." },
-            theft: { title: "Theft Rules", body: "محتوى قوانين السرقة..." },
-            factory: { title: "Factory Rules", body: "محتوى قوانين المصنع..." }
-        };
-
-        function updateRules() {
-            const select = document.getElementById("ruleSelect").value;
-            document.getElementById("title").innerText = rules[select].title;
-            document.getElementById("text").innerHTML = rules[select].body;
+        function toggleRule(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            // تبديل العرض
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            // تبديل السهم
+            icon.classList.toggle('fa-chevron-up');
         }
-
-        window.onload = updateRules;
     </script>
 </body>
 </html>
