@@ -9,7 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
 
-        /* الهيدر: خلفية ثابتة لا تتحرك بالسكرول */
+        /* الهيدر: خلفية ثابتة */
         .header-section { 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://files.catbox.moe/v94tqh.png'); 
             background-size: cover; 
@@ -20,20 +20,33 @@
             align-items: center;
         }
 
-        /* حاوية القوانين: هي التي تتحرك بالسكرول */
+        /* حاوية القوانين الرصاصية */
         .rules-main-container { 
             background-color: #121212; 
             padding: 40px 20px;
-            min-height: 60vh; /* تسمح للصفحة بالتمدد */
         }
 
-        .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; border: 1px solid #333; }
+        .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; border: 1px solid #333; transition: 0.3s; }
         .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
+        
+        /* تفعيل اللون الأحمر عند الضغط */
         .rule-section.active .rule-header { background-color: #b91c1c; }
+        
         .rule-content { padding: 20px; background: #000; display: none; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
+
+    <nav class="absolute top-0 w-full z-10 flex justify-between items-center px-8 py-6">
+        <span class="text-xl font-bold tracking-widest">GOLDEN CITY</span>
+        <div class="flex gap-8 text-sm font-bold text-gray-400">
+            <a href="index.html" class="hover:text-red-500 transition">الرئيسية</a>
+            <a href="rules.html" class="text-red-500 border-b-2 border-red-700">القوانين</a>
+            <a href="store.html" class="hover:text-red-500 transition">المتجر</a>
+            <a href="apply.html" class="hover:text-red-500 transition">التقديمات</a>
+            <a href="creativity.html" class="hover:text-red-500 transition">الإبداع</a>
+        </div>
+    </nav>
 
     <section class="header-section">
         <h1 class="text-5xl font-black uppercase">القوانين</h1>
@@ -42,12 +55,15 @@
     <main class="rules-main-container">
         <div class="max-w-3xl mx-auto">
             
-            <div class="rule-section" onclick="toggleSection(this)">
-                <div class="rule-header"><span>قوانين الرول بلاي</span><i class="fas fa-chevron-down text-sm"></i></div>
-                <div class="rule-content">نص القوانين هنا...</div>
-            </div>
-            
-            </div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الرول بلاي</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>القوانين العامة</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>القوانين العامة 2</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الدسكورد</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الاجرام</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الانعاش</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>نظام التحذيرات</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+
+        </div>
     </main>
 
     <script>
