@@ -9,66 +9,63 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
 
+        /* القوائم العلوية مثبتة دائماً */
+        .nav-menu { position: sticky; top: 0; z-index: 50; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+
         .header-section { 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://files.catbox.moe/v94tqh.png'); 
-            background-size: cover; background-position: center; height: 40vh; display: flex; justify-content: center; align-items: center;
+            background-size: cover; background-position: center; height: 30vh; display: flex; justify-content: center; align-items: center;
         }
 
-        .rules-main-container { background-color: #121212; padding: 40px 20px; min-height: 60vh; }
+        .rules-main-container { background-color: #121212; padding: 40px 20px; }
 
         .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; border: 1px solid #333; transition: 0.3s; }
         .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
         .rule-section.active .rule-header { background-color: #b91c1c; }
-        
         .rule-content { padding: 20px; background: #000; display: none; border-top: 1px solid #333; color: #d1d1d1; }
-        .warning-box { margin-top: 10px; padding: 10px; background: rgba(185, 28, 28, 0.1); border: 1px solid #b91c1c; color: #e5e5e5; display: flex; align-items: center; }
+        .rule-item { margin-bottom: 15px; line-height: 1.6; }
+        .warning-box { margin-top: 20px; padding: 15px; background: rgba(185, 28, 28, 0.1); border: 1px solid #b91c1c; border-radius: 4px; display: flex; align-items: center; color: #e5e5e5; }
     </style>
 </head>
 <body>
 
+    <nav class="nav-menu flex justify-between items-center px-8 py-4 border-b border-gray-800">
+        <span class="text-xl font-bold tracking-widest">GOLDEN CITY</span>
+        <div class="flex gap-8 text-sm font-bold text-gray-400">
+            <a href="index.html" class="hover:text-red-500">الرئيسية</a>
+            <a href="rules.html" class="text-red-500 border-b-2 border-red-700">القوانين</a>
+            <a href="store.html" class="hover:text-red-500">المتجر</a>
+            <a href="apply.html" class="hover:text-red-500">التقديمات</a>
+            <a href="creativity.html" class="hover:text-red-500">الإبداع</a>
+        </div>
+    </nav>
+
     <section class="header-section"><h1 class="text-5xl font-black uppercase">القوانين</h1></section>
 
     <main class="rules-main-container">
-        <div class="max-w-3xl mx-auto">
+        <div class="max-w-3xl mx-auto" id="rules-list">
             
+            <!-- قوانين الرول بلاي -->
             <div class="rule-section" onclick="toggleSection(this)">
                 <div class="rule-header"><span>قوانين الرول بلاي</span><i class="fas fa-chevron-down text-sm"></i></div>
                 <div class="rule-content">
-                    ضع قوانين الرول بلاي هنا...
-                    <div class="warning-box"><i class="fas fa-exclamation-triangle ml-3"></i><span>عدم اطلاعك على القوانين لا يعفيك من العقوبة</span></div>
+                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>RDM:</strong> يمنع القتل العشوائي بجميع حالاته، ويشمل جميع من برحلة.</div>
+                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>VDM:</strong> يمنع الصدم العشوائي بجميع حالاته، ويشمل جميع من برحلة.</div>
+                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>LAR:</strong> هي الحفاظ على حياتك وحياة الآخرين، وعدم التهور، وأن لا تقاوم المجرم أو الشرطة او اي شخص يحمل سلاح مهما كان خصوصاً اذا كنت أعزل، وهذا لا يمنع استعمال حق الدفاع عن النفس عند الضرورة التي تمنعك من طلب مساعدة الشرطة، وبكل الأحوال يجب محاورة اللاعب بشكل جيد والتفاوض معه قبل الشروع بأي عمل يعرض حياة اللاعب الآخر للخطر.</div>
+                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>Meta Gaming:</strong> اي معلومة تحصل عليها من خارج المدينة.</div>
+                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>NLR:</strong> في حال اغمائك بشكل كامل لا يمكنك الكلام او الحركة او فعل أي شيء في حال تم اسقاطك من قبل شخص وتم انعاشك من قبل مسعفين تستطيع تذكر جميع الاحداث.</div>
+                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>Power Gaming:</strong> يمنع استخدام اي وسيله غير شريعة تجعلك افضل من باقي لاعبين، سواء استخدام ثغرات او من خلال سوء استخدام صلاحياتك او ما شابه.</div>
+                    <div class="warning-box"><i class="fas fa-exclamation-triangle ml-3 text-red-600"></i><span>عدم اطلاعك على القوانين لا يعفيك من العقوبة</span></div>
                 </div>
             </div>
 
-            <div class="rule-section" onclick="toggleSection(this)">
-                <div class="rule-header"><span>القوانين العامة</span><i class="fas fa-chevron-down text-sm"></i></div>
-                <div class="rule-content">ضع القوانين العامة هنا...</div>
-            </div>
-
-            <div class="rule-section" onclick="toggleSection(this)">
-                <div class="rule-header"><span>القوانين العامة 2</span><i class="fas fa-chevron-down text-sm"></i></div>
-                <div class="rule-content">ضع القوانين العامة الإضافية هنا...</div>
-            </div>
-
-            <div class="rule-section" onclick="toggleSection(this)">
-                <div class="rule-header"><span>قوانين الدسكورد</span><i class="fas fa-chevron-down text-sm"></i></div>
-                <div class="rule-content">ضع قوانين الدسكورد هنا...</div>
-            </div>
-
-            <div class="rule-section" onclick="toggleSection(this)">
-                <div class="rule-header"><span>قوانين الإجرام</span><i class="fas fa-chevron-down text-sm"></i></div>
-                <div class="rule-content">ضع قوانين الإجرام هنا...</div>
-            </div>
-
-            <div class="rule-section" onclick="toggleSection(this)">
-                <div class="rule-header"><span>قوانين الإنعاش</span><i class="fas fa-chevron-down text-sm"></i></div>
-                <div class="rule-content">ضع قوانين الإنعاش هنا...</div>
-            </div>
-
-            <div class="rule-section" onclick="toggleSection(this)">
-                <div class="rule-header"><span>نظام التحذيرات</span><i class="fas fa-chevron-down text-sm"></i></div>
-                <div class="rule-content">ضع تفاصيل نظام التحذيرات هنا...</div>
-            </div>
-
+            <!-- باقي الأقسام -->
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>القوانين العامة</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>القوانين العامة 2</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الدسكورد</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الإجرام</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الإنعاش</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>نظام التحذيرات</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
         </div>
     </main>
 
