@@ -8,45 +8,47 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
-        .hero-section { height: 100vh; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://files.catbox.moe/qy3c1f.png'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 40px; max-width: 1000px; margin: auto; }
-        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 40px; max-width: 1000px; margin: auto; background-color: #1a1a1a; }
+        
+        /* خلفية الهيدر */
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://files.catbox.moe/qy3c1f.png'); background-size: cover; background-position: center; min-height: 100vh; }
+        
+        /* خلفية الإحصائيات */
+        .stats-bg { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://files.catbox.moe/v94tqh.png'); background-size: cover; background-position: center; background-attachment: fixed; }
+        
+        /* خلفية الأنظمة (رصاصية كاملة) */
+        .systems-bg { background-color: #1a1a1a; padding: 60px 20px; }
     </style>
 </head>
 <body>
 
-    <section class="hero-section">
+    <!-- الهيدر -->
+    <section class="hero-bg flex flex-col justify-center items-center text-center p-8">
         <h1 class="text-6xl font-black mb-4 uppercase">جولدن ستي</h1>
-        <p class="text-xl mb-8">حياكم الله في سيرفر جولدن ستي (سوني)، نقدم لكم أفضل تجربة رول بلاي على كونسول، نصنع أسطورة تعيشها هنا.</p>
+        <p class="text-xl mb-8 max-w-2xl">حياكم الله في سيرفر جولدن ستي (سوني)، نقدم لكم أفضل تجربة رول بلاي على كونسول، لنصنع أسطورة تعيشها هنا.</p>
         <a href="https://discord.gg/CwZftmkaH" class="bg-red-700 hover:bg-red-800 text-white px-10 py-3 rounded font-bold text-lg transition">دخول الديسكورد</a>
     </section>
 
-    <div class="stats-grid">
-        <div class="bg-black p-6 border border-red-900 text-center">
-            <h2 class="text-3xl font-black text-red-600">3000+</h2>
-            <p>عضو</p>
+    <!-- الإحصائيات -->
+    <section class="stats-bg py-24">
+        <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 px-6">
+            <div class="bg-black/50 border border-red-900 p-8 text-center"><h2 class="text-3xl font-black text-red-600">3000+</h2><p>عضو</p></div>
+            <div class="bg-black/50 border border-red-900 p-8 text-center"><h2 class="text-3xl font-black text-red-600">200+</h2><p>لاعب</p></div>
+            <div class="bg-black/50 border border-red-900 p-8 text-center"><h2 class="text-3xl font-black text-red-600">30+</h2><p>ميزة</p></div>
+            <div class="bg-black/50 border border-red-900 p-8 text-center"><h2 class="text-3xl font-black text-red-600">24/7</h2><p>دعم فني</p></div>
         </div>
-        <div class="bg-black p-6 border border-red-900 text-center">
-            <h2 class="text-3xl font-black text-red-600">200+</h2>
-            <p>لاعب</p>
-        </div>
-        <div class="bg-black p-6 border border-red-900 text-center">
-            <h2 class="text-3xl font-black text-red-600">30+</h2>
-            <p>ميزة</p>
-        </div>
-        <div class="bg-black p-6 border border-red-900 text-center">
-            <h2 class="text-3xl font-black text-red-600">24/7</h2>
-            <p>دعم فني</p>
-        </div>
-    </div>
+    </section>
 
-    <section class="feature-grid">
-        <div class="bg-black p-6 border border-red-900 text-center"><h3>نظام الشرطة</h3></div>
-        <div class="bg-black p-6 border border-red-900 text-center"><h3>نظام الإسعاف</h3></div>
-        <div class="bg-black p-6 border border-red-900 text-center"><h3>نظام القضاء</h3></div>
-        <div class="bg-black p-6 border border-red-900 text-center"><h3>نظام الجريمة</h3></div>
-        <div class="bg-black p-6 border border-red-900 text-center"><h3>نظام التحكم باللعب</h3></div>
-        <div class="bg-black p-6 border border-red-900 text-center"><h3>المزيد</h3></div>
+    <!-- الأنظمة (الخلفية الرصاصية الكاملة) -->
+    <section class="systems-bg">
+        <h2 class="text-3xl font-black text-center mb-12 uppercase">لماذا جولدن ستي</h2>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-black p-6 border border-red-900 text-center hover:bg-red-950 transition cursor-pointer"><h3>نظام الشرطة</h3></div>
+            <div class="bg-black p-6 border border-red-900 text-center hover:bg-red-950 transition cursor-pointer"><h3>نظام الإسعاف</h3></div>
+            <div class="bg-black p-6 border border-red-900 text-center hover:bg-red-950 transition cursor-pointer"><h3>نظام القضاء</h3></div>
+            <div class="bg-black p-6 border border-red-900 text-center hover:bg-red-950 transition cursor-pointer"><h3>نظام الجريمة</h3></div>
+            <div class="bg-black p-6 border border-red-900 text-center hover:bg-red-950 transition cursor-pointer"><h3>نظام التحكم باللعب</h3></div>
+            <div class="bg-black p-6 border border-red-900 text-center hover:bg-red-950 transition cursor-pointer"><h3>المزيد</h3></div>
+        </div>
     </section>
 
 </body>
