@@ -8,62 +8,59 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
-        
-        .rules-bg { 
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://files.catbox.moe/v94tqh.png'); 
+
+        /* الخلفية الرئيسية (التي طلبتها في الأعلى) */
+        .header-bg { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://files.catbox.moe/v94tqh.png'); 
             background-size: cover; 
             background-position: center; 
-            background-attachment: fixed;
-            min-height: 100vh;
+            height: 40vh; /* ارتفاع محدد للهيدر */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
+        /* منطقة القوانين (الخلفية الرصاصية التي تحت) */
+        .rules-container { 
+            background-color: #121212; 
+            min-height: 60vh;
+            padding: 40px 20px;
+        }
+
+        /* تنسيق الأزرار (تفاعلي مثل ريكليس) */
         .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; transition: 0.3s; border: 1px solid #333; }
-        .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; transition: 0.3s; }
+        .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
         
+        /* تأثير اللون الأحمر عند الضغط */
         .rule-section.active .rule-header { background-color: #b91c1c; color: white; }
-        .rule-content { padding: 20px; background: #121212; display: none; border-top: 1px solid #333; }
+        
+        .rule-content { padding: 20px; background: #000; display: none; border-top: 1px solid #333; }
     </style>
 </head>
-<body class="rules-bg">
+<body>
 
-    <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-6">
-        <span class="text-xl font-bold tracking-widest">GOLDEN CITY</span>
-        <div class="flex gap-8 text-sm font-bold text-gray-400">
-            <a href="index.html" class="hover:text-red-500">الرئيسية</a>
-            <a href="rules.html" class="text-red-500 border-b-2 border-red-700">القوانين</a>
-            <a href="store.html" class="hover:text-red-500">المتجر</a>
-            <a href="apply.html" class="hover:text-red-500">التقديمات</a>
-            <a href="creativity.html" class="hover:text-red-500">الإبداع</a>
-        </div>
-    </nav>
-
-    <div class="text-center py-12">
+    <section class="header-bg">
         <h1 class="text-5xl font-black uppercase">القوانين</h1>
-    </div>
+    </section>
 
-    <div class="max-w-3xl mx-auto px-4 pb-20">
-        
-        <!-- الأقسام المطلوبة -->
-        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الرول بلاي</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
-        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>القوانين العامة</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
-        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>القوانين العامة 2</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
-        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الدسكورد</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
-        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الاجرام</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
-        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الانعاش</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
-        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>نظام التحذيرات</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+    <section class="rules-container">
+        <div class="max-w-3xl mx-auto">
+            
+            <div class="rule-section" onclick="toggleSection(this)">
+                <div class="rule-header">
+                    <span>قوانين الرول بلاي</span>
+                    <i class="fas fa-chevron-down text-sm"></i>
+                </div>
+                <div class="rule-content">
+                    ضع القوانين هنا...
+                </div>
+            </div>
 
-    </div>
+            </div>
+    </section>
 
     <script>
         function toggleSection(element) {
-            document.querySelectorAll('.rule-section').forEach(sec => {
-                if(sec !== element) {
-                    sec.classList.remove('active');
-                    sec.querySelector('.rule-content').style.display = 'none';
-                    sec.querySelector('i').className = 'fas fa-chevron-down text-sm';
-                }
-            });
-
             element.classList.toggle('active');
             const content = element.querySelector('.rule-content');
             const icon = element.querySelector('i');
