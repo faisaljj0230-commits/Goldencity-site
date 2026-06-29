@@ -9,12 +9,12 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
 
-        /* القائمة العلوية الشفافة بتأثير الزجاج */
+        /* القائمة العلوية الشفافة (Glassmorphism) */
         .nav-menu { 
             position: sticky; top: 0; z-index: 50; 
-            background: rgba(0, 0, 0, 0.5); 
-            backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.4); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px);
             display: flex; justify-content: space-between; align-items: center; 
             padding: 20px 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -30,7 +30,6 @@
         }
 
         .rules-main-container { background-color: #121212; padding: 40px 20px; }
-
         .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; border: 1px solid #333; transition: 0.3s; }
         .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
         .rule-section.active .rule-header { background-color: #b91c1c; }
@@ -61,74 +60,36 @@
             <div class="rule-section" onclick="toggleSection(this)">
                 <div class="rule-header"><span>قوانين الرول بلاي</span><i class="fas fa-chevron-down text-sm"></i></div>
                 <div class="rule-content">
-                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>RDM:</strong> يمنع القتل العشوائي بجميع حالاته، ويشمل جميع من برحلة.</div>
-                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>VDM:</strong> يمنع الصدم العشوائي بجميع حالاته، ويشمل جميع من برحلة.</div>
-                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>LAR:</strong> هي الحفاظ على حياتك وحياة الآخرين، وعدم التهور، وأن لا تقاوم المجرم أو الشرطة او اي شخص يحمل سلاح مهما كان خصوصاً اذا كنت أعزل، وهذا لا يمنع استعمال حق الدفاع عن النفس عند الضرورة التي تمنعك من طلب مساعدة الشرطة، وبكل الأحوال يجب محاورة اللاعب بشكل جيد والتفاوض معه قبل الشروع بأي عمل يعرض حياة اللاعب الآخر للخطر.</div>
-                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>Meta Gaming:</strong> اي معلومة تحصل عليها من خارج المدينة.</div>
-                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>NLR:</strong> في حال اغمائك بشكل كامل لا يمكنك الكلام او الحركة او فعل أي شيء في حال تم اسقاطك من قبل شخص وتم انعاشك من قبل مسعفين تستطيع تذكر جميع الاحداث.</div>
-                    <div class="rule-item"><i class="fas fa-caret-left text-red-600 ml-2"></i> <strong>Power Gaming:</strong> يمنع استخدام اي وسيله غير شريعة تجعلك افضل من باقي لاعبين، سواء استخدام ثغرات او من خلال سوء استخدام صلاحياتك او ما شابه.</div>
-                    <div class="warning-box"><i class="fas fa-exclamation-triangle ml-3 text-red-600"></i><span>عدم اطلاعك على القوانين لا يعفيك من العقوبة</span></div>
+                    <div class="rule-item"><strong>RDM:</strong> يمنع القتل العشوائي بجميع حالاته، ويشمل جميع من برحلة.</div>
+                    <div class="rule-item"><strong>VDM:</strong> يمنع الصدم العشوائي بجميع حالاته، ويشمل جميع من برحلة.</div>
+                    <div class="rule-item"><strong>LAR:</strong> الحفاظ على حياتك وحياة الآخرين، وعدم التهور، وأن لا تقاوم المجرم أو الشرطة او اي شخص يحمل سلاح مهما كان خصوصاً اذا كنت أعزل.</div>
+                    <div class="rule-item"><strong>Meta Gaming:</strong> اي معلومة تحصل عليها من خارج المدينة.</div>
+                    <div class="rule-item"><strong>NLR:</strong> في حال اغمائك بشكل كامل لا يمكنك الكلام او الحركة او فعل أي شيء في حال تم اسقاطك من قبل شخص وتم انعاشك من قبل مسعفين تستطيع تذكر جميع الاحداث.</div>
+                    <div class="rule-item"><strong>Power Gaming:</strong> يمنع استخدام اي وسيله غير شريعة تجعلك افضل من باقي لاعبين.</div>
+                    <div class="warning-box"><span>عدم اطلاعك على القوانين لا يعفيك من العقوبة</span></div>
                 </div>
             </div>
 
             <div class="rule-section" onclick="toggleSection(this)">
                 <div class="rule-header"><span>القوانين العامة</span><i class="fas fa-chevron-down text-sm"></i></div>
                 <div class="rule-content">
-                    <div class="rule-item"><i class="fas fa-thumbtack text-red-600 ml-2"></i> <strong>شروط عامة:</strong>
-                        <ul style="list-style: none; padding-right: 20px;">
-                            <li style="margin-bottom: 10px;">✦ يجب الإلتزام بقوانين إنشاء الشخصية، في حال مخالفه قد يعرضك لحذف الشخصية</li>
-                            <li style="margin-bottom: 10px;">✦ يجب إستخدام مايك جيد</li>
-                            <li style="margin-bottom: 10px;">✦ يحق لك فقط امتلاك شخصيتين</li>
-                        </ul>
-                    </div>
-                    <div class="rule-item"><i class="fas fa-video text-red-600 ml-2"></i> <strong>اللعب والبث:</strong>
-                        <ul style="list-style: none; padding-right: 20px;">
-                            <li style="margin-bottom: 10px;">✦ ممنوع الستريم سنايب أو متابعة البثوث أثناء اللعب (عقوبتها شديدة)</li>
-                            <li style="margin-bottom: 10px;">✦ ممنوع التواجد في الديسكورد أو مجموعات السوني أو التواصل الخارجي مع لاعبين آخرين أثناء اللعب</li>
-                        </ul>
-                    </div>
-                    <div class="rule-item"><i class="fas fa-gamepad text-red-600 ml-2"></i> <strong>القوانين العامة داخل السيرفر:</strong>
-                        <ul style="list-style: none; padding-right: 20px;">
-                            <li style="margin-bottom: 10px;">✦ ممنوع الاعتداء على المدنيين (يعتبرون مواطنين)</li>
-                            <li style="margin-bottom: 10px;">✦ ممنوع طلب تعويض عند خسارة أموالك أو أغراض بخطأ منك</li>
-                            <li style="margin-bottom: 10px;">✦ يمنع خروج من رول بلاي لأي سبب من الأسباب ويجب عليك اكمال السيناريو حتى لو كان الشخص مخالف وراح يتم التعامل معه بعد انتهاء السيناريو</li>
-                            <li style="margin-bottom: 10px;">✦ لا يحق لك دخول في أحداث كبيرة (بيع وشراء) ويمنع ايضا اعطاء منتجات خطيرة (سلاح ناري، مفتاح قسم، إلخ) إلا إذا كان بينكم معرفة رول بلاي لا تقل عن أسبوع</li>
-                            <li style="margin-bottom: 10px;">✦ يمنع توزيع مبالغ كبيرة (10 آلاف فأكثر) إلا إذا كان بينكم معرفة لا تقل عن أسبوع</li>
-                            <li style="margin-bottom: 10px;">✦ يمنع القذف، الشتم، الطائفية، السياسة، الدين، أو القبلية (العقوبة: باند نهائي)</li>
-                        </ul>
-                    </div>
-                    <div class="warning-box"><i class="fas fa-exclamation-triangle ml-3 text-red-600"></i><span>عدم اطلاعك على القوانين لا يعفيك من العقوبة</span></div>
+                    <div class="rule-item"><strong>شروط عامة:</strong> يجب الإلتزام بقوانين إنشاء الشخصية، يجب إستخدام مايك جيد، يحق لك فقط امتلاك شخصيتين.</div>
+                    <div class="rule-item"><strong>اللعب والبث:</strong> ممنوع الستريم سنايب أو متابعة البثوث أثناء اللعب، ممنوع التواجد في الديسكورد أو مجموعات السوني أو التواصل الخارجي مع لاعبين آخرين أثناء اللعب.</div>
+                    <div class="rule-item"><strong>القوانين العامة داخل السيرفر:</strong> ممنوع الاعتداء على المدنيين، ممنوع طلب تعويض عند خسارة أموالك، يمنع الخروج من رول بلاي، لا يحق لك دخول أحداث كبيرة إلا إذا كان بينكم معرفة لا تقل عن أسبوع، يمنع توزيع مبالغ كبيرة، يمنع القذف، الشتم، الطائفية، السياسة، الدين، أو القبلية.</div>
                 </div>
             </div>
 
             <div class="rule-section" onclick="toggleSection(this)">
                 <div class="rule-header"><span>القوانين العامة 2</span><i class="fas fa-chevron-down text-sm"></i></div>
                 <div class="rule-content">
-                    <div class="rule-item"><i class="fas fa-car text-red-600 ml-2"></i> <strong>القيادة:</strong>
-                        <ul style="list-style: none; padding-right: 20px;">
-                            <li style="margin-bottom: 10px;">✦ القيادة يجب أن تكون واقعية</li>
-                            <li style="margin-bottom: 10px;">✦ لا سرعة مفرطة بدون سبب</li>
-                            <li style="margin-bottom: 10px;">✦ لا قطع إشارات عشوائي</li>
-                            <li style="margin-bottom: 10px;">✦ لا تهور بدون داع</li>
-                            <li style="margin-bottom: 10px;">✦ مخالفة هذه القوانين = تعتبر LAR</li>
-                            <li style="margin-bottom: 10px;">✦ يمنع استخدام حركة رفع الدباب والنط من أي مكان سواء الأرصفة القصيرة، وذلك يتضمن (الجسور - الجدران - المباني - العوائق التي تجعل الدباب يرتفع إلى السماء)</li>
-                        </ul>
-                    </div>
-                    <div class="rule-item"><i class="fas fa-ban text-red-600 ml-2"></i> <strong>ممنوعات أخرى:</strong>
-                        <ul style="list-style: none; padding-right: 20px;">
-                            <li style="margin-bottom: 10px;">✦ يمنع استخدام كلمات غير مفهومة، مشفرة، أو سب مبطن</li>
-                            <li style="margin-bottom: 10px;">✦ يمنع استغلال خدمات الجوال (مثل طلب تاكسي أو خدمات مشابهة) بهدف الخطف أو القتل</li>
-                            <li style="margin-bottom: 10px;">✦ يمنع حمل شخصين في نفس الوقت مهما كانت الأسباب</li>
-                        </ul>
-                    </div>
-                    <div class="warning-box"><i class="fas fa-exclamation-triangle ml-3 text-red-600"></i><span>تنبيه مهم: يحق للرقابة التعامل مع أي شخص أو موقف أو مخالفة حتى في حال عدم وجود القانون بشكل صريح، القانون فقط مطرقة للرقابة.</span></div>
+                    <div class="rule-item"><strong>القيادة:</strong> يجب أن تكون واقعية، لا سرعة مفرطة بدون سبب، لا قطع إشارات عشوائي، لا تهور، مخالفة هذه القوانين تعتبر LAR. يمنع استخدام حركة رفع الدباب والقفز من أي مكان سواء الجسور أو الجدران.</div>
+                    <div class="rule-item"><strong>ممنوعات أخرى:</strong> يمنع استخدام كلمات غير مفهومة، مشفرة، أو سب مبطن. يمنع استغلال خدمات الجوال (مثل طلب تاكسي) بهدف الخطف أو القتل. يمنع حمل شخصين في نفس الوقت.</div>
+                    <div class="warning-box"><span>تنبيه مهم: يحق للرقابة التعامل مع أي شخص أو موقف أو مخالفة حتى في حال عدم وجود القانون بشكل صريح، القانون فقط مطرقة للرقابة.</span></div>
                 </div>
             </div>
 
             <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الدسكورد</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
             <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الإجرام</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
-            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الإنعاش</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
-            <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>نظام التحذيرات</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
         </div>
     </main>
 
