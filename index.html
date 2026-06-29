@@ -7,83 +7,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
-        
-        /* تثبيت الخلفية السوداء فوراً لمنع وميض الألوان */
-        body { 
-            font-family: 'Cairo', sans-serif; 
-            background-color: #000 !important; 
-            margin: 0;
-        }
-        
-        .hero-bg { 
-            background-color: #000;
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), 
-                              url('https://files.catbox.moe/qy3c1f.png'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            min-height: 100vh;
-        }
+        body { font-family: 'Cairo', sans-serif; background-color: #000; margin: 0; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://files.catbox.moe/qy3c1f.png'); background-size: cover; background-position: center; }
     </style>
 </head>
 <body class="bg-black text-white">
 
-    <div class="hero-bg flex flex-col min-h-screen">
-        
+    <div class="hero-bg min-h-screen flex flex-col">
+        <!-- القائمة -->
         <div class="w-full bg-black/70 backdrop-blur-sm border-b border-red-900/50">
             <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-4">
-                
-                <!-- الشعار مع تعديل STUDIOS -->
                 <div class="flex items-center gap-6">
                     <span class="text-lg font-bold tracking-widest uppercase text-white">GOLDEN CITY</span>
-                    <div class="flex flex-col items-center">
-                        <img src="https://files.catbox.moe/r1xmf8.png" alt="Logo" class="w-10 h-10 object-contain">
-                        <span class="text-[8px] font-bold tracking-[0.2em] text-red-900 uppercase">STUDIOS</span>
-                    </div>
                 </div>
-
-                <!-- القائمة (تم الربط بـ rules.html) -->
                 <div class="flex flex-row-reverse gap-6 text-sm font-light text-gray-300">
                     <a href="index.html" class="text-red-500 border-b-2 border-red-700 font-bold transition">الرئيسية</a>
                     <a href="creativity.html" class="hover:text-red-500 transition">الابداع</a>
                     <a href="team.html" class="hover:text-red-500 transition">الفريق</a>
                     <a href="rules.html" class="hover:text-red-500 transition">القوانين</a>
-                    <a href="#" class="hover:text-red-500 transition">الأسئلة</a>
-                    <a href="#" class="hover:text-red-500 transition">المتصدّرين</a>
-                </div>
-
-                <!-- زر المتجر -->
-                <div class="flex items-center">
-                    <a href="#" class="bg-red-900 hover:bg-red-800 text-white px-5 py-1.5 rounded text-sm transition font-bold shadow-lg shadow-red-900/20">
-                        المتجر
-                    </a>
                 </div>
             </nav>
         </div>
 
-        <main class="flex-grow flex flex-col justify-end p-12">
-            <div class="max-w-xl mb-12">
-                <div class="inline-block border border-red-900 bg-red-950/40 px-4 py-1 rounded-full text-xs text-red-300 mb-6">
-                    رقم 1 كأفضل مجتمع حياة واقعية في الشرق الأوسط
-                </div>
-                <h1 class="text-xl font-light text-red-500 mb-4 tracking-widest uppercase">
-                    GC حيث تصبح الاحلام حقيقه
-                </h1>
-                <p class="text-gray-300 text-lg leading-relaxed border-r-2 border-red-700 pr-6">
-                    في Golden City، نحن لا نبني مجرد مدينة، نحن نصنع أسطورة تعيشها بتفاصيلها. عالمك، قرارك، وقصتك التي تُكتب هنا.
-                </p>
-                
-                <!-- الأيقونات تحت النص -->
-                <div class="mt-8 flex gap-4 text-3xl">
-                    <a href="https://discord.gg/CwZftmkaH" target="_blank" class="text-white hover:text-red-600 transition duration-300">
-                        <i class="fab fa-discord"></i>
-                    </a>
-                    <a href="https://www.tiktok.com/@golden.city3000" target="_blank" class="text-white hover:text-red-600 transition duration-300">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
-                </div>
-            </div>
+        <!-- المحتوى الرئيسي -->
+        <main class="flex-grow flex flex-col justify-center items-center text-center p-12">
+            <h1 class="text-5xl font-black mb-6 uppercase tracking-widest">GOLDEN CITY</h1>
+            <p class="text-gray-400 text-xl mb-10 max-w-2xl">أفضل تجربة رول بلاي في الشرق الأوسط، عالمك، قرارك، وقصتك التي تُكتب هنا.</p>
+            <a href="https://discord.gg/CwZftmkaH" class="bg-red-900 hover:bg-red-800 text-white px-10 py-3 rounded font-bold text-lg transition shadow-[0_0_20px_rgba(153,27,27,0.5)]">
+                دخول الديسكورد
+            </a>
         </main>
+
+        <!-- الإحصائيات -->
+        <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6 pb-24">
+            <div class="bg-black/80 p-8 border border-red-900/30 rounded text-center hover:border-red-600 transition">
+                <h2 class="text-4xl font-black text-red-600">3000+</h2>
+                <p class="text-gray-300 font-bold mt-2">عضو</p>
+            </div>
+            <div class="bg-black/80 p-8 border border-red-900/30 rounded text-center hover:border-red-600 transition">
+                <h2 class="text-4xl font-black text-red-600">200+</h2>
+                <p class="text-gray-300 font-bold mt-2">لاعب</p>
+            </div>
+            <div class="bg-black/80 p-8 border border-red-900/30 rounded text-center hover:border-red-600 transition">
+                <h2 class="text-4xl font-black text-red-600">24/7</h2>
+                <p class="text-gray-300 font-bold mt-2">دعم فني</p>
+            </div>
+        </section>
     </div>
 
 </body>
