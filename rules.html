@@ -9,7 +9,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
         
-        /* الخلفية المحددة */
         .rules-bg { 
             background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://files.catbox.moe/v94tqh.png'); 
             background-size: cover; 
@@ -18,19 +17,15 @@
             min-height: 100vh;
         }
 
-        /* تنسيق القوانين المطابق لريكليس */
         .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; transition: 0.3s; border: 1px solid #333; }
         .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; transition: 0.3s; }
         
-        /* حالة الضغط (اللون الأحمر) */
         .rule-section.active .rule-header { background-color: #b91c1c; color: white; }
-        
         .rule-content { padding: 20px; background: #121212; display: none; border-top: 1px solid #333; }
     </style>
 </head>
 <body class="rules-bg">
 
-    <!-- القائمة -->
     <nav class="max-w-7xl mx-auto flex justify-between items-center px-8 py-6">
         <span class="text-xl font-bold tracking-widest">GOLDEN CITY</span>
         <div class="flex gap-8 text-sm font-bold text-gray-400">
@@ -42,54 +37,39 @@
         </div>
     </nav>
 
-    <!-- العنوان -->
     <div class="text-center py-12">
         <h1 class="text-5xl font-black uppercase">القوانين</h1>
     </div>
 
-    <!-- حاوية القوانين -->
     <div class="max-w-3xl mx-auto px-4 pb-20">
         
-        <!-- نموذج للقسم (كرر هذا الكود لكل قسم تريد إضافته) -->
-        <div class="rule-section" onclick="toggleSection(this)">
-            <div class="rule-header">
-                <span>قوانين الرول بلاي</span>
-                <i class="fas fa-chevron-down text-sm"></i>
-            </div>
-            <div class="rule-content">
-                <!-- هنا ستضع النصوص لاحقاً -->
-            </div>
-        </div>
-
-        <div class="rule-section" onclick="toggleSection(this)">
-            <div class="rule-header">
-                <span>القوانين العامة</span>
-                <i class="fas fa-chevron-down text-sm"></i>
-            </div>
-            <div class="rule-content"></div>
-        </div>
+        <!-- الأقسام المطلوبة -->
+        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الرول بلاي</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>القوانين العامة</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>القوانين العامة 2</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الدسكورد</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الاجرام</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>قوانين الانعاش</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
+        <div class="rule-section" onclick="toggleSection(this)"><div class="rule-header"><span>نظام التحذيرات</span><i class="fas fa-chevron-down text-sm"></i></div><div class="rule-content"></div></div>
 
     </div>
 
     <script>
         function toggleSection(element) {
-            // إغلاق أي قسم مفتوح سابقاً (اختياري)
             document.querySelectorAll('.rule-section').forEach(sec => {
                 if(sec !== element) {
                     sec.classList.remove('active');
                     sec.querySelector('.rule-content').style.display = 'none';
-                    sec.querySelector('i').classList.replace('fa-chevron-up', 'fa-chevron-down');
+                    sec.querySelector('i').className = 'fas fa-chevron-down text-sm';
                 }
             });
 
-            // فتح أو إغلاق القسم الحالي
             element.classList.toggle('active');
             const content = element.querySelector('.rule-content');
             const icon = element.querySelector('i');
-            
             const isOpen = content.style.display === 'block';
             content.style.display = isOpen ? 'none' : 'block';
-            icon.className = isOpen ? 'fas fa-chevron-down' : 'fas fa-chevron-up';
+            icon.className = isOpen ? 'fas fa-chevron-down text-sm' : 'fas fa-chevron-up text-sm';
         }
     </script>
 </body>
