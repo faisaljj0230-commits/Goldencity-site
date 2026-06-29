@@ -9,55 +9,46 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
 
-        /* الخلفية الرئيسية (التي طلبتها في الأعلى) */
-        .header-bg { 
+        /* الهيدر: خلفية ثابتة لا تتحرك بالسكرول */
+        .header-section { 
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://files.catbox.moe/v94tqh.png'); 
             background-size: cover; 
             background-position: center; 
-            height: 40vh; /* ارتفاع محدد للهيدر */
+            height: 40vh; 
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        /* منطقة القوانين (الخلفية الرصاصية التي تحت) */
-        .rules-container { 
+        /* حاوية القوانين: هي التي تتحرك بالسكرول */
+        .rules-main-container { 
             background-color: #121212; 
-            min-height: 60vh;
             padding: 40px 20px;
+            min-height: 60vh; /* تسمح للصفحة بالتمدد */
         }
 
-        /* تنسيق الأزرار (تفاعلي مثل ريكليس) */
-        .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; transition: 0.3s; border: 1px solid #333; }
+        .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; border: 1px solid #333; }
         .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
-        
-        /* تأثير اللون الأحمر عند الضغط */
-        .rule-section.active .rule-header { background-color: #b91c1c; color: white; }
-        
+        .rule-section.active .rule-header { background-color: #b91c1c; }
         .rule-content { padding: 20px; background: #000; display: none; border-top: 1px solid #333; }
     </style>
 </head>
 <body>
 
-    <section class="header-bg">
+    <section class="header-section">
         <h1 class="text-5xl font-black uppercase">القوانين</h1>
     </section>
 
-    <section class="rules-container">
+    <main class="rules-main-container">
         <div class="max-w-3xl mx-auto">
             
             <div class="rule-section" onclick="toggleSection(this)">
-                <div class="rule-header">
-                    <span>قوانين الرول بلاي</span>
-                    <i class="fas fa-chevron-down text-sm"></i>
-                </div>
-                <div class="rule-content">
-                    ضع القوانين هنا...
-                </div>
+                <div class="rule-header"><span>قوانين الرول بلاي</span><i class="fas fa-chevron-down text-sm"></i></div>
+                <div class="rule-content">نص القوانين هنا...</div>
             </div>
-
+            
             </div>
-    </section>
+    </main>
 
     <script>
         function toggleSection(element) {
