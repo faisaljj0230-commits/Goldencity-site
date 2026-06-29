@@ -8,7 +8,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
-        .hero-bg { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://files.catbox.moe/qy3c1f.png'); background-size: cover; background-position: center; min-height: 100vh; }
+        
+        /* الهيدر بتنسيق مرتب ومركز */
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://files.catbox.moe/qy3c1f.png'); background-size: cover; background-position: center; min-height: 100vh; display: flex; flex-direction: column; }
+        .hero-content { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; max-width: 800px; margin: auto; padding: 20px; }
+        
         .stats-bg { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://files.catbox.moe/v94tqh.png'); background-size: cover; background-position: center; background-attachment: fixed; }
         .feature-card { background-color: #1a1a1a; padding: 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; transition: 0.3s; border: 1px solid #222; }
         .feature-card:hover { border-color: #b91c1c; }
@@ -17,7 +21,8 @@
 </head>
 <body class="bg-black text-white">
 
-    <section class="hero-bg flex flex-col">
+    <!-- الهيدر المحدث -->
+    <section class="hero-bg">
         <nav class="max-w-7xl mx-auto w-full flex justify-between items-center px-8 py-6">
             <span class="text-xl font-bold tracking-widest text-white">GOLDEN CITY</span>
             <div class="flex gap-8 text-sm font-bold text-gray-300">
@@ -25,15 +30,20 @@
                 <a href="rules.html" class="hover:text-red-500 transition">القوانين</a>
                 <a href="store.html" class="hover:text-red-500 transition">المتجر</a>
                 <a href="apply.html" class="hover:text-red-500 transition">التقديمات</a>
+                <a href="creativity.html" class="hover:text-red-500 transition">الإبداع</a>
             </div>
         </nav>
-        <div class="flex-grow flex flex-col justify-center items-center text-center p-8">
-            <h1 class="text-6xl font-black mb-4 uppercase">جولدن ستي</h1>
-            <p class="text-xl mb-8 max-w-2xl">حياكم الله في سيرفر جولدن ستي، نقدم لكم أفضل تجربة رول بلاي على كونسول.</p>
+        
+        <div class="hero-content">
+            <h1 class="text-6xl font-black mb-4 uppercase">جولدن ستي | GOLDEN CITY</h1>
+            <p class="text-xl mb-8 text-gray-300 leading-relaxed">
+                حياكم الله في سيرفر جولدن ستي، نعمل بكل شغف لنقدم لكم أفضل تجربة رول بلاي على منصة السوني. اصنع قصتك، وعش المتعة كما تريد.
+            </p>
             <a href="https://discord.gg/CwZftmkaH" class="bg-red-700 hover:bg-red-800 text-white px-10 py-3 rounded font-bold text-lg transition">دخول الديسكورد</a>
         </div>
     </section>
 
+    <!-- الإحصائيات -->
     <section class="stats-bg py-24 px-6">
         <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
             <div class="bg-black/50 border border-red-900 p-8 text-center"><h2 class="text-3xl font-black text-red-600">3000+</h2><p>عضو</p></div>
@@ -43,6 +53,7 @@
         </div>
     </section>
 
+    <!-- المميزات -->
     <section class="bg-[#121212] py-20 px-8">
         <h2 class="text-3xl font-black text-center mb-16 uppercase">لماذا جولدن ستي</h2>
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
