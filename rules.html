@@ -9,13 +9,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
 
-        /* القائمة العلوية مطابقة للصورة */
+        /* القائمة العلوية الشفافة بتأثير الزجاج */
         .nav-menu { 
             position: sticky; top: 0; z-index: 50; 
-            background: rgba(0,0,0,0.9); 
+            background: rgba(0, 0, 0, 0.5); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
             display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 40px; border-bottom: 1px solid #333;
+            padding: 20px 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+        
         .nav-links { display: flex; gap: 30px; }
         .nav-links a { color: #ccc; font-weight: bold; text-decoration: none; transition: 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: #ef4444; }
