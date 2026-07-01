@@ -9,12 +9,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
 
-        /* القائمة العلوية المعدلة بالتأثير الزجاجي */
+        /* القائمة العلوية */
         .nav-menu { 
             position: sticky; top: 0; z-index: 50; 
-            background: rgba(0, 0, 0, 0.5); 
+            background: rgba(0, 0, 0, 0.4); 
             backdrop-filter: blur(10px); 
-            -webkit-backdrop-filter: blur(10px);
             display: flex; justify-content: space-between; align-items: center; 
             padding: 20px 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
@@ -24,14 +23,8 @@
         .nav-links a:hover, .nav-links a.active { color: #ef4444; }
         .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; }
 
-        .header-section { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://files.catbox.moe/v94tqh.png'); 
-            background-size: cover; background-position: center; height: 30vh; display: flex; justify-content: center; align-items: center;
-        }
-
         .rules-main-container { background-color: #121212; padding: 40px 20px; }
-
-        .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; border: 1px solid #333; transition: 0.3s; }
+        .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; border: 1px solid #333; }
         .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
         .rule-section.active .rule-header { background-color: #b91c1c; }
         .rule-content { padding: 20px; background: #000; display: none; border-top: 1px solid #333; color: #d1d1d1; }
@@ -42,22 +35,21 @@
 <body>
 
     <nav class="nav-menu">
-        <div class="nav-links">
-            <a href="creativity.html">الإبداع</a>
-            <a href="team.html">الفريق</a>
-            <a href="apply.html">التقديمات</a>
-            <a href="store.html">المتجر</a>
-            <a href="rules.html" class="active">القوانين</a>
-            <a href="index.html">الرئيسية</a>
-        </div>
         <div class="logo">GOLDEN CITY</div>
+        <div class="nav-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="rules.html" class="active">القوانين</a>
+            <a href="store.html">المتجر</a>
+            <a href="apply.html">التقديمات</a>
+            <a href="team.html">الفريق</a>
+            <a href="creativity.html">الإبداع</a>
+        </div>
     </nav>
-
-    <section class="header-section"><h1 class="text-5xl font-black uppercase">القوانين</h1></section>
 
     <main class="rules-main-container">
         <div class="max-w-3xl mx-auto" id="rules-list">
             
+            <!-- قوانين الرول بلاي -->
             <div class="rule-section" onclick="toggleSection(this)">
                 <div class="rule-header"><span>قوانين الرول بلاي</span><i class="fas fa-chevron-down text-sm"></i></div>
                 <div class="rule-content">
@@ -71,36 +63,28 @@
                 </div>
             </div>
 
+            <!-- القوانين العامة -->
             <div class="rule-section" onclick="toggleSection(this)">
                 <div class="rule-header"><span>القوانين العامة</span><i class="fas fa-chevron-down text-sm"></i></div>
                 <div class="rule-content">
-                    <div class="rule-item"><i class="fas fa-thumbtack text-red-600 ml-2"></i> <strong>شروط عامة:</strong>
+                    <div class="rule-item"><strong>شروط عامة:</strong>
                         <ul style="list-style: none; padding-right: 20px;">
-                            <li style="margin-bottom: 10px;">✦ يجب الإلتزام بقوانين إنشاء الشخصية، في حال مخالفه قد يعرضك لحذف الشخصية</li>
-                            <li style="margin-bottom: 10px;">✦ يجب إستخدام مايك جيد</li>
-                            <li style="margin-bottom: 10px;">✦ يحق لك فقط امتلاك شخصيتين</li>
+                            <li>✦ يجب الإلتزام بقوانين إنشاء الشخصية، في حال مخالفه قد يعرضك لحذف الشخصية</li>
+                            <li>✦ يجب إستخدام مايك جيد</li>
+                            <li>✦ يحق لك فقط امتلاك شخصيتين</li>
                         </ul>
                     </div>
-                    <div class="rule-item"><i class="fas fa-video text-red-600 ml-2"></i> <strong>اللعب والبث:</strong>
+                    <div class="rule-item"><strong>اللعب والبث:</strong>
                         <ul style="list-style: none; padding-right: 20px;">
-                            <li style="margin-bottom: 10px;">✦ ممنوع الستريم سنايب أو متابعة البثوث أثناء اللعب (عقوبتها شديدة)</li>
-                            <li style="margin-bottom: 10px;">✦ ممنوع التواجد في الديسكورد أو مجموعات السوني أو التواصل الخارجي مع لاعبين آخرين أثناء اللعب</li>
+                            <li>✦ ممنوع الستريم سنايب أو متابعة البثوث أثناء اللعب</li>
+                            <li>✦ ممنوع التواجد في الديسكورد أو التواصل الخارجي مع لاعبين آخرين أثناء اللعب</li>
                         </ul>
                     </div>
-                    <div class="rule-item"><i class="fas fa-gamepad text-red-600 ml-2"></i> <strong>القوانين العامة داخل السيرفر:</strong>
-                        <ul style="list-style: none; padding-right: 20px;">
-                            <li style="margin-bottom: 10px;">✦ ممنوع الاعتداء على المدنيين (يعتبرون مواطنين)</li>
-                            <li style="margin-bottom: 10px;">✦ ممنوع طلب تعويض عند خسارة أموالك أو أغراض بخطأ منك</li>
-                            <li style="margin-bottom: 10px;">✦ يمنع خروج من رول بلاي لأي سبب من الأسباب ويجب عليك اكمال السيناريو حتى لو كان الشخص مخالف وراح يتم التعامل معه بعد انتهاء السيناريو</li>
-                            <li style="margin-bottom: 10px;">✦ لا يحق لك دخول في أحداث كبيرة (بيع وشراء) ويمنع ايضا اعطاء منتجات خطيرة (سلاح ناري، مفتاح قسم، إلخ) إلا إذا كان بينكم معرفة رول بلاي لا تقل عن أسبوع</li>
-                            <li style="margin-bottom: 10px;">✦ يمنع توزيع مبالغ كبيرة (10 آلاف فأكثر) إلا إذا كان بينكم معرفة لا تقل عن أسبوع</li>
-                            <li style="margin-bottom: 10px;">✦ يمنع القذف، الشتم، الطائفية، السياسة، الدين، أو القبلية (العقوبة: باند نهائي)</li>
-                        </ul>
-                    </div>
-                    <div class="warning-box"><i class="fas fa-exclamation-triangle ml-3 text-red-600"></i><span>عدم اطلاعك على القوانين لا يعفيك من العقوبة</span></div>
+                    <div class="warning-box">عدم اطلاعك على القوانين لا يعفيك من العقوبة</div>
                 </div>
             </div>
 
+            <!-- القوانين العامة 2 -->
             <div class="rule-section" onclick="toggleSection(this)">
                 <div class="rule-header"><span>القوانين العامة 2</span><i class="fas fa-chevron-down text-sm"></i></div>
                 <div class="rule-content">
