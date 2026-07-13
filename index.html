@@ -31,7 +31,7 @@
         .thanks span { color: #ff6600; }
         .desc { font-size: 0.9rem; color: #ccc; margin-top: 10px; }
         
-        /* الأيقونات بالمربعات */
+        /* الأيقونات بالمربعات - التعديل هنا */
         .footer-icons { display: flex; gap: 10px; margin-top: 20px; }
         .icon-box { 
             width: 40px; height: 40px; 
@@ -40,7 +40,11 @@
             display: flex; align-items: center; justify-content: center;
             cursor: pointer;
         }
-        .icon-img { width: 22px; filter: invert(1); }
+        /* اللون الرصاصي الفاتح */
+        .icon-img { 
+            width: 22px; 
+            filter: brightness(0) invert(1) opacity(0.6); 
+        }
     </style>
 </head>
 <body>
@@ -70,10 +74,12 @@
         
         <div class="footer-icons">
             <div class="icon-box">
-                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon-img">
+                <!-- الدسكورد -->
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" class="icon-img">
             </div>
             <div class="icon-box">
-                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" class="icon-img">
+                <!-- التيك توك -->
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon-img">
             </div>
         </div>
     </div>
