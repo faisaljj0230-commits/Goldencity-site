@@ -7,78 +7,66 @@
         body { margin: 0; padding: 0; font-family: 'Cairo', sans-serif; background: #000; color: #fff; height: 100vh; overflow: hidden;
                background: url('https://files.catbox.moe/helkbi.jpeg') center/cover no-repeat; }
         
-        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
 
-        /* شريط التنقل العلوي المعدل */
+        /* الهيدر: شفاف وبدون لون بني */
         header { 
             position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; 
-            padding: 10px 40px; z-index: 10; box-sizing: border-box; background: rgba(0, 0, 0, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 20px 50px; z-index: 10; box-sizing: border-box;
         }
         
-        /* التعديلات الجديدة على الأماكن */
-        .header-right { font-weight: bold; font-size: 1.1rem; }
-        .header-center { display: flex; gap: 25px; flex-grow: 1; justify-content: center; }
         .header-left { display: flex; align-items: center; gap: 15px; }
+        .header-center { display: flex; gap: 30px; }
+        .header-right { font-weight: 900; font-size: 1.5rem; letter-spacing: 1px; }
         
-        .nav-links { display: flex; gap: 25px; }
-        .nav-links a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
         .nav-links a:hover { color: #ff6600; }
         
-        /* الأزرار العلوية */
-        .btn-small { padding: 5px 15px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: bold; }
+        /* الأزرار */
+        .btn-small { padding: 6px 18px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: bold; }
         .btn-orange { background: #ff6600; color: #000; }
-        .btn-login { border: 1px solid #444; color: #fff; }
-        .lang-icon { font-size: 1.2rem; cursor: pointer; }
+        .btn-login { border: 1px solid #fff; color: #fff; }
+        .lang-icon { font-size: 1.3rem; cursor: pointer; }
 
-        /* العناصر المتبقية */
-        .left-side { position: absolute; left: 5%; bottom: 10%; }
-        .big-eight { font-size: 250px; font-weight: 900; opacity: 0.1; line-height: 1; }
-        .right-side { position: absolute; right: 5%; bottom: 10%; text-align: right; max-width: 400px; }
-        .thanks { font-size: 4rem; font-weight: 900; line-height: 1.1; }
+        /* العناصر */
+        .right-side { position: absolute; right: 5%; bottom: 15%; text-align: right; max-width: 450px; }
+        .thanks { font-size: 4rem; font-weight: 900; line-height: 1; margin: 0; }
         .thanks span { color: #ff6600; }
-        .sub-title { font-size: 1.2rem; color: #aaa; margin-top: 10px; }
-        .brand-line { font-size: 1.1rem; color: #ff6600; margin-top: 15px; }
-        .desc { font-size: 0.9rem; color: #888; margin-top: 10px; line-height: 1.5; }
-        .footer-icons { position: absolute; bottom: 20px; right: 5%; display: flex; gap: 15px; }
-        .icon { width: 25px; filter: invert(1); cursor: pointer; }
+        .desc { font-size: 1rem; color: #ddd; margin-top: 15px; }
+        
+        /* الأيقونات تحت النص */
+        .footer-icons { display: flex; gap: 15px; margin-top: 25px; }
+        .icon { width: 30px; filter: invert(1); cursor: pointer; }
     </style>
 </head>
 <body>
     <div class="overlay"></div>
 
     <header>
-        <!-- أقصى اليمين: الاسم -->
-        <div class="header-right">DREAM TOWN</div>
-        
-        <!-- المنتصف: القوائم -->
-        <div class="header-center">
-            <div class="nav-links">
-                <a href="#">الرئيسية</a>
-                <a href="#">صناع المحتوى</a>
-                <a href="#">الفريق</a>
-                <a href="#">البث المباشر</a>
-                <a href="#">الوظائف</a>
-                <a href="#">الأسئلة</a>
-                <a href="#">المتصدرين</a>
-            </div>
-        </div>
-
-        <!-- أقصى اليسار: الأزرار والأيقونة -->
+        <!-- أقصى اليسار -->
         <div class="header-left">
             <a href="#" class="btn-small btn-orange">المتجر</a>
             <a href="#" class="btn-small btn-login">تسجيل الدخول</a>
             <div class="lang-icon">🌐</div>
         </div>
-    </header>
+        
+        <!-- المنتصف -->
+        <div class="header-center nav-links">
+            <a href="#">المتصدرين</a>
+            <a href="#">الأسئلة</a>
+            <a href="#">الوظائف</a>
+            <a href="#">البث المباشر</a>
+            <a href="#">الفريق</a>
+            <a href="#">صناع المحتوى</a>
+            <a href="#">الرئيسية</a>
+        </div>
 
-    <div class="left-side">
-        <div class="big-eight">8</div>
-    </div>
+        <!-- أقصى اليمين -->
+        <div class="header-right">DREAM TOWN</div>
+    </header>
 
     <div class="right-side">
         <h1 class="thanks">شكراً <br> <span>لكم</span></h1>
-        <div class="sub-title">DREAM TOWN RP - الموسم 8</div>
-        <div class="brand-line">DT • حيث تصبح الأحلام حقيقة</div>
         <p class="desc">أفضل تجربة حياة واقعية في GTA V، تضم لأكثر من 300 ألف لاعب في عالم مليء بالأحداث والقصص التي لا تنتهي.</p>
         
         <div class="footer-icons">
