@@ -15,9 +15,10 @@
             padding: 10px 40px; z-index: 10; box-sizing: border-box; background: rgba(0, 0, 0, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         
-        .header-left { display: flex; align-items: center; gap: 15px; }
-        .header-center { display: flex; gap: 25px; flex-grow: 1; justify-content: center; }
+        /* التعديلات الجديدة على الأماكن */
         .header-right { font-weight: bold; font-size: 1.1rem; }
+        .header-center { display: flex; gap: 25px; flex-grow: 1; justify-content: center; }
+        .header-left { display: flex; align-items: center; gap: 15px; }
         
         .nav-links { display: flex; gap: 25px; }
         .nav-links a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
@@ -46,14 +47,10 @@
     <div class="overlay"></div>
 
     <header>
-        <!-- أقصى اليسار -->
-        <div class="header-left">
-            <div class="lang-icon">🌐</div>
-            <a href="#" class="btn-small btn-login">تسجيل الدخول</a>
-            <a href="#" class="btn-small btn-orange">المتجر</a>
-        </div>
+        <!-- أقصى اليمين: الاسم -->
+        <div class="header-right">DREAM TOWN</div>
         
-        <!-- المنتصف -->
+        <!-- المنتصف: القوائم -->
         <div class="header-center">
             <div class="nav-links">
                 <a href="#">الرئيسية</a>
@@ -66,8 +63,12 @@
             </div>
         </div>
 
-        <!-- أقصى اليمين -->
-        <div class="header-right">DREAM TOWN</div>
+        <!-- أقصى اليسار: الأزرار والأيقونة -->
+        <div class="header-left">
+            <a href="#" class="btn-small btn-orange">المتجر</a>
+            <a href="#" class="btn-small btn-login">تسجيل الدخول</a>
+            <div class="lang-icon">🌐</div>
+        </div>
     </header>
 
     <div class="left-side">
