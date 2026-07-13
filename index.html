@@ -4,63 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
         body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
 
-        .nav-menu { 
-            position: sticky; top: 0; z-index: 50; 
-            background: rgba(0, 0, 0, 0.4); 
-            backdrop-filter: blur(10px); 
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        .header-bg { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://files.catbox.moe/v94tqh.png'); 
+            background-size: cover; background-position: center; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
-        
-        .nav-links { display: flex; gap: 25px; }
-        .nav-links a { color: #ccc; font-weight: bold; text-decoration: none; transition: 0.3s; }
+        .nav-links { display: flex; gap: 30px; position: absolute; top: 30px; left: 40px; }
+        .nav-links a { color: #ccc; font-weight: bold; text-decoration: none; font-size: 1.1rem; }
         .nav-links a:hover, .nav-links a.active { color: #ef4444; }
-        .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; }
-
-        .rules-main-container { background-color: #121212; padding: 40px 20px; }
-        .rule-section { background-color: #1a1a1a; margin-bottom: 12px; cursor: pointer; border: 1px solid #333; }
-        .rule-header { padding: 20px; display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
-        .rule-section.active .rule-header { background-color: #b91c1c; }
-        .rule-content { padding: 20px; background: #000; display: none; border-top: 1px solid #333; color: #d1d1d1; }
-        .rule-item { margin-bottom: 15px; line-height: 1.6; }
-        .warning-box { margin-top: 20px; padding: 15px; background: rgba(185, 28, 28, 0.1); border: 1px solid #b91c1c; border-radius: 4px; display: flex; align-items: center; color: #e5e5e5; }
+        
+        .hero-content { max-width: 800px; padding: 20px; }
+        .btn-join { 
+            background-color: #b91c1c; padding: 15px 40px; color: white; font-weight: bold; 
+            text-decoration: none; border-radius: 5px; transition: 0.3s; margin-top: 20px; display: inline-block;
+        }
+        .btn-join:hover { background-color: #991b1b; }
     </style>
 </head>
 <body>
 
-    <nav class="nav-menu">
-        <div class="logo">GOLDEN CITY</div>
-        <div class="nav-links">
-            <a href="index.html">الرئيسية</a>
-            <a href="rules.html" class="active">القوانين</a>
-            <a href="store.html">المتجر</a>
-            <a href="apply.html">التقديمات</a>
-            <a href="team.html">الفريق</a>
+    <header class="header-bg">
+        <nav class="nav-links">
             <a href="creativity.html">الإبداع</a>
+            <a href="team.html">الفريق</a>
+            <a href="apply.html">التقديمات</a>
+            <a href="store.html">المتجر</a>
+            <a href="rules.html">القوانين</a>
+            <a href="index.html" class="active">الرئيسية</a>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="text-6xl font-black mb-6">GOLDEN CITY</h1>
+            <p class="text-xl text-gray-300 mb-8">سيرفر رول بلاي احترافي، تجربة واقعية، ومجتمع متكامل في انتظارك.</p>
+            <a href="#" class="btn-join">انضم إلينا الآن</a>
         </div>
-    </nav>
+    </header>
 
-    <main class="rules-main-container">
-        <div class="max-w-3xl mx-auto" id="rules-list">
-            <!-- تمت إضافة كافة أقسام القوانين هنا (الرول بلاي، العامة، العامة 2، الدسكورد، الإجرام، الإنعاش، التحذيرات) -->
-            <!-- كل قسم يحتوي على محتواه الكامل كما أرسلته سابقاً -->
-        </div>
-    </main>
-    
-    <script>
-        function toggleSection(element) {
-            element.classList.toggle('active');
-            const content = element.querySelector('.rule-content');
-            const icon = element.querySelector('i');
-            const isOpen = content.style.display === 'block';
-            content.style.display = isOpen ? 'none' : 'block';
-            icon.className = isOpen ? 'fas fa-chevron-down' : 'fas fa-chevron-up';
-        }
-    </script>
 </body>
 </html>
