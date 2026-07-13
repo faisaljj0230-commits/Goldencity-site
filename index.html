@@ -9,32 +9,35 @@
         
         .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
 
-        /* شريط التنقل العلوي */
-        header { position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; z-index: 10; box-sizing: border-box; }
+        /* شريط التنقل العلوي (Header) */
+        header { 
+            position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; 
+            padding: 10px 30px; z-index: 10; box-sizing: border-box; background: rgba(0, 0, 0, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-left { display: flex; align-items: center; gap: 20px; }
         .nav-right { display: flex; align-items: center; gap: 20px; }
-        .nav-left { display: flex; align-items: center; gap: 15px; }
+        
         .nav-links { display: flex; gap: 25px; }
-        .nav-links a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-        .nav-links a:hover { color: #ff6600; }
-        .logo-top { font-size: 1.1rem; font-weight: bold; margin-left: 20px; }
-        .btn-login { background: #ff6600; padding: 8px 15px; border-radius: 4px; text-decoration: none; color: #000; font-weight: bold; font-size: 0.9rem; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 0.85rem; }
+        
+        .logo-box { font-weight: bold; font-size: 1rem; margin-right: 20px; }
+        
+        /* الأزرار العلوية */
+        .btn-small { padding: 5px 12px; border-radius: 4px; text-decoration: none; font-size: 0.8rem; }
+        .btn-orange { background: #ff6600; color: #000; font-weight: bold; }
+        .btn-login { border: 1px solid #444; color: #fff; margin-right: 10px; }
+        .lang-icon { font-size: 1.2rem; cursor: pointer; }
 
-        /* العناصر اليسرى */
+        /* العناصر المتبقية (كما في الكود السابق) */
         .left-side { position: absolute; left: 5%; bottom: 10%; }
         .big-eight { font-size: 250px; font-weight: 900; opacity: 0.1; line-height: 1; }
-        .season-box { margin-top: -50px; }
-        .season-text { font-size: 2rem; font-weight: bold; }
-        .season-text span { color: #ff6600; }
-
-        /* العناصر اليمنى */
         .right-side { position: absolute; right: 5%; bottom: 10%; text-align: right; max-width: 400px; }
         .thanks { font-size: 4rem; font-weight: 900; line-height: 1.1; }
         .thanks span { color: #ff6600; }
         .sub-title { font-size: 1.2rem; color: #aaa; margin-top: 10px; }
         .brand-line { font-size: 1.1rem; color: #ff6600; margin-top: 15px; }
         .desc { font-size: 0.9rem; color: #888; margin-top: 10px; line-height: 1.5; }
-
-        /* الأيقونات */
         .footer-icons { position: absolute; bottom: 20px; right: 5%; display: flex; gap: 15px; }
         .icon { width: 25px; filter: invert(1); cursor: pointer; }
     </style>
@@ -43,8 +46,13 @@
     <div class="overlay"></div>
 
     <header>
+        <div class="nav-left">
+            <div class="lang-icon">🌐</div>
+            <a href="#" class="btn-small btn-login">تسجيل الدخول</a>
+            <a href="#" class="btn-small btn-orange">المتجر</a>
+        </div>
+        
         <div class="nav-right">
-            <div class="logo-top">DREAM TOWN</div>
             <div class="nav-links">
                 <a href="#">الرئيسية</a>
                 <a href="#">صناع المحتوى</a>
@@ -54,17 +62,12 @@
                 <a href="#">الأسئلة</a>
                 <a href="#">المتصدرين</a>
             </div>
-        </div>
-        <div class="nav-left">
-            <a href="#" class="btn-login">تسجيل الدخول</a>
+            <div class="logo-box">DREAM TOWN</div>
         </div>
     </header>
 
     <div class="left-side">
         <div class="big-eight">8</div>
-        <div class="season-box">
-            <div class="season-text">الموسم <span>8</span></div>
-        </div>
     </div>
 
     <div class="right-side">
