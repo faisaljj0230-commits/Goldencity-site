@@ -5,11 +5,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; padding: 0; font-family: 'Cairo', sans-serif; background: #000; color: #fff; height: 100vh; overflow: hidden;
-               background: url('https://files.catbox.moe/sp6vy2.png') center/cover no-repeat; }
+               background: url('https://files.catbox.moe/ymmvot.png') center/cover no-repeat; }
         
         .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
 
-        /* الهيدر: شفاف تماماً */
+        /* الهيدر */
         header { 
             position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; 
             padding: 20px 50px; z-index: 10; box-sizing: border-box; background: transparent !important;
@@ -30,8 +30,17 @@
         .thanks { font-size: 4rem; font-weight: 900; line-height: 1; }
         .thanks span { color: #ff6600; }
         .desc { font-size: 0.9rem; color: #ccc; margin-top: 10px; }
-        .footer-icons { display: flex; gap: 15px; margin-top: 20px; }
-        .icon { width: 25px; filter: invert(1); cursor: pointer; }
+        
+        /* الأيقونات بالمربعات */
+        .footer-icons { display: flex; gap: 10px; margin-top: 20px; }
+        .icon-box { 
+            width: 40px; height: 40px; 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            border-radius: 8px; 
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer;
+        }
+        .icon-img { width: 22px; filter: invert(1); }
     </style>
 </head>
 <body>
@@ -39,7 +48,6 @@
 
     <header>
         <div class="header-right">DREAM TOWN</div>
-        
         <div class="header-center">
             <a href="#">المتصدرين</a>
             <a href="#">الأسئلة</a>
@@ -49,7 +57,6 @@
             <a href="#">صناع المحتوى</a>
             <a href="#">الرئيسية</a>
         </div>
-
         <div class="header-left">
             <div class="lang-icon">🌐</div>
             <a href="#" class="btn-small btn-login">تسجيل الدخول</a>
@@ -62,8 +69,12 @@
         <p class="desc">أفضل تجربة حياة واقعية في GTA V، تضم لأكثر من 300 ألف لاعب في عالم مليء بالأحداث والقصص التي لا تنتهي.</p>
         
         <div class="footer-icons">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" class="icon">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon">
+            <div class="icon-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon-img">
+            </div>
+            <div class="icon-box">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" class="icon-img">
+            </div>
         </div>
     </div>
 </body>
