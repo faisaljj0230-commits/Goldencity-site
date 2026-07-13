@@ -2,94 +2,53 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dream Town | مدينة الأحلام</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #ff6600;
-            --bg-dark: #000000;
-            --text-light: #ffffff;
-            --text-muted: #888888;
-        }
-
-        body {
-            margin: 0; padding: 0; font-family: 'Cairo', sans-serif;
-            background-color: var(--bg-dark); color: var(--text-light);
-            overflow-x: hidden; height: 100vh;
-            background-image: url('https://files.catbox.moe/helkbi.jpeg');
-            background-size: cover; background-position: center;
-            background-repeat: no-repeat; position: relative;
-        }
-
-        body::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6); z-index: 1;
-        }
-
-        header, main, .footer-icons { position: relative; z-index: 10; }
-
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 20px 50px; background: rgba(0, 0, 0, 0.3);
-        }
-
-        .logo-area { display: flex; align-items: center; gap: 10px; }
-        .logo-icon { width: 30px; height: 30px; background-color: var(--primary-color); border-radius: 4px; display: flex; justify-content: center; align-items: center; font-weight: 900; color: var(--bg-dark); font-size: 0.8rem; }
-        .logo-text { font-size: 1rem; font-weight: 900; } /* تم تصغير الخط */
+        body { margin: 0; padding: 0; font-family: 'Cairo', sans-serif; background: #000; color: #fff; height: 100vh; overflow: hidden;
+               background: url('https://files.catbox.moe/helkbi.jpeg') center/cover no-repeat; }
         
-        nav { display: flex; gap: 25px; }
-        nav a { text-decoration: none; color: var(--text-muted); transition: 0.3s; }
-        nav a:hover { color: var(--text-light); }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
 
-        .btn { padding: 10px 20px; border-radius: 4px; text-decoration: none; font-weight: 700; }
-        .btn-primary { background-color: var(--primary-color); color: var(--bg-dark); }
+        /* العناصر اليسرى */
+        .left-side { position: absolute; left: 5%; bottom: 10%; }
+        .big-eight { font-size: 250px; font-weight: 900; opacity: 0.1; line-height: 1; }
+        .season-box { margin-top: -50px; }
+        .season-text { font-size: 2rem; font-weight: bold; }
+        .season-text span { color: #ff6600; }
 
-        /* تم تحريك النصوص للأسفل */
-        main { display: flex; justify-content: space-between; align-items: center; padding: 50px; margin-top: 150px; }
-        .hero-title { font-size: 5rem; font-weight: 900; line-height: 1; }
-        .hero-title span { color: var(--primary-color); }
-        .hero-subtitle { font-size: 2rem; color: var(--text-muted); margin-bottom: 20px; }
-        .hero-description { max-width: 500px; color: var(--text-muted); line-height: 1.6; }
+        /* العناصر اليمنى */
+        .right-side { position: absolute; right: 5%; bottom: 10%; text-align: right; max-width: 400px; }
+        .thanks { font-size: 4rem; font-weight: 900; line-height: 1.1; }
+        .thanks span { color: #ff6600; }
+        .sub-title { font-size: 1.2rem; color: #aaa; margin-top: 10px; }
+        .brand-line { font-size: 1.1rem; color: #ff6600; margin-top: 15px; }
+        .desc { font-size: 0.9rem; color: #888; margin-top: 10px; line-height: 1.5; }
 
-        .footer-icons { position: absolute; bottom: 30px; right: 50px; display: flex; gap: 15px; }
-        .icon-circle { width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); display: flex; justify-content: center; align-items: center; cursor: pointer; }
-        .icon-img { width: 20px; height: 20px; filter: invert(1); }
+        /* الأيقونات */
+        .footer-icons { position: absolute; bottom: 20px; right: 5%; display: flex; gap: 15px; }
+        .icon { width: 25px; filter: invert(1); cursor: pointer; }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
 
-    <header>
-        <div class="logo-area">
-            <div class="logo-icon">DT</div>
-            <div class="logo-text">DREAM TOWN STUDIOS</div>
+    <div class="left-side">
+        <div class="big-eight">8</div>
+        <div class="season-box">
+            <div class="season-text">الموسم <span>8</span></div>
         </div>
-        <nav>
-            <a href="#">الرئيسية</a>
-            <a href="#">مناح المحتوى</a>
-            <a href="#">الفريق</a>
-            <a href="#">البث المباشر</a>
-            <a href="#">الوظائف</a>
-        </nav>
-        <div class="header-actions">
-            <a href="#" class="btn btn-primary">المتجر</a>
-        </div>
-    </header>
-
-    <main>
-        <div class="hero-right">
-            <h1 class="hero-title">شكراً <br> <span>لكم</span></h1>
-            <div class="hero-subtitle">جوهرة المدن في الموسم 8</div>
-            <p class="hero-description">
-                أفضل تجربة حياة واقعية، تضم أكثر من 300 ألف لاعب في عالم مليء بالأحداث والقصص التي لا تنتهي.
-            </p>
-        </div>
-    </main>
-
-    <div class="footer-icons">
-        <div class="icon-circle"><img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" class="icon-img" alt="X"></div>
-        <div class="icon-circle"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon-img" alt="TikTok"></div>
     </div>
 
+    <div class="right-side">
+        <h1 class="thanks">شكراً <br> <span>لكم</span></h1>
+        <div class="sub-title">DREAM TOWN RP - الموسم 8</div>
+        <div class="brand-line">DT • حيث تصبح الأحلام حقيقة</div>
+        <p class="desc">أفضل تجربة حياة واقعية في GTA V، تضم لأكثر من 300 ألف لاعب في عالم مليء بالأحداث والقصص التي لا تنتهي.</p>
+        
+        <div class="footer-icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" class="icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon">
+        </div>
+    </div>
 </body>
 </html>
