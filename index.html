@@ -9,33 +9,28 @@
         
         .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); }
 
-        /* الهيدر: شفاف وبدون لون بني */
+        /* الهيدر: شفاف تماماً بدون أي خلفية أو لون بني */
         header { 
             position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; 
-            padding: 20px 50px; z-index: 10; box-sizing: border-box;
+            padding: 20px 50px; z-index: 10; box-sizing: border-box; background: transparent !important; border: none !important;
         }
         
-        .header-left { display: flex; align-items: center; gap: 15px; }
-        .header-center { display: flex; gap: 30px; }
         .header-right { font-weight: 900; font-size: 1.5rem; letter-spacing: 1px; }
         
-        .nav-links a { color: #fff; text-decoration: none; font-size: 0.95rem; transition: 0.3s; }
-        .nav-links a:hover { color: #ff6600; }
+        .header-center { display: flex; gap: 30px; }
+        .header-center a { color: #fff; text-decoration: none; font-size: 0.95rem; }
         
-        /* الأزرار */
+        .header-left { display: flex; align-items: center; gap: 15px; }
         .btn-small { padding: 6px 18px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: bold; }
         .btn-orange { background: #ff6600; color: #000; }
         .btn-login { border: 1px solid #fff; color: #fff; }
         .lang-icon { font-size: 1.3rem; cursor: pointer; }
 
-        /* العناصر */
-        .right-side { position: absolute; right: 5%; bottom: 15%; text-align: right; max-width: 450px; }
+        .main-content { position: absolute; right: 5%; bottom: 15%; text-align: right; max-width: 500px; }
         .thanks { font-size: 4rem; font-weight: 900; line-height: 1; margin: 0; }
         .thanks span { color: #ff6600; }
         .desc { font-size: 1rem; color: #ddd; margin-top: 15px; }
-        
-        /* الأيقونات تحت النص */
-        .footer-icons { display: flex; gap: 15px; margin-top: 25px; }
+        .social-icons { display: flex; gap: 15px; margin-top: 20px; }
         .icon { width: 30px; filter: invert(1); cursor: pointer; }
     </style>
 </head>
@@ -43,15 +38,9 @@
     <div class="overlay"></div>
 
     <header>
-        <!-- أقصى اليسار -->
-        <div class="header-left">
-            <a href="#" class="btn-small btn-orange">المتجر</a>
-            <a href="#" class="btn-small btn-login">تسجيل الدخول</a>
-            <div class="lang-icon">🌐</div>
-        </div>
+        <div class="header-right">DREAM TOWN</div>
         
-        <!-- المنتصف -->
-        <div class="header-center nav-links">
+        <div class="header-center">
             <a href="#">المتصدرين</a>
             <a href="#">الأسئلة</a>
             <a href="#">الوظائف</a>
@@ -61,17 +50,20 @@
             <a href="#">الرئيسية</a>
         </div>
 
-        <!-- أقصى اليمين -->
-        <div class="header-right">DREAM TOWN</div>
+        <div class="header-left">
+            <div class="lang-icon">🌐</div>
+            <a href="#" class="btn-small btn-login">تسجيل الدخول</a>
+            <a href="#" class="btn-small btn-orange">المتجر</a>
+        </div>
     </header>
 
-    <div class="right-side">
+    <div class="main-content">
         <h1 class="thanks">شكراً <br> <span>لكم</span></h1>
         <p class="desc">أفضل تجربة حياة واقعية في GTA V، تضم لأكثر من 300 ألف لاعب في عالم مليء بالأحداث والقصص التي لا تنتهي.</p>
         
-        <div class="footer-icons">
+        <div class="social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670151.png" class="icon">
             <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" class="icon">
-            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon">
         </div>
     </div>
 </body>
