@@ -2,46 +2,89 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;700;900&display=swap');
-        body { font-family: 'Cairo', sans-serif; background-color: #000; color: white; margin: 0; }
-
-        .header-bg { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://files.catbox.moe/v94tqh.png'); 
-            background-size: cover; background-position: center; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-        }
-        .nav-links { display: flex; gap: 30px; position: absolute; top: 30px; left: 40px; }
-        .nav-links a { color: #ccc; font-weight: bold; text-decoration: none; font-size: 1.1rem; }
-        .nav-links a:hover, .nav-links a.active { color: #ef4444; }
+        body { margin: 0; padding: 0; font-family: 'Cairo', sans-serif; background: #000; color: #fff; height: 100vh; overflow: hidden;
+               background: url('https://files.catbox.moe/helkbi.jpeg') center/cover no-repeat; }
         
-        .hero-content { max-width: 800px; padding: 20px; }
-        .btn-join { 
-            background-color: #b91c1c; padding: 15px 40px; color: white; font-weight: bold; 
-            text-decoration: none; border-radius: 5px; transition: 0.3s; margin-top: 20px; display: inline-block;
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); }
+
+        /* شريط التنقل العلوي المعدل */
+        header { 
+            position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; 
+            padding: 10px 40px; z-index: 10; box-sizing: border-box; background: rgba(0, 0, 0, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .btn-join:hover { background-color: #991b1b; }
+        
+        /* التعديلات الجديدة على الأماكن */
+        .header-right { font-weight: bold; font-size: 1.1rem; }
+        .header-center { display: flex; gap: 25px; flex-grow: 1; justify-content: center; }
+        .header-left { display: flex; align-items: center; gap: 15px; }
+        
+        .nav-links { display: flex; gap: 25px; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: #ff6600; }
+        
+        /* الأزرار العلوية */
+        .btn-small { padding: 5px 15px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: bold; }
+        .btn-orange { background: #ff6600; color: #000; }
+        .btn-login { border: 1px solid #444; color: #fff; }
+        .lang-icon { font-size: 1.2rem; cursor: pointer; }
+
+        /* العناصر المتبقية */
+        .left-side { position: absolute; left: 5%; bottom: 10%; }
+        .big-eight { font-size: 250px; font-weight: 900; opacity: 0.1; line-height: 1; }
+        .right-side { position: absolute; right: 5%; bottom: 10%; text-align: right; max-width: 400px; }
+        .thanks { font-size: 4rem; font-weight: 900; line-height: 1.1; }
+        .thanks span { color: #ff6600; }
+        .sub-title { font-size: 1.2rem; color: #aaa; margin-top: 10px; }
+        .brand-line { font-size: 1.1rem; color: #ff6600; margin-top: 15px; }
+        .desc { font-size: 0.9rem; color: #888; margin-top: 10px; line-height: 1.5; }
+        .footer-icons { position: absolute; bottom: 20px; right: 5%; display: flex; gap: 15px; }
+        .icon { width: 25px; filter: invert(1); cursor: pointer; }
     </style>
 </head>
 <body>
+    <div class="overlay"></div>
 
-    <header class="header-bg">
-        <nav class="nav-links">
-            <a href="creativity.html">الإبداع</a>
-            <a href="team.html">الفريق</a>
-            <a href="apply.html">التقديمات</a>
-            <a href="store.html">المتجر</a>
-            <a href="rules.html">القوانين</a>
-            <a href="index.html" class="active">الرئيسية</a>
-        </nav>
+    <header>
+        <!-- أقصى اليمين: الاسم -->
+        <div class="header-right">DREAM TOWN</div>
         
-        <div class="hero-content">
-            <h1 class="text-6xl font-black mb-6">GOLDEN CITY</h1>
-            <p class="text-xl text-gray-300 mb-8">سيرفر رول بلاي احترافي، تجربة واقعية، ومجتمع متكامل في انتظارك.</p>
-            <a href="#" class="btn-join">انضم إلينا الآن</a>
+        <!-- المنتصف: القوائم -->
+        <div class="header-center">
+            <div class="nav-links">
+                <a href="#">الرئيسية</a>
+                <a href="#">صناع المحتوى</a>
+                <a href="#">الفريق</a>
+                <a href="#">البث المباشر</a>
+                <a href="#">الوظائف</a>
+                <a href="#">الأسئلة</a>
+                <a href="#">المتصدرين</a>
+            </div>
+        </div>
+
+        <!-- أقصى اليسار: الأزرار والأيقونة -->
+        <div class="header-left">
+            <a href="#" class="btn-small btn-orange">المتجر</a>
+            <a href="#" class="btn-small btn-login">تسجيل الدخول</a>
+            <div class="lang-icon">🌐</div>
         </div>
     </header>
 
+    <div class="left-side">
+        <div class="big-eight">8</div>
+    </div>
+
+    <div class="right-side">
+        <h1 class="thanks">شكراً <br> <span>لكم</span></h1>
+        <div class="sub-title">DREAM TOWN RP - الموسم 8</div>
+        <div class="brand-line">DT • حيث تصبح الأحلام حقيقة</div>
+        <p class="desc">أفضل تجربة حياة واقعية في GTA V، تضم لأكثر من 300 ألف لاعب في عالم مليء بالأحداث والقصص التي لا تنتهي.</p>
+        
+        <div class="footer-icons">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023.svg" class="icon">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon">
+        </div>
+    </div>
 </body>
 </html>
