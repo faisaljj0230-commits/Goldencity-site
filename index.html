@@ -43,31 +43,6 @@
   }
   .logo-en span{color:var(--ember);}
 
-  /* big ringed number, bottom-left */
-  .ring-number{
-    position:absolute; bottom:-8%; left:-6%; z-index:1;
-    width:min(46vw, 520px); height:min(46vw, 520px);
-    display:flex; align-items:center; justify-content:center;
-  }
-  .ring-number .ring{
-    position:absolute; inset:0; border-radius:50%;
-    border:1px solid rgba(255,179,71,0.35);
-  }
-  .ring-number .ring.inner{ inset:10%; border-color:rgba(255,90,31,0.25); }
-  .ring-number .num{
-    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:800;
-    font-size:min(18vw, 190px); color:var(--paper); opacity:0.9;
-  }
-  .season-caption{
-    position:absolute; bottom:6%; left:6%; z-index:2;
-    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:700; font-size:1.3rem;
-    color:var(--paper);
-  }
-  .season-caption small{
-    display:block; font-family:'Tajawal', sans-serif; font-weight:400;
-    font-size:.8rem; color:var(--mist); margin-top:4px;
-  }
-
   /* tagline pill, centered top area */
   .tag-pill{
     position:relative; z-index:2; display:inline-flex; align-items:center; gap:10px;
@@ -103,9 +78,8 @@
   .brand-tagline .sep{color:var(--gold); margin:0 6px;}
 
   .subtitle{font-size:1.02rem; color:var(--mist); line-height:1.9; margin-bottom:30px; max-width:480px; margin-left:auto;}
-  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end; margin-bottom:26px;}
 
-  .hero-socials-row{display:flex; gap:10px; justify-content:flex-end; margin-top:22px;}
+  .hero-socials-row{display:flex; gap:10px; justify-content:flex-end; margin-top:8px;}
   .hero-socials-row a{
     width:38px; height:38px; border-radius:50%; border:1px solid var(--line);
     display:flex; align-items:center; justify-content:center; color:var(--mist);
@@ -116,11 +90,9 @@
 
   @media (max-width:860px){
     .hero-content{text-align:center; margin:100px auto 0;}
-    .hero-ctas, .hero-socials-row{justify-content:center;}
+    .hero-socials-row{justify-content:center;}
     .subtitle{margin:0 auto 30px;}
     .brand-tagline{text-align:center;}
-    .ring-number{width:70vw; height:70vw; left:-15%;}
-    .season-caption{left:8%;}
   }
 </style>
 </head>
@@ -149,16 +121,6 @@
     <div class="hero-bg"></div>
     <div class="skyline" id="skyline"></div>
 
-    <div class="ring-number">
-      <div class="ring"></div>
-      <div class="ring inner"></div>
-      <div class="num">1</div>
-    </div>
-    <div class="season-caption">
-      الموسم 1
-      <small>الموسم الحالي</small>
-    </div>
-
     <div class="tag-wrap">
       <div class="tag-pill"><span class="dot"></span> رقم 1 لتجربة رولبلاي عربية واقعية في المنطقة</div>
     </div>
@@ -171,11 +133,6 @@
         <div class="brand-tagline"><b>D T</b><span class="sep">·</span>حيث تصبح الأحلام واقع</div>
 
         <p class="subtitle">أفضل تجربة حياة واقعية GTA V، انضم لأكثر من 2000 لاعب في عالم مليء بالأحداث والقصص التي لا تُنسى.</p>
-
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="jobs.html">ابدأ حكايتك</a>
-          <a class="btn btn-ghost" href="creativity.html">شوف إبداعات اللاعبين</a>
-        </div>
 
         <div class="hero-socials-row">
           <a href="#" target="_blank" rel="noopener" aria-label="X">
