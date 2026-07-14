@@ -1,84 +1,136 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { margin: 0; padding: 0; font-family: 'Cairo', sans-serif; background: #000; color: #fff; height: 100vh; overflow: hidden;
-               background: url('https://files.catbox.moe/sp6vy2.png') center/cover no-repeat; }
-        
-        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Town | دريم تاون</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ===== Cinematic Hero (this page only) ===== */
+  .hero{
+    position:relative; min-height:88vh; display:flex; align-items:flex-end;
+    overflow:hidden; padding-bottom:70px;
+  }
+  .hero-bg{
+    position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(ellipse 70% 55% at 75% 15%, rgba(255,90,31,0.55), transparent 60%),
+      radial-gradient(ellipse 60% 45% at 30% 0%, rgba(179,34,10,0.45), transparent 65%),
+      linear-gradient(180deg, #150c09 0%, #0a0807 70%);
+  }
+  .hero-bg::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, transparent 40%, var(--void) 95%);
+  }
+  .hero-glow{
+    position:absolute; top:-10%; right:-10%; width:60%; height:70%; z-index:0;
+    background:radial-gradient(circle, rgba(255,179,71,0.35), transparent 65%);
+    filter:blur(20px); animation:flicker 5s ease-in-out infinite;
+  }
+  @keyframes flicker{ 0%,100%{opacity:1;} 50%{opacity:.7;} }
+  .big-number{
+    position:absolute; bottom:-6%; left:-2%; z-index:0;
+    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:800;
+    font-size:min(42vw, 480px); line-height:1; color:transparent;
+    -webkit-text-stroke:2px rgba(245,239,232,0.12);
+    user-select:none;
+  }
+  .wordmark{
+    position:absolute; top:20%; left:28px; z-index:1; text-align:left;
+    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:800;
+    font-size:clamp(2.2rem, 6vw, 4.2rem); line-height:0.95;
+    color:var(--paper); text-shadow:0 0 40px rgba(255,90,31,0.4);
+  }
+  .wordmark span{color:var(--ember); display:block;}
+  .hero-content{position:relative; z-index:2; max-width:640px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:.8rem; letter-spacing:2px;
+    color:var(--gold); text-transform:uppercase; margin-bottom:16px; display:block;
+  }
+  h1.title{
+    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:800;
+    font-size:clamp(2.6rem, 6.5vw, 4.6rem); line-height:1.08; margin-bottom:18px;
+  }
+  h1.title em{
+    font-style:normal;
+    background:linear-gradient(135deg, var(--ember), var(--gold));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .subtitle{font-size:1.1rem; color:var(--mist); line-height:1.9; margin-bottom:34px; max-width:520px;}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap; margin-bottom:40px;}
+  .season-badge{
+    display:inline-flex; align-items:center; gap:14px;
+    background:var(--panel); border:1px solid var(--line); border-radius:14px;
+    padding:10px 10px 10px 18px;
+  }
+  .season-badge .n{
+    width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center;
+    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:800; font-size:1.2rem;
+    background:linear-gradient(135deg, var(--ember), var(--gold)); color:#1a0a02;
+  }
+  .season-badge .txt{font-size:.88rem; color:var(--mist);}
+  .season-badge .txt b{color:var(--paper); display:block; font-size:.98rem;}
 
-        /* الهيدر الممتد على كامل العرض */
-        header { 
-            position: absolute; top: 0; left: 0; width: 100%; 
-            height: 70px; /* ارتفاع الهيدر */
-            background: rgba(0, 0, 0, 0.4); /* شفافية خفيفة */
-            display: flex; justify-content: space-between; align-items: center; 
-            padding: 0 50px; box-sizing: border-box; z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* خط فاصل خفيف أسفل الهيدر */
-        }
-        
-        .header-right { font-weight: 900; font-size: 1.2rem; }
-        .header-center { display: flex; gap: 30px; }
-        .header-center a { color: #fff; text-decoration: none; font-size: 0.9rem; opacity: 0.8; }
-        .header-center a:hover { opacity: 1; color: #ff6600; }
-        
-        .header-left { display: flex; align-items: center; gap: 15px; }
-        .btn-small { padding: 6px 16px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: bold; }
-        .btn-orange { background: #ff6600; color: #fff; }
-        .btn-login { border: 1px solid rgba(255,255,255,0.3); color: #fff; }
-        .lang-icon { font-size: 1.2rem; cursor: pointer; }
-
-        /* باقي العناصر (كما هي) */
-        .right-side { position: absolute; right: 5%; bottom: 10%; text-align: right; max-width: 400px; }
-        .thanks { font-size: 4rem; font-weight: 900; line-height: 1; }
-        .thanks span { color: #ff6600; }
-        .desc { font-size: 0.9rem; color: #ccc; margin-top: 10px; }
-        
-        .footer-icons { display: flex; gap: 10px; margin-top: 20px; }
-        .icon-box { 
-            width: 40px; height: 40px; border: 1px solid rgba(255, 255, 255, 0.2); 
-            border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer;
-        }
-        .icon-img { width: 22px; filter: brightness(0) invert(1) opacity(0.6); }
-    </style>
+  @media (max-width:860px){
+    .wordmark{position:static; margin:20px 28px 0; text-align:right;}
+    .hero{flex-direction:column; padding-top:40px;}
+  }
+</style>
 </head>
 <body>
-    <div class="overlay"></div>
 
-    <header>
-        <div class="header-right">DREAM TOWN</div>
-        
-        <div class="header-center">
-            <a href="#">المتصدرين</a>
-            <a href="#">الأسئلة</a>
-            <a href="#">الوظائف</a>
-            <a href="#">البث المباشر</a>
-            <a href="#">الفريق</a>
-            <a href="#">صناع المحتوى</a>
-            <a href="#">الرئيسية</a>
-        </div>
+<header>
+  <nav>
+    <div class="logo">دريم <span>تاون</span></div>
+    <ul class="navlinks">
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="creativity.html">الإبداع</a></li>
+      <li><a href="team.html">الفريق</a></li>
+      <li><a href="jobs.html">الوظائف</a></li>
+      <li><a href="faq.html">الأسئلة</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#" target="_blank" rel="noopener">دخول الديسكورد</a>
+  </nav>
+</header>
 
-        <div class="header-left">
-            <div class="lang-icon">🌐</div>
-            <a href="#" class="btn-small btn-login">تسجيل الدخول</a>
-            <a href="#" class="btn-small btn-orange">المتجر</a>
-        </div>
-    </header>
+<main>
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="big-number">1</div>
+    <div class="wordmark">دريم<span>تاون</span></div>
 
-    <div class="right-side">
-        <h1 class="thanks">شكراً <br> <span>لكم</span></h1>
-        <p class="desc">أفضل تجربة حياة واقعية في GTA V، تضم لأكثر من 300 ألف لاعب في عالم مليء بالأحداث والقصص التي لا تنتهي.</p>
-        
-        <div class="footer-icons">
-            <div class="icon-box">
-                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" class="icon-img">
-            </div>
-            <div class="icon-box">
-                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" class="icon-img">
-            </div>
+    <div class="wrap">
+      <div class="hero-content">
+        <span class="eyebrow">GTA V · FIVEM · رولبلاي عربي</span>
+        <h1 class="title">أهلاً فيك في <em>دريم تاون</em></h1>
+        <p class="subtitle">مدينة كاملة تنبض بالحياة كل ليلة — قصص، عصابات، ووظائف تصنع اسمك فيها بنفسك.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="jobs.html">ابدأ حكايتك</a>
+          <a class="btn btn-ghost" href="creativity.html">شوف إبداعات اللاعبين</a>
         </div>
+        <div class="season-badge">
+          <div class="n">١</div>
+          <div class="txt">الموسم الحالي<b>الموسم الأول</b></div>
+        </div>
+      </div>
     </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="logo">دريم <span>تاون</span></div>
+      <div class="socials">
+        <a href="#" target="_blank" rel="noopener" aria-label="ديسكورد">💬</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="تيك توك">🎵</a>
+        <a href="#" target="_blank" rel="noopener" aria-label="يوتيوب">▶️</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Dream Town. جميع الحقوق محفوظة.</div>
+  </div>
+</footer>
+
 </body>
 </html>
