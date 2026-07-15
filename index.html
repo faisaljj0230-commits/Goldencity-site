@@ -8,8 +8,6 @@
 <style>
   .hero{
     position:relative; min-height:92vh; overflow:hidden;
-    display:flex; align-items:flex-end;
-    padding-bottom:90px;
   }
   .hero-bg{
     position:absolute; inset:0; z-index:0;
@@ -48,14 +46,15 @@
     margin-bottom:20px;
   }
   .tag-pill .dot{width:7px; height:7px; border-radius:50%; background:var(--ember); box-shadow:0 0 8px 2px var(--ember);}
-  .hero-content{
-    position:relative; z-index:2; max-width:600px;
-    text-align:right; margin-left:auto;
-  }
   .hero .wrap{
-    max-width:100%;
-    padding-right:5vw;
-    padding-left:0;
+    position:absolute; bottom:90px; left:0; right:0;
+    max-width:100%; margin:0;
+    padding-right:5vw; padding-left:28px;
+    z-index:2;
+  }
+  .hero-content{
+    max-width:600px;
+    text-align:right; margin-left:auto;
   }
   .brand-tagline{
     font-family:'IBM Plex Mono', monospace; font-size:.95rem; letter-spacing:1px;
@@ -73,9 +72,8 @@
   .hero-socials-row a:hover{border-color:var(--ember); color:var(--ember); background:rgba(255,90,31,0.1);}
   .hero-socials-row svg{width:18px; height:18px;}
   @media (max-width:860px){
-    .hero{align-items:center; padding-bottom:40px;}
-    .hero .wrap{padding-right:28px; padding-left:28px;}
-    .hero-content{text-align:center; margin:100px auto 0;}
+    .hero .wrap{position:static; padding:100px 28px 0;}
+    .hero-content{text-align:center; margin:0 auto;}
     .tag-pill{margin-left:auto; margin-right:auto;}
     .hero-socials-row{justify-content:center;}
     .subtitle{margin:0 auto 24px;}
