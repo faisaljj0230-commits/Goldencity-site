@@ -6,6 +6,7 @@
 <title>Dream Town | دريم تاون</title>
 <link rel="stylesheet" href="style.css">
 <style>
+  /* ===== HERO ===== */
   .hero{
     position:relative; min-height:92vh; overflow:hidden;
   }
@@ -71,6 +72,99 @@
   }
   .hero-socials-row a:hover{border-color:var(--ember); color:var(--ember); background:rgba(255,90,31,0.1);}
   .hero-socials-row svg{width:18px; height:18px;}
+
+  /* ===== LIVE SECTION ===== */
+  .live-section{padding:90px 0;}
+  .live-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:44px; flex-wrap:wrap; gap:16px;
+  }
+  .live-head h2{
+    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:700;
+    font-size:clamp(1.6rem, 3vw, 2.2rem); display:flex; align-items:center; gap:10px;
+  }
+  .live-dot{
+    width:10px; height:10px; border-radius:50%; background:#ff3b3b;
+    box-shadow:0 0 10px 3px rgba(255,59,59,0.6); animation:pulse 1.6s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.4;} }
+  .live-head p{color:var(--mist); font-size:.92rem; margin-top:6px;}
+  .live-all{
+    color:var(--mist); font-size:.9rem; display:flex; align-items:center; gap:6px;
+    transition:color .2s;
+  }
+  .live-all:hover{color:var(--ember);}
+  .live-card{
+    max-width:420px; margin:0 auto; background:var(--deep);
+    border:1px solid var(--line); border-radius:20px; overflow:hidden;
+    transition:transform .25s, border-color .25s;
+  }
+  .live-card:hover{transform:translateY(-6px); border-color:var(--ember);}
+  .live-thumb{
+    position:relative; aspect-ratio:16/10;
+    background:linear-gradient(135deg, #2a1712, #171015);
+    overflow:hidden;
+  }
+  .live-thumb::after{
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(circle at 30% 30%, rgba(255,90,31,0.25), transparent 60%);
+  }
+  .live-badge{
+    position:absolute; top:12px; right:12px; z-index:2;
+    background:#ff3b3b; color:#fff; font-size:.72rem; font-weight:700;
+    padding:4px 10px; border-radius:6px; display:flex; align-items:center; gap:5px;
+  }
+  .live-viewers{
+    position:absolute; bottom:12px; left:12px; z-index:2;
+    background:rgba(10,8,7,0.75); color:var(--paper); font-size:.75rem;
+    padding:4px 10px; border-radius:6px; display:flex; align-items:center; gap:5px;
+  }
+  .live-info{padding:16px 18px 20px; display:flex; gap:12px; align-items:flex-start;}
+  .live-avatar{
+    width:42px; height:42px; border-radius:50%; flex-shrink:0;
+    background:linear-gradient(135deg, var(--ember), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:700; color:#1a0a02;
+  }
+  .live-info h4{font-size:.95rem; margin-bottom:4px; line-height:1.4;}
+  .live-info .streamer{color:var(--mist); font-size:.82rem;}
+  .live-info .game{color:var(--gold); font-size:.78rem; margin-top:4px;}
+  .no-live{
+    max-width:420px; margin:0 auto; text-align:center; padding:50px 20px;
+    border:1px dashed var(--line); border-radius:20px; color:var(--mist);
+  }
+
+  /* ===== COMMUNITY SECTION ===== */
+  .community-section{
+    background:#000;
+    padding:100px 0;
+    text-align:center;
+  }
+  .community-section h2{
+    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:700;
+    font-size:clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom:60px;
+  }
+  .community-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;
+  }
+  .community-card{
+    background:var(--deep); border:1px solid var(--line); border-radius:20px;
+    padding:36px 24px; transition:transform .25s, border-color .25s;
+  }
+  .community-card:hover{transform:translateY(-6px); border-color:var(--ember);}
+  .community-icon{
+    width:52px; height:52px; margin:0 auto 18px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:14px; background:rgba(255,90,31,0.12);
+    color:var(--ember);
+  }
+  .community-icon svg{width:26px; height:26px;}
+  .community-num{
+    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:800;
+    font-size:2.2rem; color:var(--paper); margin-bottom:8px;
+  }
+  .community-label{color:var(--mist); font-size:.92rem;}
+
   @media (max-width:860px){
     .hero .wrap{position:static; padding:100px 28px 0;}
     .hero-content{text-align:center; margin:0 auto;}
@@ -78,6 +172,7 @@
     .hero-socials-row{justify-content:center;}
     .subtitle{margin:0 auto 24px;}
     .brand-tagline{text-align:center;}
+    .community-grid{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -102,6 +197,8 @@
 </header>
 
 <main>
+
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="skyline" id="skyline"></div>
@@ -125,6 +222,74 @@
       </div>
     </div>
   </section>
+
+  <!-- LIVE -->
+  <section class="live-section">
+    <div class="wrap">
+      <div class="live-head">
+        <div>
+          <h2><span class="live-dot"></span> مباشر الآن</h2>
+          <p>تابع صناع محتوى دريم تاون وهم يبثون لحظة بلحظة</p>
+        </div>
+        <a class="live-all" href="creativity.html">عرض كل البثوث ←</a>
+      </div>
+
+      <div class="live-card">
+        <div class="live-thumb">
+          <span class="live-badge">🔴 مباشر</span>
+          <span class="live-viewers">👁 481</span>
+        </div>
+        <div class="live-info">
+          <div class="live-avatar">DT</div>
+          <div>
+            <h4>جولة داخل دريم تاون | #WeAreDreamTown</h4>
+            <div class="streamer">اسم الستريمر</div>
+            <div class="game">Grand Theft Auto V (GTA)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- لو ما فيه بث حاليًا، بدّل البطاقة اللي فوق بهذا -->
+      <!--
+      <div class="no-live">لا يوجد بث مباشر حاليًا — تابعنا على ديسكورد عشان تعرف أول بواحد يبث</div>
+      -->
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section class="community-section">
+    <div class="wrap">
+      <h2>المجتمع</h2>
+      <div class="community-grid">
+
+        <div class="community-card">
+          <div class="community-icon">
+            <svg viewBox="0 0 127.14 96.36" fill="currentColor"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21a105.73,105.73,0,0,0,32.17,16.15,77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1,105.25,105.25,0,0,0,32.19-16.14C129.24,52.24,122.9,28.61,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+          </div>
+          <div class="community-num">2,341</div>
+          <div class="community-label">أعضاء ديسكورد</div>
+        </div>
+
+        <div class="community-card">
+          <div class="community-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          </div>
+          <div class="community-num">24/7</div>
+          <div class="community-label">دعم فني</div>
+        </div>
+
+        <div class="community-card">
+          <div class="community-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.6 1.7 7-6.3-3.9-6.3 3.9 1.7-7L2 9.5l7.1-.6L12 2z"/></svg>
+          </div>
+          <div class="community-num">+40</div>
+          <div class="community-label">ميزة</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer>
