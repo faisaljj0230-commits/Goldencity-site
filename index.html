@@ -73,66 +73,37 @@
   .hero-socials-row a:hover{border-color:var(--ember); color:var(--ember); background:rgba(255,90,31,0.1);}
   .hero-socials-row svg{width:18px; height:18px;}
 
-  /* ===== LIVE SECTION ===== */
-  .live-section{padding:90px 0;}
-  .live-head{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    margin-bottom:44px; flex-wrap:wrap; gap:16px;
+  /* ===== ABOUT US SECTION ===== */
+  .about-section{padding:100px 0;}
+  .about-eyebrow{
+    display:flex; align-items:center; gap:10px; justify-content:flex-end;
+    color:var(--ember); font-family:'IBM Plex Mono', monospace; font-size:.85rem;
+    margin-bottom:14px;
   }
-  .live-head h2{
+  .about-eyebrow::before{
+    content:''; width:24px; height:1px; background:var(--ember);
+  }
+  .about-section h2{
     font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:700;
-    font-size:clamp(1.6rem, 3vw, 2.2rem); display:flex; align-items:center; gap:10px;
+    font-size:clamp(2rem, 4vw, 2.6rem); text-align:right; margin-bottom:50px;
   }
-  .live-dot{
-    width:10px; height:10px; border-radius:50%; background:#ff3b3b;
-    box-shadow:0 0 10px 3px rgba(255,59,59,0.6); animation:pulse 1.6s ease-in-out infinite;
+  .about-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;
   }
-  @keyframes pulse{ 0%,100%{opacity:1;} 50%{opacity:.4;} }
-  .live-head p{color:var(--mist); font-size:.92rem; margin-top:6px;}
-  .live-all{
-    color:var(--mist); font-size:.9rem; display:flex; align-items:center; gap:6px;
-    transition:color .2s;
+  .about-card{
+    background:var(--deep); border:1px solid var(--line); border-radius:16px;
+    padding:28px; text-align:right; transition:transform .25s, border-color .25s;
   }
-  .live-all:hover{color:var(--ember);}
-  .live-card{
-    max-width:420px; margin:0 auto; background:var(--deep);
-    border:1px solid var(--line); border-radius:20px; overflow:hidden;
-    transition:transform .25s, border-color .25s;
-  }
-  .live-card:hover{transform:translateY(-6px); border-color:var(--ember);}
-  .live-thumb{
-    position:relative; aspect-ratio:16/10;
-    background:linear-gradient(135deg, #2a1712, #171015);
-    overflow:hidden;
-  }
-  .live-thumb::after{
-    content:''; position:absolute; inset:0;
-    background:radial-gradient(circle at 30% 30%, rgba(255,90,31,0.25), transparent 60%);
-  }
-  .live-badge{
-    position:absolute; top:12px; right:12px; z-index:2;
-    background:#ff3b3b; color:#fff; font-size:.72rem; font-weight:700;
-    padding:4px 10px; border-radius:6px; display:flex; align-items:center; gap:5px;
-  }
-  .live-viewers{
-    position:absolute; bottom:12px; left:12px; z-index:2;
-    background:rgba(10,8,7,0.75); color:var(--paper); font-size:.75rem;
-    padding:4px 10px; border-radius:6px; display:flex; align-items:center; gap:5px;
-  }
-  .live-info{padding:16px 18px 20px; display:flex; gap:12px; align-items:flex-start;}
-  .live-avatar{
-    width:42px; height:42px; border-radius:50%; flex-shrink:0;
-    background:linear-gradient(135deg, var(--ember), var(--gold));
+  .about-card:hover{transform:translateY(-6px); border-color:var(--ember);}
+  .about-icon{
+    width:44px; height:44px; border-radius:12px;
+    background:rgba(255,90,31,0.12); color:var(--ember);
     display:flex; align-items:center; justify-content:center;
-    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:700; color:#1a0a02;
+    margin-bottom:18px; margin-right:auto;
   }
-  .live-info h4{font-size:.95rem; margin-bottom:4px; line-height:1.4;}
-  .live-info .streamer{color:var(--mist); font-size:.82rem;}
-  .live-info .game{color:var(--gold); font-size:.78rem; margin-top:4px;}
-  .no-live{
-    max-width:420px; margin:0 auto; text-align:center; padding:50px 20px;
-    border:1px dashed var(--line); border-radius:20px; color:var(--mist);
-  }
+  .about-icon svg{width:22px; height:22px;}
+  .about-card h3{font-size:1.05rem; font-weight:700; margin-bottom:10px;}
+  .about-card p{color:var(--mist); font-size:.87rem; line-height:1.8;}
 
   /* ===== COMMUNITY SECTION ===== */
   .community-section{
@@ -244,6 +215,8 @@
     .hero-socials-row{justify-content:center;}
     .subtitle{margin:0 auto 24px;}
     .brand-tagline{text-align:center;}
+    .about-grid{grid-template-columns:1fr;}
+    .about-eyebrow, .about-section h2{justify-content:center; text-align:center;}
     .community-grid{grid-template-columns:1fr;}
     .events-grid{grid-template-columns:1fr 1fr;}
   }
@@ -282,7 +255,7 @@
 
         <div class="brand-tagline"><b>D T</b><span class="sep">·</span>حيث تصبح الأحلام واقع</div>
 
-        <p class="subtitle">مرحباً في مدينة الاحلام. مدينة صُنعت من الفولاذ والأسرار، حيث كل خطوه له ثمن وكل شخصية تحكي قصة. هل تملك الإرادة للعب في بلدة الأحلام؟ .</p>
+        <p class="subtitle">أفضل تجربة حياة واقعية GTA V، انضم لأكثر من 2000 لاعب في عالم مليء بالأحداث والقصص التي لا تُنسى.</p>
 
         <div class="hero-socials-row">
           <a href="#" target="_blank" rel="noopener" aria-label="X">
@@ -296,36 +269,63 @@
     </div>
   </section>
 
-  <!-- LIVE -->
-  <section class="live-section">
+  <!-- ABOUT US -->
+  <section class="about-section">
     <div class="wrap">
-      <div class="live-head">
-        <div>
-          <h2><span class="live-dot"></span> مباشر الآن</h2>
-          <p>تابع صناع محتوى دريم تاون وهم يبثون لحظة بلحظة</p>
-        </div>
-        <a class="live-all" href="creativity.html">عرض كل البثوث ←</a>
-      </div>
+      <div class="about-eyebrow">لماذا نحن</div>
+      <h2>تعرف علينا</h2>
 
-      <div class="live-card">
-        <div class="live-thumb">
-          <span class="live-badge">🔴 مباشر</span>
-          <span class="live-viewers">👁 481</span>
-        </div>
-        <div class="live-info">
-          <div class="live-avatar">DT</div>
-          <div>
-            <h4>جولة داخل دريم تاون | #WeAreDreamTown</h4>
-            <div class="streamer">اسم الستريمر</div>
-            <div class="game">Grand Theft Auto V (GTA)</div>
+      <div class="about-grid">
+
+        <div class="about-card">
+          <div class="about-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           </div>
+          <h3>وظائف مخصصة</h3>
+          <p>سواء كنت تطبق القانون أو تدير الأرواح أو تنفذ عملك، وظائفنا الفريدة تجعل لعب الأدوار حقيقيًا.</p>
         </div>
-      </div>
 
-      <!-- لو ما فيه بث حاليًا، بدّل البطاقة اللي فوق بهذا -->
-      <!--
-      <div class="no-live">لا يوجد بث مباشر حاليًا — تابعنا على ديسكورد عشان تعرف أول بواحد يبث</div>
-      -->
+        <div class="about-card">
+          <div class="about-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>سكربتات متقدمة</h3>
+          <p>استمتع بتجربة لعب سلسة ومبتكرة مع سكربتاتنا المخصصة التي تعزز التفاعل والواقعية.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>أفضل دعم في المجال</h3>
+          <p>احصل على مساعدة فورية على مدار الساعة من فريقنا، مع استجابة خلال 90 ثانية.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>مجتمع نشط</h3>
+          <p>انضم لمجتمع من عشاق لعب الأدوار في فعاليات ومغامرات يديرها فريق متخصص.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l9 4v5c0 5-3.5 8.5-9 9-5.5-.5-9-4-9-9V7l9-4z"/></svg>
+          </div>
+          <h3>صلاحيات الإدارة</h3>
+          <p>يطبق المشرفون قواعد المجتمع ويحاربون اللاعبين المخلين لضمان بيئة لعب عادلة.</p>
+        </div>
+
+        <div class="about-card">
+          <div class="about-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>حقوق اللاعبين</h3>
+          <p>حقوقك ومعلوماتك محفوظة بشكل آمن، مما يضمن بيئة لعب آمنة للجميع.</p>
+        </div>
+
+      </div>
     </div>
   </section>
 
