@@ -35,11 +35,8 @@
     width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
     display:flex; align-items:center; justify-content:center; font-size:.9rem; color:var(--mist);
   }
-  .logo-en{
-    font-family:'Baloo Bhaijaan 2', sans-serif; font-weight:800; font-size:1.05rem;
-    letter-spacing:1px; color:var(--paper);
-  }
-  .logo-en span{color:var(--ember);}
+  .logo-img{display:flex; align-items:center;}
+  .logo-img img{height:42px; width:auto; display:block;}
   .tag-pill{
     position:relative; z-index:2; display:inline-flex; align-items:center; gap:10px;
     background:rgba(23,18,16,0.7); border:1px solid var(--line); border-radius:999px;
@@ -226,7 +223,7 @@
 
 <header>
   <nav>
-    <div class="logo-en">DREAM <span>TOWN</span></div>
+    <a href="index.html" class="logo-img"><img src="images/logo.png" alt="Dream Town"></a>
     <ul class="navlinks">
       <li><a href="index.html" class="active">الرئيسية</a></li>
       <li><a href="creativity.html">الإبداع</a></li>
@@ -449,7 +446,7 @@
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <div class="logo-en">DREAM <span>TOWN</span></div>
+      <a href="index.html" class="logo-img"><img src="images/logo.png" alt="Dream Town"></a>
       <div class="socials">
         <a href="#" target="_blank" rel="noopener" aria-label="ديسكورد">💬</a>
         <a href="#" target="_blank" rel="noopener" aria-label="تيك توك">🎵</a>
