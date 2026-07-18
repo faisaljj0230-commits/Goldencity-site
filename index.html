@@ -169,12 +169,11 @@
   .event-media{
     position:relative; aspect-ratio:16/10;
     background:linear-gradient(135deg,#2a1712,#171015);
+    background-size:cover; background-position:center;
     display:flex; align-items:center; justify-content:center;
     overflow:hidden;
   }
-  .event-media video{
-    width:100%; height:100%; object-fit:cover; display:block;
-  }
+  .event-media img{width:100%; height:100%; object-fit:cover; display:block;}
   .event-media svg{width:42px; height:42px; color:rgba(255,140,66,0.5);}
   .event-badge{
     position:absolute; top:10px; right:10px; z-index:2;
@@ -300,7 +299,7 @@
 
 <header>
   <nav>
-    <a href="index.html" class="logo-img"><img src="https://files.catbox.moe/fc1899.png" alt="Dream Town"></a>
+    <a href="index.html" class="logo-img"><img src="https://files.catbox.moe/fc1899.png" alt=""></a>
     <ul class="navlinks">
       <li><a href="index.html" class="active">الرئيسية</a></li>
       <li><a href="creativity.html">الإبداع</a></li>
@@ -461,7 +460,7 @@
         <div class="event-card" data-category="war">
           <div class="event-media">
             <span class="event-badge">War</span>
-            <video src="https://files.catbox.moe/c79yds.mov" controls muted playsinline></video>
+            <img src="https://files.catbox.moe/t46nv7.jpeg" alt="احتلال ساندي">
           </div>
           <div class="event-body">
             <div class="event-title">احتلال ساندي</div>
@@ -564,7 +563,7 @@
 <footer>
   <div class="wrap">
     <div class="footer-top">
-      <a href="index.html" class="logo-img"><img src="https://files.catbox.moe/fc1899.png" alt="Dream Town"></a>
+      <a href="index.html" class="logo-img"><img src="https://files.catbox.moe/fc1899.png" alt=""></a>
     </div>
     <div class="footer-bottom">© 2026 Dream Town. جميع الحقوق محفوظة | تم الإنشاء بواسطة <a href="https://discord.com/users/1149991645203406848" target="_blank" rel="noopener" style="color:var(--ember); font-weight:700;">iDOM</a></div>
   </div>
