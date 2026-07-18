@@ -169,12 +169,15 @@
   .event-media{
     position:relative; aspect-ratio:16/10;
     background:linear-gradient(135deg,#2a1712,#171015);
-    background-size:cover; background-position:center;
     display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .event-media video{
+    width:100%; height:100%; object-fit:cover; display:block;
   }
   .event-media svg{width:42px; height:42px; color:rgba(255,140,66,0.5);}
   .event-badge{
-    position:absolute; top:10px; right:10px;
+    position:absolute; top:10px; right:10px; z-index:2;
     background:var(--ember); color:#fff; font-size:.7rem; font-weight:700;
     padding:4px 10px; border-radius:6px; text-transform:uppercase;
   }
@@ -185,13 +188,8 @@
     color:var(--gold); margin-bottom:10px; display:block;
   }
   .event-desc{
-    color:var(--mist); font-size:.83rem; line-height:1.7; margin-bottom:16px;
-    display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+    color:var(--mist); font-size:.83rem; line-height:1.7;
   }
-  .event-stats{display:flex; gap:18px;}
-  .event-stats .stat{display:flex; flex-direction:column; gap:2px;}
-  .event-stats .stat b{color:var(--ember); font-size:.95rem; font-weight:800;}
-  .event-stats .stat span{color:var(--mist); font-size:.72rem;}
 
   .events-pagination{
     display:flex; justify-content:center; align-items:center; gap:16px;
@@ -459,53 +457,16 @@
 
       <div class="events-grid" id="eventsGrid">
 
-        <!-- بطاقة 1 -->
+        <!-- حدث: احتلال ساندي -->
         <div class="event-card" data-category="war">
           <div class="event-media">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
             <span class="event-badge">War</span>
+            <video src="https://files.catbox.moe/c79yds.mov" controls muted playsinline></video>
           </div>
           <div class="event-body">
-            <div class="event-title">حرب العصابات: الشمال ضد الجنوب</div>
-            <span class="event-date">Feb 1, 2026</span>
-            <p class="event-desc">الخلافات على الأراضي انقلبت إلى حرب عصابات واسعة النطاق، اختارت كل عصابة جانبًا في هذه المدينة...</p>
-            <div class="event-stats">
-              <div class="stat"><b>25M</b><span>مشاهدات</span></div>
-              <div class="stat"><b>400</b><span>شير</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- بطاقة 2 -->
-        <div class="event-card" data-category="event">
-          <div class="event-media">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span class="event-badge">Event</span>
-          </div>
-          <div class="event-body">
-            <div class="event-title">حدث جزيرة الرسامين</div>
-            <span class="event-date">Feb 22, 2025</span>
-            <p class="event-desc">حدث جزيرة الرسامين، حيث يجمع جميع اللاعبين الذين دقت ساعتهم بتصويبهم و يجعلهم يتنافسون سويًا...</p>
-            <div class="event-stats">
-              <div class="stat"><b>15M</b><span>مشاهدات</span></div>
-              <div class="stat"><b>180</b><span>شير</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- بطاقة 3 -->
-        <div class="event-card" data-category="heist">
-          <div class="event-media" style="background-image:url('');">
-            <span class="event-badge">Heist</span>
-          </div>
-          <div class="event-body">
-            <div class="event-title">حدث فورملا يوم التأسيس</div>
-            <span class="event-date">Feb 23, 2026</span>
-            <p class="event-desc">حدث فورملا يوم التأسيس حيث يتسابق اللاعبون على المراكز الأولى و حصد الجوائز!</p>
-            <div class="event-stats">
-              <div class="stat"><b>18.7M</b><span>مشاهدات</span></div>
-              <div class="stat"><b>280</b><span>شير</span></div>
-            </div>
+            <div class="event-title">احتلال ساندي</div>
+            <span class="event-date">Jul 11, 2026</span>
+            <p class="event-desc">شهدت ساندي واحدة من أقوى المعارك في دريم تاون RP بعد محاولة العصابات احتلالها، لكن قوات العسكر تصدت لهم وتمكنت من استعادة المدينة بالكامل، لتنتهي المعركة بانتصار الدولة وعودة الأمن إلى ساندي.</p>
           </div>
         </div>
 
